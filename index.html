@@ -3,81 +3,840 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>喵-多國代購報價工具</title>
+    <title>多國代購報價工具 - 使用說明文檔</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
             color: #333;
-            max-width: 800px;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #f5f5f5;
         }
-        .container {
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        h1 {
-            color: #2c3e50;
-            text-align: center;
-        }
-        .links {
-            text-align: center;
-            margin-top: 30px;
-        }
-        .button {
-            display: inline-block;
-            padding: 12px 24px;
-            margin: 10px;
-            background-color: #4A90E2;
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #007AFF, #5856d6);
             color: white;
+            padding: 60px 20px;
+            text-align: center;
+            margin-bottom: 40px;
+            border-radius: 12px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 24px;
+        }
+
+        .app-badges {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 24px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Navigation */
+        .nav {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+            position: sticky;
+            top: 20px;
+            z-index: 100;
+        }
+
+        .nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            justify-content: center;
+        }
+
+        .nav a {
+            color: #007AFF;
             text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            font-weight: 500;
         }
-        .button:hover {
-            background-color: #357ABD;
+
+        .nav a:hover {
+            background: #007AFF;
+            color: white;
         }
-        .app-icon {
-            width: 120px;
-            height: 120px;
-            margin: 0 auto 20px;
+
+        /* Sections */
+        .section {
+            background: white;
+            padding: 40px;
+            margin-bottom: 40px;
+            border-radius: 12px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        .section h2 {
+            color: #007AFF;
+            font-size: 2rem;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 3px solid #e9ecef;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section h3 {
+            color: #333;
+            font-size: 1.4rem;
+            margin: 32px 0 16px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section h4 {
+            color: #5856d6;
+            font-size: 1.2rem;
+            margin: 24px 0 12px 0;
+        }
+
+        /* Feature Cards */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin: 24px 0;
+        }
+
+        .feature-card {
+            background: #f8f9fa;
+            padding: 24px;
+            border-radius: 12px;
+            border-left: 4px solid #007AFF;
+        }
+
+        .feature-card h4 {
+            color: #007AFF;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .feature-card ul {
+            padding-left: 20px;
+        }
+
+        .feature-card li {
+            margin-bottom: 8px;
+        }
+
+        /* Steps */
+        .steps {
+            counter-reset: step-counter;
+        }
+
+        .step {
+            counter-increment: step-counter;
+            background: #f8f9fa;
+            padding: 24px;
+            margin: 16px 0;
+            border-radius: 12px;
+            border-left: 4px solid #28a745;
+            position: relative;
+        }
+
+        .step::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: -20px;
+            top: 24px;
+            background: #28a745;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 26px;
-            background-color: #000000;
-            color: #FFFFFF;
-            font-size: 64px;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .step h4 {
+            margin-left: 32px;
+            color: #28a745;
+            margin-bottom: 12px;
+        }
+
+        .step p {
+            margin-left: 32px;
+        }
+
+        /* Comparison Table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 16px 24px;
+            text-align: left;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .comparison-table th {
+            background: #007AFF;
+            color: white;
+            font-weight: 600;
+        }
+
+        .comparison-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        .free-tier {
+            color: #6c757d;
+        }
+
+        .pro-tier {
+            color: #28a745;
+            font-weight: 600;
+        }
+
+        /* Alerts */
+        .alert {
+            padding: 16px 20px;
+            border-radius: 8px;
+            margin: 16px 0;
+            border-left: 4px solid;
+        }
+
+        .alert-info {
+            background: #e3f2fd;
+            border-left-color: #2196f3;
+            color: #0d47a1;
+        }
+
+        .alert-warning {
+            background: #fff3e0;
+            border-left-color: #ff9800;
+            color: #e65100;
+        }
+
+        .alert-success {
+            background: #e8f5e8;
+            border-left-color: #4caf50;
+            color: #2e7d32;
+        }
+
+        /* Code blocks */
+        .code {
+            background: #f1f3f4;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 16px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .section {
+                padding: 24px;
+            }
+            
+            .nav ul {
+                flex-direction: column;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Icons */
+        .icon {
+            font-size: 1.5rem;
+            margin-right: 8px;
+        }
+
+        /* Highlight */
+        .highlight {
+            background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        /* Footer links */
+        .footer-links {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .footer-button {
+            display: inline-block;
+            padding: 12px 24px;
+            margin: 10px;
+            background-color: #007AFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.3s;
             font-weight: 500;
-            font-family: "PingFang TC", "Microsoft JhengHei", "Helvetica Neue", Arial, sans-serif;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        }
+        
+        .footer-button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="app-icon">喵</div>
-        <h1>喵-多國代購報價工具</h1>
-        <p style="text-align: center; color: #666;">專業代購成本計算與報價管理</p>
-        
-        <div class="links">
-            <a href="privacy.html" class="button">隱私權政策</a>
-            <a href="terms.html" class="button">使用條款</a>
-            <a href="support.html" class="button">支援中心</a>
-        </div>
-        
-        <div style="text-align: center; margin-top: 50px; color: #999;">
-            <p>© 2025 Louis. All rights reserved.</p>
-            <p style="margin-top: 10px;">
-                <a href="https://www.instagram.com/mr.__.l/" target="_blank" style="color: #E1306C; text-decoration: none;">
-                    📷 Instagram: @mr.__.l
-                </a>
+        <!-- Header -->
+        <header class="header">
+            <h1>🛒 多國代購報價工具</h1>
+            <p>專業代購業者的智能定價助手</p>
+            <p>支援多國貨幣、智能成本分配、專業報價生成</p>
+            <div class="app-badges">
+                <span class="badge">📱 iOS App</span>
+                <span class="badge">🔐 Apple 登入</span>
+                <span class="badge">💰 免費 + Pro 版</span>
+                <span class="badge">🌏 多國貨幣</span>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="nav">
+            <ul>
+                <li><a href="#overview">應用概覽</a></li>
+                <li><a href="#login">登入指南</a></li>
+                <li><a href="#settings">設定流程</a></li>
+                <li><a href="#calculator">計算功能</a></li>
+                <li><a href="#products">產品管理</a></li>
+                <li><a href="#history">歷史記錄</a></li>
+                <li><a href="#pro-features">Pro 版本</a></li>
+                <li><a href="#faq">常見問題</a></li>
+            </ul>
+        </nav>
+
+        <!-- Overview Section -->
+        <section id="overview" class="section">
+            <h2><span class="icon">📊</span>應用概覽</h2>
+            
+            <p style="font-size: 1.1rem; margin-bottom: 24px;">
+                多國代購報價工具是專為代購業者設計的專業定價計算應用，幫助您快速準確地計算商品售價，
+                管理營運成本，並生成專業的報價單。
             </p>
-        </div>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>🔐 安全登入</h4>
+                    <ul>
+                        <li>Apple 登入（推薦使用）</li>
+                        <li>快速認證，保護隱私</li>
+                        <li>自動同步設定資料</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h4>💱 多國貨幣</h4>
+                    <ul>
+                        <li>支援 KRW、JPY、USD、CNY、TWD</li>
+                        <li>即時匯率更新</li>
+                        <li>自定義匯率設定</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h4>📊 智能計算</h4>
+                    <ul>
+                        <li>自動成本分攤</li>
+                        <li>利潤率計算</li>
+                        <li>運費估算</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h4>📱 專業功能</h4>
+                    <ul>
+                        <li>產品管理與儲存</li>
+                        <li>計算歷史記錄</li>
+                        <li>報價單生成（Pro）</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Login Guide -->
+        <section id="login" class="section">
+            <h2><span class="icon">🔐</span>登入指南</h2>
+
+            <div class="alert alert-info">
+                <strong>推薦登入方式：</strong>使用 Apple 登入，快速安全且保護您的隱私。
+            </div>
+
+            <h3>🍎 Apple 登入流程</h3>
+            <div class="steps">
+                <div class="step">
+                    <h4>開啟應用</h4>
+                    <p>首次開啟應用，會看到登入畫面</p>
+                </div>
+                <div class="step">
+                    <h4>點擊「使用 Apple 登入」</h4>
+                    <p>建議使用 Apple 登入，安全且快速</p>
+                </div>
+                <div class="step">
+                    <h4>完成 Apple 認證</h4>
+                    <p>使用 Face ID、Touch ID 或密碼完成認證</p>
+                </div>
+                <div class="step">
+                    <h4>自動建立帳戶</h4>
+                    <p>系統自動建立您的專屬帳戶，無需額外註冊</p>
+                </div>
+            </div>
+
+            <h3>🔒 其他登入方式</h3>
+            <div class="alert alert-warning">
+                <strong>注意：</strong>電子郵件登入和 Google 登入功能「即將推出」，目前僅支援 Apple 登入。
+            </div>
+
+            <h3>⚡️ 登入性能優化</h3>
+            <ul style="margin-left: 20px;">
+                <li><strong>首次登入：</strong>約 5-8 秒</li>
+                <li><strong>重複登入：</strong>約 2-3 秒（使用快取）</li>
+                <li><strong>同一會話：</strong>少於 1 秒（記憶快取）</li>
+            </ul>
+        </section>
+
+        <!-- Settings Guide -->
+        <section id="settings" class="section">
+            <h2><span class="icon">⚙️</span>設定流程指南</h2>
+
+            <div class="alert alert-success">
+                <strong>重要：</strong>登入後，建議先完成設定流程，確保計算結果準確。
+            </div>
+
+            <h3>📋 建議設定順序</h3>
+            <div class="steps">
+                <div class="step">
+                    <h4>👤 會員資訊確認</h4>
+                    <p>檢查帳戶資訊，確認會員等級（免費版/Pro版）</p>
+                </div>
+                <div class="step">
+                    <h4>🏪 店鋪資訊設定</h4>
+                    <p>設定店鋪名稱，用於浮水印和報價單生成</p>
+                </div>
+                <div class="step">
+                    <h4>💰 經營成本設定</h4>
+                    <p>設定本次出國的固定成本：機票、住宿、交通、其他費用</p>
+                </div>
+                <div class="step">
+                    <h4>📊 成本分攤設定</h4>
+                    <p>選擇成本分攤方式，設定預計銷售量</p>
+                </div>
+                <div class="step">
+                    <h4>🧾 服務收費設定</h4>
+                    <p>設定是否開立發票、營業稅率等服務設定</p>
+                </div>
+                <div class="step">
+                    <h4>💱 匯率管理</h4>
+                    <p>檢查匯率，必要時設定自定義匯率</p>
+                </div>
+            </div>
+
+            <h3>💰 經營成本設定詳解</h3>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>💺 機票費用</h4>
+                    <p>往返機票總費用（台幣）</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🏨 住宿費用</h4>
+                    <p>整趟行程的住宿總費用（台幣）</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🚗 交通費用</h4>
+                    <p>當地交通、接送等費用（台幣）</p>
+                </div>
+                <div class="feature-card">
+                    <h4>💰 其他費用</h4>
+                    <p>包裝材料、人力時間、系統使用費、標籤貼紙等營運成本</p>
+                </div>
+            </div>
+
+            <h3>💱 智能匯率管理</h3>
+            <ul style="margin-left: 20px;">
+                <li><strong>即時API匯率：</strong>自動更新，來源可靠</li>
+                <li><strong>自定義匯率：</strong>可覆蓋API匯率，優先使用</li>
+                <li><strong>支援貨幣：</strong>🇰🇷 韓元、🇯🇵 日元、🇺🇸 美元、🇨🇳 人民幣、🇹🇼 台幣</li>
+                <li><strong>快速設定：</strong>API+5%、API+10%、使用API等快捷選項</li>
+            </ul>
+        </section>
+
+        <!-- Calculator Features -->
+        <section id="calculator" class="section">
+            <h2><span class="icon">🧮</span>計算功能說明</h2>
+
+            <h3>🎯 計算流程</h3>
+            <div class="steps">
+                <div class="step">
+                    <h4>選擇貨幣</h4>
+                    <p>選擇商品原價貨幣（免費版僅支援韓元）</p>
+                </div>
+                <div class="step">
+                    <h4>商品資訊</h4>
+                    <p>上傳照片、輸入商品名稱、原價、重量、數量</p>
+                </div>
+                <div class="step">
+                    <h4>進階設定（可選）</h4>
+                    <p>調整服務費率、運費、成本分攤方式</p>
+                </div>
+                <div class="step">
+                    <h4>計算定價</h4>
+                    <p>系統自動計算最終售價和詳細成本分析</p>
+                </div>
+                <div class="step">
+                    <h4>儲存結果</h4>
+                    <p>儲存計算結果到歷史記錄，可選擇建立產品</p>
+                </div>
+            </div>
+
+            <h3>⚙️ 進階設定說明</h3>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>💼 服務費率</h4>
+                    <ul>
+                        <li>基礎服務費率（％）</li>
+                        <li>國際運費（每公斤）</li>
+                        <li>本地運費</li>
+                        <li>最低利潤保證</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h4>📊 成本分攤</h4>
+                    <ul>
+                        <li>預計月銷量設定</li>
+                        <li>成本分配方法選擇</li>
+                        <li>當前設定顯示</li>
+                        <li>動態調整（Pro版）</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>💾 儲存功能</h3>
+            <div class="alert alert-info">
+                計算完成後，可以選擇將結果儲存為：
+                <ul style="margin: 8px 0 0 20px;">
+                    <li><strong>歷史記錄：</strong>保留完整計算過程和結果</li>
+                    <li><strong>產品資料：</strong>建立可重複使用的產品檔案</li>
+                    <li><strong>報價圖片：</strong>生成專業報價單（Pro版）</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Products Management -->
+        <section id="products" class="section">
+            <h2><span class="icon">📦</span>產品管理</h2>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>📱 產品建立</h4>
+                    <ul>
+                        <li>從計算機直接建立</li>
+                        <li>手動新增產品</li>
+                        <li>圖片永久儲存</li>
+                        <li>完整資訊記錄</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h4>🖼️ 圖片管理</h4>
+                    <ul>
+                        <li>相機拍攝或相簿選擇</li>
+                        <li>自動圖片遷移</li>
+                        <li>永久儲存不遺失</li>
+                        <li>浮水印生成（Pro）</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h4>📝 資訊管理</h4>
+                    <ul>
+                        <li>商品名稱和編號</li>
+                        <li>詳細描述和備註</li>
+                        <li>定價歷史記錄</li>
+                        <li>成本分析保存</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h4>💾 匯出功能</h4>
+                    <ul>
+                        <li>CSV 格式匯出（Pro）</li>
+                        <li>JSON 格式匯出（Pro）</li>
+                        <li>Excel 含圖片（Pro）</li>
+                        <li>分享功能（Pro）</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- History Features -->
+        <section id="history" class="section">
+            <h2><span class="icon">📊</span>歷史記錄</h2>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>💾 計算歷史</h4>
+                    <ul>
+                        <li>完整計算過程記錄</li>
+                        <li>商品詳細資訊</li>
+                        <li>成本分析結果</li>
+                        <li>計算時間戳記</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h4>🔍 搜尋篩選</h4>
+                    <ul>
+                        <li>按日期範圍篩選</li>
+                        <li>按商品名稱搜尋</li>
+                        <li>按貨幣類型分類</li>
+                        <li>按價格區間篩選</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h4>📊 詳細檢視</h4>
+                    <ul>
+                        <li>重新查看計算結果</li>
+                        <li>檢視使用的設定參數</li>
+                        <li>查看報價圖片</li>
+                        <li>複製到新計算</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h4>🗑️ 記錄管理</h4>
+                    <ul>
+                        <li>刪除個別記錄</li>
+                        <li>批量清理功能</li>
+                        <li>匯出歷史資料（Pro）</li>
+                        <li>備份恢復功能</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pro Features -->
+        <section id="pro-features" class="section">
+            <h2><span class="icon">💎</span>Pro 版本功能</h2>
+
+            <div class="alert alert-success">
+                <strong>升級 Pro 版本，解鎖完整專業功能！</strong><br>
+                月付方案：$9.99/月 | 年付方案：$79.99/年（省33%，相當於每月$6.67）
+            </div>
+
+            <h3>🆚 免費版 vs Pro版 完整對比</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>功能項目</th>
+                        <th>免費版</th>
+                        <th>Pro 版</th>
+                        <th>說明</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>每日計算次數</strong></td>
+                        <td class="free-tier">20 次</td>
+                        <td class="pro-tier">200 次</td>
+                        <td>Pro版每日可計算200次</td>
+                    </tr>
+                    <tr>
+                        <td><strong>支援貨幣</strong></td>
+                        <td class="free-tier">僅韓元 KRW</td>
+                        <td class="pro-tier">KRW, JPY, USD, CNY, TWD</td>
+                        <td>Pro版支援全部5種主要貨幣</td>
+                    </tr>
+                    <tr>
+                        <td><strong>產品儲存</strong></td>
+                        <td class="free-tier">最多 5 個</td>
+                        <td class="pro-tier">最多 50 個</td>
+                        <td>Pro版可儲存50個產品</td>
+                    </tr>
+                    <tr>
+                        <td><strong>歷史記錄</strong></td>
+                        <td class="free-tier">最多 20 筆</td>
+                        <td class="pro-tier">最多 50 筆</td>
+                        <td>Pro版可保存50筆計算歷史</td>
+                    </tr>
+                    <tr>
+                        <td><strong>匯出功能</strong></td>
+                        <td class="free-tier">不支援</td>
+                        <td class="pro-tier">CSV, JSON, Excel</td>
+                        <td>Pro版支援多格式資料匯出</td>
+                    </tr>
+                    <tr>
+                        <td><strong>自動浮水印</strong></td>
+                        <td class="free-tier">不支援</td>
+                        <td class="pro-tier">專業報價圖生成</td>
+                        <td>Pro版自動生成品牌化報價單</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>💎 Pro 版專屬功能詳解</h3>
+
+            <h4>🖼️ 自動浮水印生成</h4>
+            <ul style="margin-left: 20px;">
+                <li>自動在商品圖片添加店鋪名稱浮水印</li>
+                <li>顯示計算後的售價資訊</li>
+                <li>專業報價單格式</li>
+                <li>一鍵分享給客戶</li>
+            </ul>
+
+            <h4>📊 高級成本分攤算法</h4>
+            <ul style="margin-left: 20px;">
+                <li><strong>動態費率法：</strong>根據商品價值調整服務費率</li>
+                <li><strong>營收比例分攤：</strong>按預期營收比例分配固定成本</li>
+                <li><strong>商品價值分層：</strong>高價值商品承擔更多固定成本</li>
+            </ul>
+
+            <h4>📈 數據匯出與分析</h4>
+            <ul style="margin-left: 20px;">
+                <li><strong>CSV 格式：</strong>適合 Excel 進一步分析</li>
+                <li><strong>JSON 格式：</strong>便於系統整合</li>
+                <li><strong>Excel 含圖片：</strong>包含商品圖片的完整報告</li>
+            </ul>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section">
+            <h2><span class="icon">❓</span>常見問題</h2>
+
+            <h3>🔐 登入相關</h3>
+            <div class="alert alert-info">
+                <strong>Q: 為什麼只支援 Apple 登入？</strong><br>
+                A: Apple 登入提供最高的隱私保護和安全性。電子郵件和 Google 登入功能即將推出。
+            </div>
+
+            <h3>💰 計算相關</h3>
+            <div class="alert alert-info">
+                <strong>Q: 匯率多久更新一次？</strong><br>
+                A: API 匯率會根據資料來源即時更新，您也可以手動刷新或設定自定義匯率。
+            </div>
+
+            <h3>📦 產品與歷史</h3>
+            <div class="alert alert-info">
+                <strong>Q: 免費版產品數量滿了怎麼辦？</strong><br>
+                A: 可以刪除舊產品騰出空間，或升級 Pro 版享受無限儲存。
+            </div>
+
+            <h3>💎 Pro 版本</h3>
+            <div class="alert alert-info">
+                <strong>Q: Pro 版功能會立即生效嗎？</strong><br>
+                A: 是的，購買後立即解鎖所有 Pro 功能。
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer style="text-align: center; margin: 60px 0 40px 0; padding: 40px; background: white; border-radius: 12px;">
+            <h3 style="color: #007AFF; margin-bottom: 16px;">📱 多國代購報價工具</h3>
+            <p style="color: #666; margin-bottom: 24px;">專業代購業者的最佳選擇</p>
+            
+            <div class="footer-links">
+                <a href="privacy.html" class="footer-button">隱私權政策</a>
+                <a href="terms.html" class="footer-button">使用條款</a>
+                <a href="support.html" class="footer-button">支援中心</a>
+            </div>
+            
+            <p style="color: #666; font-size: 0.9rem; margin-top: 24px;">
+                © 2025 Louis. 版權所有.<br>
+                Instagram: <a href="https://www.instagram.com/mr.__.l/" target="_blank" style="color: #E1306C; text-decoration: none;">@mr.__.l</a><br>
+                本文檔最後更新：<span id="update-date">2024年12月</span>
+            </p>
+        </footer>
     </div>
+
+    <script>
+        // Auto-update date
+        document.getElementById('update-date').textContent = new Date().toLocaleDateString('zh-TW');
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Highlight current section in navigation
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (window.pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.style.background = '';
+                link.style.color = '#007AFF';
+                if (link.getAttribute('href') === '#' + current) {
+                    link.style.background = '#007AFF';
+                    link.style.color = 'white';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
