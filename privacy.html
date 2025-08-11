@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>隱私權政策 - MeowDaigou</title>
+    <meta name="description" content="MeowDaigou 隱私權政策，了解我們如何保護您的個人資料">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #FF6B6B;
+            --primary-dark: #EE5A5A;
+            --secondary: #4ECDC4;
+            --accent: #FFE66D;
+            --dark: #2B2D42;
+            --light: #F8F9FA;
+            --gray: #8D99AE;
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.06);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+            --shadow-lg: 0 10px 30px rgba(0,0,0,0.12);
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            position: relative;
+            min-height: 100vh;
+        }
+
+        /* Header Navigation */
+        .nav-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Main Content */
+        .main-content {
+            padding-top: 80px;
+            min-height: 100vh;
+        }
+
+        .page-header {
+            background: var(--gradient-1);
+            padding: 4rem 2rem;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: float 20s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-20px, -20px) rotate(180deg); }
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .update-date {
+            font-size: 1rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .content-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .section {
+            background: white;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+        }
+
+        .section:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+        }
+
+        .section h2 {
+            color: var(--primary);
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section h2::before {
+            content: '';
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-2);
+            border-radius: 2px;
+        }
+
+        .section p {
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .section ul li {
+            padding: 0.75rem 0 0.75rem 2rem;
+            position: relative;
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        .section ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: 700;
+        }
+
+        .section ul li strong {
+            color: var(--dark);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: var(--gradient-2);
+            color: white;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            color: white;
+            justify-content: center;
+        }
+
+        .contact-section h2::before {
+            background: white;
+        }
+
+        .contact-section p,
+        .contact-section ul li {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .contact-section a {
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .contact-section a:hover {
+            border-bottom-color: white;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1.5rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .section {
+                padding: 1.5rem;
+            }
+            
+            .content-container {
+                padding: 2rem 1rem;
+            }
+        }
+
+        /* Animations */
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span>🐱</span>
+                <span>MeowDaigou</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">首頁</a></li>
+                <li><a href="terms.html">使用條款</a></li>
+                <li><a href="support.html">支援中心</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1>隱私權政策</h1>
+            <p class="update-date">最後更新日期：2025年1月8日</p>
+        </div>
+
+        <!-- Content -->
+        <div class="content-container">
+            <section class="section fade-in-up">
+                <h2>總則</h2>
+                <p>「MeowDaigou 多國代購報價工具」（以下簡稱「本應用程式」）非常重視您的隱私權。本隱私權政策說明我們如何收集、使用、揭露、處理及保護您在使用本應用程式時提供的資訊。</p>
+                <p>使用本應用程式即表示您同意本隱私權政策的條款。如果您不同意本政策，請勿使用本應用程式。</p>
+            </section>
+
+            <section class="section fade-in-up">
+                <h2>資料收集</h2>
+                <p>我們可能收集以下類型的資料：</p>
+                <ul>
+                    <li><strong>聯絡資訊</strong>：當您聯繫客服時，我們可能收集您的電子郵件地址</li>
+                    <li><strong>使用資料</strong>：包括您如何使用應用程式的資訊，例如功能使用頻率、計算記錄等</li>
+                    <li><strong>裝置資訊</strong>：包括裝置型號、作業系統版本、唯一裝置識別碼</li>
+                    <li><strong>診斷資料</strong>：當機報告、效能資料，用於改善應用程式穩定性</li>
+                    <li><strong>Apple ID 資訊</strong>：當您使用 Apple 登入時，我們會收集您的用戶識別碼</li>
+                </ul>
+            </section>
+
+            <section class="section fade-in-up">
+                <h2>資料使用方式</h2>
+                <p>我們收集的資料將用於：</p>
+                <ul>
+                    <li>提供並維護應用程式服務</li>
+                    <li>改善使用者體驗和個人化功能</li>
+                    <li>提供客戶支援和回應您的詢問</li>
+                    <li>分析應用程式使用情況以優化功能</li>
+                    <li>偵測、預防和解決技術問題</li>
+                    <li>發送重要的服務通知和更新</li>
+                </ul>
+            </section>
+
+            <section class="section fade-in-up">
+                <h2>資料儲存與安全</h2>
+                <p>您的資料安全是我們的首要考量：</p>
+                <ul>
+                    <li>所有資料傳輸均使用 SSL/TLS 加密技術</li>
+                    <li>伺服器採用業界標準的安全防護措施</li>
+                    <li>定期進行安全審查和更新</li>
+                    <li>嚴格限制員工的資料存取權限</li>
+                    <li>資料儲存在安全的雲端伺服器</li>
+                </ul>
+            </section>
+
+            <section class="section fade-in-up">
+                <h2>資料分享</h2>
+                <p>我們承諾保護您的隱私：</p>
+                <ul>
+                    <li>絕不出售、交易或出租您的個人資料</li>
+                    <li>僅在獲得您明確同意時分享資料</li>
+                    <li>遵守法律要求或政府機關的合法要求</li>
+                    <li>保護本公司和用戶的合法權益</li>
+                    <li>與可信賴的服務提供商合作時，確保他們遵守隱私保護標準</li>
+                </ul>
+            </section>
+
+            <section class="section fade-in-up">
+                <h2>第三方服務</h2>
+                <p>本應用程式可能整合以下第三方服務：</p>
+                <ul>
+                    <li>Apple 登入服務</li>
+                    <li>App Store 內購服務</li>
+                    <li>分析服務（用於改善應用程式）</li>
+                    <li>雲端儲存服務</li>
+                </ul>
+                <p>這些第三方服務有其自己的隱私權政策，我們建議您仔細閱讀。</p>
+            </section>
+
+            <section class="section fade-in-up">
+                <h2>兒童隱私</h2>
+                <p>本應用程式不針對 13 歲以下的兒童。我們不會故意收集 13 歲以下兒童的個人資料。如果我們發現已收集此類資料，將立即刪除。</p>
+                <p>家長或監護人如發現其子女在未經同意的情況下向我們提供了個人資料，請立即與我們聯繫。</p>
+            </section>
+
+            <section class="section fade-in-up">
+                <h2>您的權利</h2>
+                <p>根據相關法律，您享有以下權利：</p>
+                <ul>
+                    <li><strong>存取權</strong>：查看我們持有的您的個人資料</li>
+                    <li><strong>更正權</strong>：要求更正不準確的資料</li>
+                    <li><strong>刪除權</strong>：要求刪除您的個人資料</li>
+                    <li><strong>限制處理權</strong>：反對或限制資料處理</li>
+                    <li><strong>資料可攜權</strong>：以結構化格式接收您的資料</li>
+                    <li><strong>拒絕權</strong>：拒絕接收行銷訊息</li>
+                </ul>
+            </section>
+
+            <section class="section fade-in-up">
+                <h2>隱私權政策的變更</h2>
+                <p>我們可能會不定期更新本隱私權政策以反映法律要求的變化或我們營運的改變。</p>
+                <p>任何重大變更都會：</p>
+                <ul>
+                    <li>在本頁面上公布</li>
+                    <li>更新「最後更新日期」</li>
+                    <li>透過應用程式內通知告知您</li>
+                    <li>如有重大變更，可能要求您重新確認同意</li>
+                </ul>
+            </section>
+
+            <section class="section contact-section fade-in-up">
+                <h2>聯絡我們</h2>
+                <p>如果您對本隱私權政策有任何疑問或需要行使您的權利，請透過以下方式聯絡我們：</p>
+                <ul>
+                    <li>電子郵件：<a href="mailto:thankcoom@gmail.com">thankcoom@gmail.com</a></li>
+                    <li>Instagram：<a href="https://www.instagram.com/mr.__.l/" target="_blank">@mr.__.l</a></li>
+                    <li>應用程式內的「聯絡我們」功能</li>
+                </ul>
+                <p>我們承諾在收到您的請求後 30 天內回應。</p>
+            </section>
+
+            <section class="section fade-in-up">
+                <h2>適用法律</h2>
+                <p>本隱私權政策受中華民國法律管轄。任何因本政策產生的爭議，雙方同意以台灣台北地方法院為第一審管轄法院。</p>
+                <p>如果本政策的任何條款被認定為無效或不可執行，其餘條款將繼續有效。</p>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="index.html">返回首頁</a>
+            <a href="terms.html">使用條款</a>
+            <a href="support.html">支援中心</a>
+        </div>
+        <p style="color: rgba(255,255,255,0.7);">
+            © 2025 MeowDaigou. All rights reserved.
+        </p>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.nav-header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.85)';
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

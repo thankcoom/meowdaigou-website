@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>支援中心 - MeowDaigou</title>
+    <meta name="description" content="MeowDaigou 支援中心，常見問題與客戶服務">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #FF6B6B;
+            --primary-dark: #EE5A5A;
+            --secondary: #4ECDC4;
+            --accent: #FFE66D;
+            --dark: #2B2D42;
+            --light: #F8F9FA;
+            --gray: #8D99AE;
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --gradient-support: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.06);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+            --shadow-lg: 0 10px 30px rgba(0,0,0,0.12);
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            position: relative;
+            min-height: 100vh;
+        }
+
+        /* Header Navigation */
+        .nav-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Main Content */
+        .main-content {
+            padding-top: 80px;
+            min-height: 100vh;
+        }
+
+        .page-header {
+            background: var(--gradient-support);
+            padding: 4rem 2rem;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            left: -30%;
+            width: 160%;
+            height: 160%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: float 30s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(-10px, -15px) rotate(120deg); }
+            66% { transform: translate(10px, 15px) rotate(240deg); }
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-header p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .content-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        /* Quick Actions */
+        .quick-actions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .quick-action {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .quick-action:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .quick-action .icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1rem;
+            background: var(--gradient-1);
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .quick-action h3 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .quick-action p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .quick-action a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .quick-action a:hover {
+            text-decoration: underline;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin: 3rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .section-header p {
+            font-size: 1.125rem;
+            color: var(--gray);
+        }
+
+        .faq-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .faq {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .faq::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-support);
+        }
+
+        .faq:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateX(5px);
+        }
+
+        .faq h3 {
+            color: var(--secondary);
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .faq h3::before {
+            content: 'Q:';
+            background: var(--secondary);
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            min-width: 2rem;
+            text-align: center;
+        }
+
+        .faq .answer {
+            color: var(--gray);
+            line-height: 1.8;
+            padding-left: 3rem;
+        }
+
+        .faq .answer::before {
+            content: 'A: ';
+            color: var(--primary);
+            font-weight: 600;
+            margin-left: -2rem;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: var(--gradient-2);
+            padding: 3rem;
+            border-radius: 1.5rem;
+            text-align: center;
+            color: white;
+            margin: 3rem 0;
+        }
+
+        .contact-section h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .contact-section p {
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .contact-method {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-method:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .contact-method .icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-method h4 {
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-method a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .contact-method a:hover {
+            border-bottom-color: white;
+        }
+
+        /* Updates Section */
+        .updates-section {
+            background: white;
+            padding: 3rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow-md);
+            margin: 3rem 0;
+        }
+
+        .updates-section h2 {
+            color: var(--dark);
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .updates-section h2::before {
+            content: '🚀';
+        }
+
+        .version {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: var(--light);
+            border-radius: 1rem;
+            border-left: 4px solid var(--accent);
+        }
+
+        .version h3 {
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .version ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .version ul li {
+            padding: 0.5rem 0;
+            color: var(--gray);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .version ul li::before {
+            content: '✨';
+            flex-shrink: 0;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1.5rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        /* Search Box */
+        .search-box {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow-md);
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .search-input {
+            width: 100%;
+            max-width: 500px;
+            padding: 1rem 1.5rem;
+            border: 2px solid var(--light);
+            border-radius: 2rem;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .quick-actions {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-methods {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-section,
+            .updates-section {
+                padding: 2rem 1.5rem;
+            }
+            
+            .content-container {
+                padding: 2rem 1rem;
+            }
+        }
+
+        /* Animations */
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span>🐱</span>
+                <span>MeowDaigou</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">首頁</a></li>
+                <li><a href="privacy.html">隱私權政策</a></li>
+                <li><a href="terms.html">使用條款</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1>🆘 支援中心</h1>
+            <p>我們在這裡為您提供幫助與支援</p>
+        </div>
+
+        <!-- Content -->
+        <div class="content-container">
+            <!-- Search Box -->
+            <div class="search-box fade-in-up">
+                <h3 style="margin-bottom: 1rem; color: var(--dark);">搜尋常見問題</h3>
+                <input type="text" class="search-input" placeholder="輸入關鍵字搜尋問題..." id="searchInput">
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="quick-actions fade-in-up">
+                <div class="quick-action">
+                    <div class="icon">📱</div>
+                    <h3>下載 App</h3>
+                    <p>立即下載 iOS 版本</p>
+                    <a href="#">前往 App Store</a>
+                </div>
+                <div class="quick-action">
+                    <div class="icon">💎</div>
+                    <h3>升級 Pro</h3>
+                    <p>解鎖完整功能</p>
+                    <a href="#pro-info">了解更多</a>
+                </div>
+                <div class="quick-action">
+                    <div class="icon">📧</div>
+                    <h3>聯絡客服</h3>
+                    <p>專業客服團隊</p>
+                    <a href="#contact">立即聯絡</a>
+                </div>
+                <div class="quick-action">
+                    <div class="icon">📚</div>
+                    <h3>使用教學</h3>
+                    <p>完整操作指南</p>
+                    <a href="index.html">查看文檔</a>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="faq-section fade-in-up">
+                <div class="section-header">
+                    <h2>❓ 常見問題</h2>
+                    <p>快速找到您需要的答案</p>
+                </div>
+
+                <div class="faq-grid" id="faqGrid">
+                    <div class="faq" data-keywords="升級 專業版 付費 訂閱">
+                        <h3>如何升級到 Pro 專業版？</h3>
+                        <div class="answer">在應用程式中點擊「升級 Pro」按鈕，選擇月付（$9.99）或年付（$79.99）方案，通過 Apple ID 完成購買即可立即享受所有專業功能。</div>
+                    </div>
+
+                    <div class="faq" data-keywords="免費版 專業版 差別 比較">
+                        <h3>免費版和 Pro 專業版有什麼差別？</h3>
+                        <div class="answer">免費版每日僅 20 次計算，只支援韓元，最多儲存 5 個產品。Pro 版每日 200 次計算，支援 5 種貨幣，可儲存 50 個產品，並包含專業報價圖生成和資料匯出功能。</div>
+                    </div>
+
+                    <div class="faq" data-keywords="取消 訂閱 退訂 停止">
+                        <h3>如何取消 Pro 專業版訂閱？</h3>
+                        <div class="answer">前往 iPhone「設定」→「您的姓名」→「訂閱項目」，找到 MeowDaigou，選擇「取消訂閱」。訂閱將在當前週期結束後自動停止，您仍可使用 Pro 功能直到期滿。</div>
+                    </div>
+
+                    <div class="faq" data-keywords="匯率 更新 頻率 準確">
+                        <h3>匯率多久更新一次？是否準確？</h3>
+                        <div class="answer">我們使用可靠的金融資料源提供即時匯率更新。您也可以設定自定義匯率以符合實際交易需求。建議在重要交易前再次確認當前匯率。</div>
+                    </div>
+
+                    <div class="faq" data-keywords="計算 成本 費用 包含">
+                        <h3>成本計算包含哪些項目？</h3>
+                        <div class="answer">完整成本包含：商品原價、國際運費、國內運費、代購服務費、固定成本分攤（機票、住宿、交通）、營業稅等。所有費用透明化，客戶一目了然。</div>
+                    </div>
+
+                    <div class="faq" data-keywords="報價單 生成 分享 圖片">
+                        <h3>如何生成和分享專業報價單？</h3>
+                        <div class="answer">Pro 版本可在完成計算後點擊「生成報價圖」，系統會自動創建包含商品圖片、價格明細、店鋪浮水印的專業報價單，可直接分享給客戶或儲存到相簿。</div>
+                    </div>
+
+                    <div class="faq" data-keywords="歷史記錄 保存 查看">
+                        <h3>計算歷史記錄可以保存多久？</h3>
+                        <div class="answer">免費版保存最近 20 筆記錄，Pro 版本可保存 200 筆歷史記錄。所有記錄都包含完整的計算過程和結果，方便您回顧和管理。</div>
+                    </div>
+
+                    <div class="faq" data-keywords="貨幣 支援 國家 幣別">
+                        <h3>支援哪些國家的貨幣？</h3>
+                        <div class="answer">免費版僅支援韓元（KRW），Pro 版本支援韓元（KRW）、日元（JPY）、美元（USD）、人民幣（CNY）、台幣（TWD）等 5 種主要貨幣。</div>
+                    </div>
+
+                    <div class="faq" data-keywords="匯出 資料 Excel CSV">
+                        <h3>可以匯出計算資料嗎？</h3>
+                        <div class="answer">Pro 版本支援將產品資料和歷史記錄匯出為 CSV、JSON 或含圖片的 Excel 格式，方便您進行進一步的資料分析或備份。</div>
+                    </div>
+
+                    <div class="faq" data-keywords="登入 問題 Apple ID">
+                        <h3>登入時遇到問題怎麼辦？</h3>
+                        <div class="answer">請確保您的 Apple ID 正常運作，網路連線穩定。如果持續遇到問題，請嘗試重啟 App，或聯絡我們的客服團隊協助解決。</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Section -->
+            <div id="contact" class="contact-section fade-in-up">
+                <h2>💬 需要更多幫助？</h2>
+                <p>我們的專業客服團隊隨時為您服務</p>
+                <p style="font-size: 0.9rem; opacity: 0.8;">通常在 24-48 小時內回覆</p>
+
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <div class="icon">📧</div>
+                        <h4>電子郵件</h4>
+                        <a href="mailto:thankcoom@gmail.com">thankcoom@gmail.com</a>
+                    </div>
+                    <div class="contact-method">
+                        <div class="icon">📷</div>
+                        <h4>Instagram</h4>
+                        <a href="https://www.instagram.com/mr.__.l/" target="_blank">@mr.__.l</a>
+                    </div>
+                    <div class="contact-method">
+                        <div class="icon">💬</div>
+                        <h4>App 內聯絡</h4>
+                        <a href="#">在 App 內傳送訊息</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Updates Section -->
+            <div class="updates-section fade-in-up">
+                <h2>更新紀錄</h2>
+                
+                <div class="version">
+                    <h3>版本 1.2.0（2025年1月8日）</h3>
+                    <ul>
+                        <li>新增報價圖片浮水印功能</li>
+                        <li>改善匯率更新機制</li>
+                        <li>優化使用者介面設計</li>
+                        <li>修復部分計算問題</li>
+                        <li>增加更多貨幣支援</li>
+                    </ul>
+                </div>
+
+                <div class="version">
+                    <h3>版本 1.1.0（2024年12月20日）</h3>
+                    <ul>
+                        <li>新增產品管理功能</li>
+                        <li>增加歷史記錄搜尋</li>
+                        <li>改善計算精確度</li>
+                        <li>優化 App 效能</li>
+                    </ul>
+                </div>
+
+                <div class="version">
+                    <h3>版本 1.0.0（2024年12月1日）</h3>
+                    <ul>
+                        <li>正式上架 App Store</li>
+                        <li>支援多國匯率自動轉換</li>
+                        <li>專業報價單生成功能</li>
+                        <li>智能成本分析系統</li>
+                        <li>Apple 登入整合</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Pro Info -->
+            <div id="pro-info" class="updates-section fade-in-up" style="background: var(--gradient-1); color: white;">
+                <h2 style="color: white;">💎 Pro 專業版特色</h2>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+                    <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 1rem;">
+                        <h4 style="color: white; margin-bottom: 1rem;">🌍 多國貨幣</h4>
+                        <p style="color: rgba(255,255,255,0.9); font-size: 0.9rem;">支援 KRW、JPY、USD、CNY、TWD 五種主要貨幣</p>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 1rem;">
+                        <h4 style="color: white; margin-bottom: 1rem;">🖼️ 專業報價</h4>
+                        <p style="color: rgba(255,255,255,0.9); font-size: 0.9rem;">自動生成品牌化報價圖片，提升專業形象</p>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 1rem;">
+                        <h4 style="color: white; margin-bottom: 1rem;">📊 資料匯出</h4>
+                        <p style="color: rgba(255,255,255,0.9); font-size: 0.9rem;">支援 CSV、Excel、JSON 多格式匯出</p>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 1rem;">
+                        <h4 style="color: white; margin-bottom: 1rem;">♾️ 無限使用</h4>
+                        <p style="color: rgba(255,255,255,0.9); font-size: 0.9rem;">每日 200 次計算，50 個產品儲存</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="index.html">返回首頁</a>
+            <a href="privacy.html">隱私權政策</a>
+            <a href="terms.html">使用條款</a>
+        </div>
+        <p style="color: rgba(255,255,255,0.7);">
+            © 2025 MeowDaigou. All rights reserved.
+        </p>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.nav-header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.85)';
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            observer.observe(el);
+        });
+
+        // FAQ Search Functionality
+        const searchInput = document.getElementById('searchInput');
+        const faqItems = document.querySelectorAll('.faq');
+
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            
+            faqItems.forEach(faq => {
+                const text = faq.textContent.toLowerCase();
+                const keywords = faq.dataset.keywords.toLowerCase();
+                
+                if (text.includes(searchTerm) || keywords.includes(searchTerm) || searchTerm === '') {
+                    faq.style.display = 'block';
+                    faq.style.animation = 'fadeInUp 0.3s ease';
+                } else {
+                    faq.style.display = 'none';
+                }
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

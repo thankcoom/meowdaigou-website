@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用條款 - MeowDaigou</title>
+    <meta name="description" content="MeowDaigou 使用條款與服務協議">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #FF6B6B;
+            --primary-dark: #EE5A5A;
+            --secondary: #4ECDC4;
+            --accent: #FFE66D;
+            --dark: #2B2D42;
+            --light: #F8F9FA;
+            --gray: #8D99AE;
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.06);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+            --shadow-lg: 0 10px 30px rgba(0,0,0,0.12);
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            position: relative;
+            min-height: 100vh;
+        }
+
+        /* Header Navigation */
+        .nav-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Main Content */
+        .main-content {
+            padding-top: 80px;
+            min-height: 100vh;
+        }
+
+        .page-header {
+            background: var(--gradient-3);
+            padding: 4rem 2rem;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: float 25s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(20px, 20px) rotate(180deg); }
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .update-date {
+            font-size: 1rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .content-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .section {
+            background: white;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+        }
+
+        .section:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+        }
+
+        .section h2 {
+            color: var(--secondary);
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section h2::before {
+            content: '';
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-3);
+            border-radius: 2px;
+        }
+
+        .section h3 {
+            color: var(--dark);
+            font-size: 1.25rem;
+            margin: 1.5rem 0 1rem 0;
+        }
+
+        .section p {
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .section ul li {
+            padding: 0.75rem 0 0.75rem 2rem;
+            position: relative;
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        .section ul li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .section ul li strong {
+            color: var(--dark);
+        }
+
+        /* Pricing Section */
+        .pricing-highlight {
+            background: var(--gradient-1);
+            color: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            margin: 1rem 0;
+            text-align: center;
+        }
+
+        .pricing-highlight h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .price-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .price-card .price {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 0.5rem 0;
+        }
+
+        .price-card .desc {
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: var(--gradient-2);
+            color: white;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            color: white;
+            justify-content: center;
+        }
+
+        .contact-section h2::before {
+            background: white;
+        }
+
+        .contact-section p,
+        .contact-section ul li {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .contact-section a {
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .contact-section a:hover {
+            border-bottom-color: white;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1.5rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .section {
+                padding: 1.5rem;
+            }
+            
+            .content-container {
+                padding: 2rem 1rem;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Table of Contents */
+        .toc {
+            background: var(--gradient-3);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .toc h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .toc ul {
+            list-style: none;
+        }
+
+        .toc ul li {
+            padding: 0.5rem 0;
+        }
+
+        .toc a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .toc a:hover {
+            color: white;
+            padding-left: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span>🐱</span>
+                <span>MeowDaigou</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">首頁</a></li>
+                <li><a href="privacy.html">隱私權政策</a></li>
+                <li><a href="support.html">支援中心</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1>使用條款</h1>
+            <p class="update-date">最後更新日期：2025年1月8日</p>
+        </div>
+
+        <!-- Content -->
+        <div class="content-container">
+            <!-- Table of Contents -->
+            <div class="toc fade-in-up">
+                <h3>📋 目錄</h3>
+                <ul>
+                    <li><a href="#accept">1. 接受條款</a></li>
+                    <li><a href="#service">2. 服務說明</a></li>
+                    <li><a href="#account">3. 使用者帳戶</a></li>
+                    <li><a href="#subscription">4. 訂閱服務</a></li>
+                    <li><a href="#restrictions">5. 使用限制</a></li>
+                    <li><a href="#accuracy">6. 內容準確性</a></li>
+                    <li><a href="#ip">7. 智慧財產權</a></li>
+                    <li><a href="#disclaimer">8. 免責聲明</a></li>
+                    <li><a href="#liability">9. 責任限制</a></li>
+                    <li><a href="#termination">10. 終止服務</a></li>
+                </ul>
+            </div>
+
+            <section id="accept" class="section fade-in-up">
+                <h2>接受條款</h2>
+                <p>歡迎使用「MeowDaigou 多國代購報價工具」（以下簡稱「本應用程式」）。使用本應用程式即表示您同意遵守這些使用條款。</p>
+                <p>如果您不同意這些條款，請勿使用本應用程式。我們保留隨時修改這些條款的權利，繼續使用即表示您接受修改後的條款。</p>
+            </section>
+
+            <section id="service" class="section fade-in-up">
+                <h2>服務說明</h2>
+                <p>MeowDaigou 提供專業的代購成本計算服務，包括：</p>
+                <ul>
+                    <li><strong>多國貨幣轉換</strong>：支援韓元、日元、美元、人民幣、台幣</li>
+                    <li><strong>智能成本計算</strong>：自動分攤機票、住宿、交通等固定成本</li>
+                    <li><strong>報價單生成</strong>：專業的圖片報價單，含浮水印功能</li>
+                    <li><strong>產品管理</strong>：完整的產品資料庫管理功能</li>
+                    <li><strong>歷史記錄</strong>：詳細的計算歷史追蹤</li>
+                </ul>
+            </section>
+
+            <section id="account" class="section fade-in-up">
+                <h2>使用者帳戶</h2>
+                <h3>帳戶責任</h3>
+                <ul>
+                    <li>您需對您帳戶下的所有活動負責</li>
+                    <li>您必須保護您的帳戶安全，包括 Apple ID</li>
+                    <li>您同意在發現任何未經授權的使用時立即通知我們</li>
+                    <li>每個使用者僅能註冊一個帳戶</li>
+                </ul>
+                
+                <h3>帳戶安全</h3>
+                <p>我們建議您：</p>
+                <ul>
+                    <li>使用強密碼並定期更換</li>
+                    <li>啟用雙重認證</li>
+                    <li>不與他人分享您的登入資訊</li>
+                </ul>
+            </section>
+
+            <section id="subscription" class="section fade-in-up">
+                <h2>訂閱服務</h2>
+                
+                <div class="pricing-highlight">
+                    <h3>💎 Pro 專業版訂閱</h3>
+                    <div class="pricing-grid">
+                        <div class="price-card">
+                            <div class="price">$9.99</div>
+                            <div class="desc">每月</div>
+                        </div>
+                        <div class="price-card">
+                            <div class="price">$79.99</div>
+                            <div class="desc">每年（省33%）</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>訂閱條款</h3>
+                <ul>
+                    <li>訂閱將自動續訂，除非您在當前訂閱期結束前至少24小時取消</li>
+                    <li>續訂費用將在當前訂閱期結束前24小時內從您的 Apple ID 帳戶收取</li>
+                    <li>您可以隨時在 App Store 帳戶設定中管理或取消訂閱</li>
+                    <li>取消訂閱後，您仍可使用 Pro 功能直到當前訂閱期結束</li>
+                </ul>
+
+                <h3>付款與退款</h3>
+                <ul>
+                    <li>所有付款均通過 Apple App Store 處理</li>
+                    <li>價格可能因地區而異，並可能包含當地稅費</li>
+                    <li>退款申請需透過 Apple 支援處理</li>
+                    <li>我們無法直接處理退款請求</li>
+                </ul>
+            </section>
+
+            <section id="restrictions" class="section fade-in-up">
+                <h2>使用限制</h2>
+                <p>使用本應用程式時，您同意不會：</p>
+                <ul>
+                    <li>將本應用程式用於任何非法或未經授權的目的</li>
+                    <li>嘗試破解、反向工程、反編譯或修改應用程式</li>
+                    <li>傳播病毒、惡意軟體或任何破壞性代碼</li>
+                    <li>干擾或破壞伺服器或網路的正常運作</li>
+                    <li>收集或儲存其他使用者的個人資料</li>
+                    <li>使用自動化工具（如機器人）存取服務</li>
+                    <li>轉售或商業化使用本服務</li>
+                    <li>違反任何適用的法律或法規</li>
+                </ul>
+            </section>
+
+            <section id="accuracy" class="section fade-in-up">
+                <h2>內容準確性</h2>
+                <p>關於計算結果和匯率資訊：</p>
+                <ul>
+                    <li><strong>匯率資訊</strong>：僅供參考，實際匯率可能因銀行或交易平台而異</li>
+                    <li><strong>計算結果</strong>：不構成財務或投資建議</li>
+                    <li><strong>使用者責任</strong>：您應自行驗證所有計算結果的準確性</li>
+                    <li><strong>更新頻率</strong>：我們會盡力保持資訊即時更新，但不保證即時性</li>
+                </ul>
+                <p>本應用程式提供的所有資訊僅供參考，最終商業決策應基於您的專業判斷。</p>
+            </section>
+
+            <section id="ip" class="section fade-in-up">
+                <h2>智慧財產權</h2>
+                <p>本應用程式及其所有內容的智慧財產權歸屬：</p>
+                <ul>
+                    <li>所有內容包括但不限於文字、圖像、標誌、按鈕圖示、音訊、程式碼</li>
+                    <li>這些內容均為本公司或其授權方的財產</li>
+                    <li>受著作權法、商標法和其他智慧財產權法保護</li>
+                    <li>未經書面許可，不得複製、修改、分發或商業使用</li>
+                </ul>
+                <h3>使用者內容</h3>
+                <p>您保留您上傳內容的所有權，但授予我們使用這些內容以提供服務的必要權利。</p>
+            </section>
+
+            <section id="disclaimer" class="section fade-in-up">
+                <h2>免責聲明</h2>
+                <p>本應用程式按「現狀」和「現有」基礎提供，不提供任何形式的保證：</p>
+                <ul>
+                    <li><strong>不保證</strong>服務不會中斷或沒有錯誤</li>
+                    <li><strong>不保證</strong>計算結果的絕對準確性</li>
+                    <li><strong>不保證</strong>符合您的特定需求</li>
+                    <li><strong>不保證</strong>與所有裝置或系統相容</li>
+                </ul>
+                <p>使用本服務的風險由您自行承擔。</p>
+            </section>
+
+            <section id="liability" class="section fade-in-up">
+                <h2>責任限制</h2>
+                <p>在法律允許的最大範圍內：</p>
+                <ul>
+                    <li>我們不對任何間接、附帶、特殊或後果性損害負責</li>
+                    <li>包括但不限於利潤損失、資料損失、商譽損失</li>
+                    <li>即使我們已被告知此類損害的可能性</li>
+                    <li>我們的總責任不超過您支付的訂閱費用</li>
+                </ul>
+            </section>
+
+            <section id="termination" class="section fade-in-up">
+                <h2>終止服務</h2>
+                <h3>我們的權利</h3>
+                <p>我們可能因以下原因終止或暫停您的帳戶：</p>
+                <ul>
+                    <li>違反使用條款</li>
+                    <li>涉嫌欺詐或非法活動</li>
+                    <li>長期未使用（超過12個月）</li>
+                    <li>其他我們認為必要的情況</li>
+                </ul>
+                
+                <h3>終止後果</h3>
+                <ul>
+                    <li>您將無法存取您的帳戶和資料</li>
+                    <li>未使用的訂閱期間不予退款</li>
+                    <li>我們可能保留某些資料以符合法律要求</li>
+                </ul>
+            </section>
+
+            <section class="section fade-in-up">
+                <h2>其他條款</h2>
+                <h3>修改服務</h3>
+                <p>我們保留隨時修改、暫停或終止服務的權利，包括但不限於：</p>
+                <ul>
+                    <li>新增或移除功能</li>
+                    <li>修改訂閱價格（生效前30天通知）</li>
+                    <li>改變服務的可用性</li>
+                </ul>
+
+                <h3>適用法律</h3>
+                <p>這些條款受中華民國法律管轄。任何爭議應提交台灣台北地方法院專屬管轄。</p>
+
+                <h3>可分割性</h3>
+                <p>如果這些條款的任何部分被認定為無效或不可執行，其餘部分將繼續有效。</p>
+            </section>
+
+            <section class="section contact-section fade-in-up">
+                <h2>聯絡我們</h2>
+                <p>如果您對這些使用條款有任何疑問，歡迎聯絡我們：</p>
+                <ul>
+                    <li>電子郵件：<a href="mailto:thankcoom@gmail.com">thankcoom@gmail.com</a></li>
+                    <li>Instagram：<a href="https://www.instagram.com/mr.__.l/" target="_blank">@mr.__.l</a></li>
+                    <li>應用程式內的「聯絡我們」功能</li>
+                </ul>
+                <p>我們將盡快回應您的詢問。</p>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="index.html">返回首頁</a>
+            <a href="privacy.html">隱私權政策</a>
+            <a href="support.html">支援中心</a>
+        </div>
+        <p style="color: rgba(255,255,255,0.7);">
+            © 2025 MeowDaigou. All rights reserved.
+        </p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.nav-header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.85)';
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
