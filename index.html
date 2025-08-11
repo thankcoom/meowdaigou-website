@@ -318,7 +318,7 @@
             line-height: 1.8;
         }
 
-        /* Screenshots Section */
+        /* Demo Section */
         .screenshots {
             padding: 5rem 2rem;
             background: var(--light);
@@ -326,47 +326,146 @@
         }
 
         .screenshots-container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
-        .screenshot-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        /* Process Flow */
+        .process-flow {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 4rem 0;
+            flex-wrap: wrap;
             gap: 2rem;
-            margin-top: 3rem;
         }
 
-        .screenshot-card {
-            background: white;
-            border-radius: 1rem;
-            overflow: hidden;
+        .process-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            max-width: 300px;
+            animation: fadeInUp 0.8s ease forwards;
+            opacity: 0;
+        }
+
+        .process-step[data-step="1"] {
+            animation-delay: 0.2s;
+        }
+
+        .process-step[data-step="2"] {
+            animation-delay: 0.4s;
+        }
+
+        .process-step[data-step="3"] {
+            animation-delay: 0.6s;
+        }
+
+        .step-icon {
+            margin-bottom: 1.5rem;
+        }
+
+        .icon-bg {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
             box-shadow: var(--shadow-lg);
             transition: all 0.3s ease;
-            position: relative;
         }
 
-        .screenshot-card:hover {
-            transform: rotate(-1deg) scale(1.02);
+        .process-step:hover .icon-bg {
+            transform: scale(1.1) rotate(5deg);
             box-shadow: var(--shadow-xl);
         }
 
-        .screenshot-card img {
-            width: 100%;
-            height: auto;
-            display: block;
+        .step-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
         }
 
-        .screenshot-label {
+        .step-content p {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        .step-arrow {
             position: absolute;
-            bottom: 1rem;
-            left: 1rem;
+            right: -3rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .process-step:last-child .step-arrow {
+            display: none;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .stat-card {
             background: white;
-            padding: 0.5rem 1rem;
-            border-radius: 2rem;
-            font-size: 0.875rem;
-            font-weight: 600;
+            padding: 2.5rem;
+            border-radius: 1rem;
+            text-align: center;
             box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-2);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-desc {
+            font-size: 0.9rem;
+            color: var(--gray);
+            line-height: 1.5;
         }
 
         /* Pricing Section */
@@ -526,13 +625,24 @@
             }
             
             .features-grid,
-            .screenshot-grid,
             .pricing-grid {
                 grid-template-columns: 1fr;
             }
             
             .pricing-card.featured {
                 transform: none;
+            }
+
+            .process-flow {
+                flex-direction: column;
+            }
+
+            .step-arrow {
+                display: none;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             }
         }
 
@@ -583,7 +693,7 @@
             </a>
             <ul class="nav-links">
                 <li><a href="#features">功能特色</a></li>
-                <li><a href="#screenshots">應用截圖</a></li>
+                <li><a href="#screenshots">使用流程</a></li>
                 <li><a href="#pricing">價格方案</a></li>
                 <li><a href="support.html">支援中心</a></li>
             </ul>
@@ -672,26 +782,70 @@
             </div>
         </section>
 
-        <!-- Screenshots Section -->
+        <!-- Demo Section -->
         <section id="screenshots" class="screenshots">
             <div class="screenshots-container">
                 <div class="section-header">
-                    <h2>直觀易用的介面設計</h2>
-                    <p>專業功能，簡單操作</p>
+                    <h2>專業功能，輕鬆上手</h2>
+                    <p>三步驟完成代購報價，提升您的工作效率</p>
                 </div>
 
-                <div class="screenshot-grid">
-                    <div class="screenshot-card">
-                        <img src="https://via.placeholder.com/400x800/FF6B6B/FFFFFF?text=計算器介面" alt="計算器介面">
-                        <div class="screenshot-label">智能計算器</div>
+                <!-- Process Flow -->
+                <div class="process-flow">
+                    <div class="process-step" data-step="1">
+                        <div class="step-icon">
+                            <div class="icon-bg">📝</div>
+                        </div>
+                        <div class="step-content">
+                            <h3>輸入商品資訊</h3>
+                            <p>拍照上傳商品圖片，輸入價格、重量等基本資訊</p>
+                        </div>
+                        <div class="step-arrow">→</div>
                     </div>
-                    <div class="screenshot-card">
-                        <img src="https://via.placeholder.com/400x800/4ECDC4/FFFFFF?text=產品管理" alt="產品管理">
-                        <div class="screenshot-label">產品管理</div>
+
+                    <div class="process-step" data-step="2">
+                        <div class="step-icon">
+                            <div class="icon-bg">🧮</div>
+                        </div>
+                        <div class="step-content">
+                            <h3>智能成本計算</h3>
+                            <p>自動計算匯率、運費、服務費，智能分攤固定成本</p>
+                        </div>
+                        <div class="step-arrow">→</div>
                     </div>
-                    <div class="screenshot-card">
-                        <img src="https://via.placeholder.com/400x800/FFE66D/FFFFFF?text=報價生成" alt="報價生成">
-                        <div class="screenshot-label">報價生成</div>
+
+                    <div class="process-step" data-step="3">
+                        <div class="step-icon">
+                            <div class="icon-bg">🎨</div>
+                        </div>
+                        <div class="step-content">
+                            <h3>生成專業報價</h3>
+                            <p>一鍵生成精美報價圖，直接分享給客戶</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats Section -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">5+</div>
+                        <div class="stat-label">支援貨幣</div>
+                        <div class="stat-desc">KRW・JPY・USD・CNY・TWD</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">200+</div>
+                        <div class="stat-label">每日計算次數</div>
+                        <div class="stat-desc">Pro 版無限制使用</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">3秒</div>
+                        <div class="stat-label">快速生成報價</div>
+                        <div class="stat-desc">提升 80% 工作效率</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">即時匯率更新</div>
+                        <div class="stat-desc">確保報價準確性</div>
                     </div>
                 </div>
             </div>
