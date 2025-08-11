@@ -363,6 +363,10 @@
             animation-delay: 0.6s;
         }
 
+        .process-step[data-step="4"] {
+            animation-delay: 0.8s;
+        }
+
         .step-icon {
             margin-bottom: 1.5rem;
         }
@@ -635,10 +639,15 @@
 
             .process-flow {
                 flex-direction: column;
+                gap: 1rem;
             }
 
             .step-arrow {
                 display: none;
+            }
+            
+            .process-step {
+                max-width: 100%;
             }
             
             .stats-grid {
@@ -794,6 +803,17 @@
                 <div class="process-flow">
                     <div class="process-step" data-step="1">
                         <div class="step-icon">
+                            <div class="icon-bg">⚙️</div>
+                        </div>
+                        <div class="step-content">
+                            <h3>設定經營參數</h3>
+                            <p>設定經營成本、成本分攤方式、稅務設定、匯率管理等基礎參數</p>
+                        </div>
+                        <div class="step-arrow">→</div>
+                    </div>
+
+                    <div class="process-step" data-step="2">
+                        <div class="step-icon">
                             <div class="icon-bg">🇰🇷</div>
                         </div>
                         <div class="step-content">
@@ -803,7 +823,7 @@
                         <div class="step-arrow">→</div>
                     </div>
 
-                    <div class="process-step" data-step="2">
+                    <div class="process-step" data-step="3">
                         <div class="step-icon">
                             <div class="icon-bg">📷</div>
                         </div>
@@ -814,7 +834,7 @@
                         <div class="step-arrow">→</div>
                     </div>
 
-                    <div class="process-step" data-step="3">
+                    <div class="process-step" data-step="4">
                         <div class="step-icon">
                             <div class="icon-bg">📊</div>
                         </div>
