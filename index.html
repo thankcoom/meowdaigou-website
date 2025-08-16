@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MeowDaigou | 多國代購報價工具</title>
-    <meta name="description" content="專業代購業者的智能定價助手，支援多國貨幣、智能成本分配、專業報價生成">
+    <title>MeowDaigou | 專業代購計算機</title>
+    <meta name="description" content="專為代購業者設計的智能計算工具，支援7步驟精準計算、8種國際貨幣、專業報價圖片生成、會員制度">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,64 +19,66 @@
         }
 
         :root {
-            /* Colors inspired by modern design */
-            --primary: #FF6B6B;
-            --primary-dark: #EE5A5A;
-            --secondary: #4ECDC4;
-            --accent: #FFE66D;
-            --dark: #2B2D42;
-            --light: #F8F9FA;
-            --gray: #8D99AE;
-            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            --shadow-sm: 0 2px 4px rgba(0,0,0,0.06);
-            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
-            --shadow-lg: 0 10px 30px rgba(0,0,0,0.12);
-            --shadow-xl: 0 20px 50px rgba(0,0,0,0.16);
+            /* 莫蘭迪色彩系統 - 來自 MeowDaigou App */
+            /* 主要白色系 */
+            --pure-white: #FFFFFF;
+            --ivory-white: #FBF9F6;
+            --soft-white: #F8F6F3;
+            
+            /* 莫蘭迪核心色 */
+            --morandi-blue: #7A9CC6;
+            --morandi-green: #9BB5A3;
+            --milk-tea: #E8D5C4;
+            --smoky-purple: #B8A5D1;
+            
+            /* 莫蘭迪延伸色 */
+            --dusty-rose: #D4A5A5;
+            --sage-brown: #C4A889;
+            --mist-gray: #B5B5B5;
+            --pale-yellow: #F0E68C;
+            
+            /* 輔助中性色 */
+            --warm-gray: #8B8B8B;
+            --cool-gray: #6B7280;
+            --soft-black: #2D2D2D;
+            
+            /* 功能色彩 */
+            --success-green: #34C759;
+            --error-red: #FF3B30;
+            --warning-orange: #FF9500;
+            --info-blue: #007AFF;
+            
+            /* 陰影系統 */
+            --shadow-soft: 0 2px 8px rgba(0,0,0,0.1);
+            --shadow-medium: 0 4px 12px rgba(0,0,0,0.15);
+            --shadow-strong: 0 8px 24px rgba(0,0,0,0.25);
+            
+            /* 莫蘭迪漸變 */
+            --gradient-primary: linear-gradient(135deg, var(--morandi-blue), var(--smoky-purple));
+            --gradient-secondary: linear-gradient(135deg, var(--milk-tea), var(--dusty-rose));
+            --gradient-accent: linear-gradient(135deg, var(--morandi-green), var(--sage-brown));
         }
 
         body {
             font-family: 'Inter', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.6;
-            color: var(--dark);
-            background-color: var(--light);
+            color: var(--soft-black);
+            background-color: var(--ivory-white);
             overflow-x: hidden;
-            position: relative;
         }
 
-        /* Noise texture overlay */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0.03;
-            z-index: 1;
-            pointer-events: none;
-            background-image: 
-                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.1) 35px, rgba(255,255,255,.1) 70px);
-        }
-
-        .container {
-            position: relative;
-            z-index: 2;
-        }
-
-        /* Header Navigation */
+        /* 導航欄 */
         .nav-header {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(255, 255, 255, 0.85);
+            background: rgba(251, 249, 246, 0.95);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             z-index: 1000;
             transition: all 0.3s ease;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            border-bottom: 1px solid rgba(139, 139, 139, 0.1);
         }
 
         .nav-container {
@@ -91,7 +93,10 @@
         .logo {
             font-size: 1.5rem;
             font-weight: 700;
-            color: var(--primary);
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             text-decoration: none;
             display: flex;
             align-items: center;
@@ -105,7 +110,7 @@
         }
 
         .nav-links a {
-            color: var(--dark);
+            color: var(--soft-black);
             text-decoration: none;
             font-weight: 500;
             font-size: 0.95rem;
@@ -114,7 +119,7 @@
         }
 
         .nav-links a:hover {
-            color: var(--primary);
+            color: var(--morandi-blue);
         }
 
         .nav-links a::after {
@@ -124,7 +129,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--primary);
+            background: var(--morandi-blue);
             transition: width 0.3s ease;
         }
 
@@ -132,7 +137,7 @@
             width: 100%;
         }
 
-        /* Hero Section */
+        /* Hero 區域 */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -140,51 +145,66 @@
             justify-content: center;
             padding: 6rem 2rem 4rem;
             position: relative;
-            background: radial-gradient(ellipse at top, rgba(255, 107, 107, 0.1) 0%, transparent 50%),
-                        radial-gradient(ellipse at bottom, rgba(78, 205, 196, 0.1) 0%, transparent 50%);
+            background: 
+                radial-gradient(ellipse 800px 400px at 50% 0%, rgba(122, 156, 198, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse 600px 300px at 80% 80%, rgba(232, 213, 196, 0.15) 0%, transparent 50%);
         }
 
         .hero-content {
             text-align: center;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             animation: fadeInUp 1s ease;
         }
 
         .hero-badge {
             display: inline-block;
-            background: var(--gradient-1);
+            background: var(--gradient-primary);
             color: white;
-            padding: 0.5rem 1.5rem;
+            padding: 0.75rem 2rem;
             border-radius: 2rem;
             font-size: 0.875rem;
             font-weight: 600;
             margin-bottom: 2rem;
-            animation: pulse 2s infinite;
+            animation: gentlePulse 3s infinite;
+            box-shadow: var(--shadow-medium);
         }
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+        @keyframes gentlePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .hero h1 {
-            font-size: clamp(3rem, 8vw, 5rem);
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
             font-weight: 700;
             line-height: 1.1;
             margin-bottom: 1.5rem;
-            background: var(--gradient-2);
+            background: var(--gradient-primary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
         .hero-subtitle {
-            font-size: 1.5rem;
-            font-weight: 300;
-            color: var(--gray);
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: var(--warm-gray);
             margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .cta-buttons {
@@ -192,85 +212,98 @@
             gap: 1rem;
             justify-content: center;
             flex-wrap: wrap;
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
         }
 
         .btn {
             padding: 1rem 2rem;
-            border-radius: 2rem;
-            font-weight: 600;
+            border-radius: 1rem;
             text-decoration: none;
+            font-weight: 600;
             transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
             position: relative;
             overflow: hidden;
         }
 
         .btn-primary {
-            background: var(--primary);
+            background: var(--gradient-primary);
             color: white;
-            box-shadow: 0 4px 20px rgba(255, 107, 107, 0.3);
+            box-shadow: var(--shadow-medium);
         }
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 30px rgba(255, 107, 107, 0.4);
+            box-shadow: var(--shadow-strong);
         }
 
         .btn-secondary {
-            background: white;
-            color: var(--dark);
-            border: 2px solid var(--dark);
+            background: transparent;
+            color: var(--morandi-blue);
+            border: 2px solid var(--morandi-blue);
         }
 
         .btn-secondary:hover {
-            background: var(--dark);
+            background: var(--morandi-blue);
             color: white;
-            transform: translateY(-2px);
+            transform: translateY(-1px);
         }
 
-        /* Features Grid */
+        /* 功能特色區域 */
         .features {
-            padding: 5rem 2rem;
-            background: white;
-            position: relative;
+            padding: 6rem 2rem;
+            background: var(--pure-white);
         }
 
-        .section-header {
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto 4rem;
-        }
-
-        .section-header h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--dark);
-        }
-
-        .section-header p {
-            font-size: 1.125rem;
-            color: var(--gray);
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
+        .container {
             max-width: 1200px;
             margin: 0 auto;
         }
 
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.25rem;
+            color: var(--warm-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
         .feature-card {
-            background: var(--light);
-            padding: 2.5rem;
-            border-radius: 1rem;
+            background: var(--ivory-white);
+            padding: 2.5rem 2rem;
+            border-radius: 1.5rem;
+            box-shadow: var(--shadow-soft);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-strong);
         }
 
         .feature-card::before {
@@ -278,274 +311,205 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
+            right: 0;
             height: 4px;
-            background: var(--gradient-3);
-            transform: translateX(-100%);
-            transition: transform 0.3s ease;
-        }
-
-        .feature-card:hover::before {
-            transform: translateX(0);
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-xl);
+            background: var(--gradient-primary);
         }
 
         .feature-icon {
             width: 60px;
             height: 60px;
-            background: var(--gradient-1);
             border-radius: 1rem;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.5rem;
             margin-bottom: 1.5rem;
-            color: white;
         }
 
-        .feature-card h3 {
+        .feature-card:nth-child(1) .feature-icon {
+            background: linear-gradient(135deg, var(--morandi-blue), rgba(122, 156, 198, 0.2));
+            color: var(--morandi-blue);
+        }
+
+        .feature-card:nth-child(2) .feature-icon {
+            background: linear-gradient(135deg, var(--morandi-green), rgba(155, 181, 163, 0.2));
+            color: var(--morandi-green);
+        }
+
+        .feature-card:nth-child(3) .feature-icon {
+            background: linear-gradient(135deg, var(--milk-tea), rgba(232, 213, 196, 0.2));
+            color: var(--sage-brown);
+        }
+
+        .feature-card:nth-child(4) .feature-icon {
+            background: linear-gradient(135deg, var(--smoky-purple), rgba(184, 165, 209, 0.2));
+            color: var(--smoky-purple);
+        }
+
+        .feature-card:nth-child(5) .feature-icon {
+            background: linear-gradient(135deg, var(--dusty-rose), rgba(212, 165, 165, 0.2));
+            color: var(--dusty-rose);
+        }
+
+        .feature-title {
             font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--soft-black);
             margin-bottom: 1rem;
-            color: var(--dark);
         }
 
-        .feature-card p {
-            color: var(--gray);
-            line-height: 1.8;
-        }
-
-        /* Demo Section */
-        .screenshots {
-            padding: 5rem 2rem;
-            background: var(--light);
-            overflow: hidden;
-        }
-
-        .screenshots-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        /* Process Flow */
-        .process-flow {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            margin: 4rem 0;
-            gap: 1rem;
-            overflow-x: auto;
-        }
-
-        .process-step {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            position: relative;
-            min-width: 220px;
-            max-width: 220px;
-            flex-shrink: 0;
-            animation: fadeInUp 0.8s ease forwards;
-            opacity: 0;
-        }
-
-        .process-step[data-step="1"] {
-            animation-delay: 0.2s;
-        }
-
-        .process-step[data-step="2"] {
-            animation-delay: 0.4s;
-        }
-
-        .process-step[data-step="3"] {
-            animation-delay: 0.6s;
-        }
-
-        .process-step[data-step="4"] {
-            animation-delay: 0.8s;
-        }
-
-        .step-icon {
-            margin-bottom: 1.5rem;
-        }
-
-        .icon-bg {
-            width: 80px;
-            height: 80px;
-            background: var(--gradient-1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            color: white;
-            box-shadow: var(--shadow-lg);
-            transition: all 0.3s ease;
-        }
-
-        .process-step:hover .icon-bg {
-            transform: scale(1.1) rotate(5deg);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .step-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--dark);
-        }
-
-        .step-content p {
-            color: var(--gray);
+        .feature-description {
+            color: var(--warm-gray);
             line-height: 1.6;
         }
 
-        .step-arrow {
-            position: absolute;
-            right: -1.5rem;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 1.5rem;
-            color: var(--primary);
-            font-weight: bold;
-            z-index: 10;
+        /* 會員制度區域 */
+        .membership {
+            padding: 6rem 2rem;
+            background: var(--soft-white);
         }
 
-        .process-step:last-child .step-arrow {
-            display: none;
-        }
-
-        /* Stats Grid */
-        .stats-grid {
+        .membership-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-top: 4rem;
+            margin-top: 3rem;
         }
 
-        .stat-card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 1rem;
-            text-align: center;
-            box-shadow: var(--shadow-md);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .stat-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--gradient-2);
-        }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 700;
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--dark);
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-desc {
-            font-size: 0.9rem;
-            color: var(--gray);
-            line-height: 1.5;
-        }
-
-        /* Pricing Section */
-        .pricing {
-            padding: 5rem 2rem;
-            background: white;
-        }
-
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .pricing-card {
-            background: var(--light);
-            padding: 3rem;
+        .membership-card {
+            background: var(--pure-white);
+            padding: 2.5rem 2rem;
             border-radius: 1.5rem;
-            text-align: center;
+            box-shadow: var(--shadow-soft);
             transition: all 0.3s ease;
             position: relative;
+            text-align: center;
         }
 
-        .pricing-card.featured {
-            background: var(--gradient-1);
-            color: white;
+        .membership-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-strong);
+        }
+
+        .membership-card.featured {
+            border: 2px solid var(--morandi-blue);
             transform: scale(1.05);
-            box-shadow: var(--shadow-xl);
         }
 
-        .pricing-card.featured .price,
-        .pricing-card.featured h3,
-        .pricing-card.featured .pricing-features li {
-            color: white;
+        .membership-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
         }
 
-        .pricing-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-xl);
+        .membership-card.free .membership-badge {
+            background: rgba(107, 114, 128, 0.1);
+            color: var(--cool-gray);
         }
 
-        .pricing-card.featured:hover {
-            transform: scale(1.08) translateY(-10px);
+        .membership-card.pro .membership-badge {
+            background: rgba(122, 156, 198, 0.1);
+            color: var(--morandi-blue);
         }
 
-        .price {
-            font-size: 3rem;
+        .membership-card.max .membership-badge {
+            background: rgba(155, 181, 163, 0.1);
+            color: var(--morandi-green);
+        }
+
+        .membership-title {
+            font-size: 1.5rem;
             font-weight: 700;
-            color: var(--primary);
-            margin: 1rem 0;
+            margin-bottom: 1rem;
         }
 
-        .pricing-features {
+        .membership-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--morandi-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .membership-period {
+            color: var(--warm-gray);
+            margin-bottom: 2rem;
+        }
+
+        .membership-features {
             list-style: none;
-            margin: 2rem 0;
+            text-align: left;
+            margin-bottom: 2rem;
         }
 
-        .pricing-features li {
-            padding: 0.75rem 0;
-            color: var(--gray);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
+        .membership-features li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 1.5rem;
         }
 
-        /* Footer */
+        .membership-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success-green);
+            font-weight: 600;
+        }
+
+        /* 響應式設計 */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero {
+                padding: 4rem 1rem 2rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .features-grid,
+            .membership-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* 動畫效果 */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .scroll-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 頁腳 */
         .footer {
-            background: var(--dark);
-            color: white;
-            padding: 4rem 2rem 2rem;
+            background: var(--soft-black);
+            color: var(--mist-gray);
+            padding: 3rem 2rem 2rem;
             text-align: center;
         }
 
@@ -558,409 +522,199 @@
             display: flex;
             justify-content: center;
             gap: 2rem;
-            margin: 2rem 0;
+            margin-bottom: 2rem;
             flex-wrap: wrap;
         }
 
         .footer-links a {
-            color: white;
+            color: var(--mist-gray);
             text-decoration: none;
-            padding: 0.75rem 1.5rem;
-            background: rgba(255,255,255,0.1);
-            border-radius: 2rem;
-            transition: all 0.3s ease;
+            transition: color 0.3s ease;
         }
 
         .footer-links a:hover {
-            background: var(--primary);
-            transform: translateY(-2px);
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin: 2rem 0;
-        }
-
-        .social-links a {
-            width: 40px;
-            height: 40px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            transition: all 0.3s ease;
-        }
-
-        .social-links a:hover {
-            background: var(--primary);
-            transform: translateY(-3px);
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fade-in-up {
-            animation: fadeInUp 0.8s ease forwards;
-            opacity: 0;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .hero h1 {
-                font-size: 3rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1.25rem;
-            }
-            
-            .features-grid,
-            .pricing-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .pricing-card.featured {
-                transform: none;
-            }
-
-            .process-flow {
-                gap: 0.5rem;
-                padding: 0 1rem;
-                justify-content: flex-start;
-            }
-
-            .process-step {
-                min-width: 180px;
-                max-width: 180px;
-            }
-
-            .step-arrow {
-                right: -1rem;
-                font-size: 1.2rem;
-            }
-            
-            .step-content h3 {
-                font-size: 1.2rem;
-            }
-            
-            .step-content p {
-                font-size: 0.85rem;
-            }
-            
-            .stats-grid {
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            }
-        }
-
-        /* Floating shapes */
-        .shape {
-            position: absolute;
-            opacity: 0.1;
-            animation: float 20s infinite ease-in-out;
-        }
-
-        .shape-1 {
-            width: 400px;
-            height: 400px;
-            background: var(--gradient-1);
-            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-            top: -200px;
-            right: -200px;
-        }
-
-        .shape-2 {
-            width: 300px;
-            height: 300px;
-            background: var(--gradient-2);
-            border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
-            bottom: -150px;
-            left: -150px;
-            animation-delay: -5s;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            33% { transform: translate(30px, -30px) rotate(120deg); }
-            66% { transform: translate(-20px, 20px) rotate(240deg); }
+            color: var(--morandi-blue);
         }
     </style>
 </head>
 <body>
-    <!-- Background Shapes -->
-    <div class="shape shape-1"></div>
-    <div class="shape shape-2"></div>
-
-    <!-- Navigation -->
+    <!-- 導航欄 -->
     <nav class="nav-header">
         <div class="nav-container">
-            <a href="#" class="logo">
-                <span>🐱</span>
-                <span>MeowDaigou</span>
-            </a>
+            <a href="#" class="logo">🐱 MeowDaigou</a>
             <ul class="nav-links">
-                <li><a href="#features">功能特色</a></li>
-                <li><a href="#screenshots">使用流程</a></li>
-                <li><a href="#pricing">價格方案</a></li>
-                <li><a href="support.html">支援中心</a></li>
+                <li><a href="#features">功能</a></li>
+                <li><a href="#membership">方案</a></li>
+                <li><a href="#support">支援</a></li>
+                <li><a href="privacy.html">隱私</a></li>
             </ul>
         </div>
     </nav>
 
-    <div class="container">
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-content">
-                <div class="hero-badge">🚀 專業代購必備工具</div>
-                <h1>多國代購報價工具</h1>
-                <p class="hero-subtitle">智能計算成本、自動生成報價、管理產品庫存</p>
-                
-                <div class="cta-buttons">
-                    <a href="#" class="btn btn-primary">
-                        <span>📱</span>
-                        <span>立即下載 iOS App</span>
-                    </a>
-                    <a href="#features" class="btn btn-secondary">
-                        <span>✨</span>
-                        <span>探索功能</span>
-                    </a>
-                </div>
-
-                <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
-                    <div style="text-align: center;">
-                        <div style="font-size: 2rem; font-weight: 700; color: var(--primary);">5種</div>
-                        <div style="color: var(--gray);">主要貨幣</div>
-                    </div>
-                    <div style="text-align: center;">
-                        <div style="font-size: 2rem; font-weight: 700; color: var(--secondary);">200次</div>
-                        <div style="color: var(--gray);">每日計算額度</div>
-                    </div>
-                    <div style="text-align: center;">
-                        <div style="font-size: 2rem; font-weight: 700; color: var(--accent);">50個</div>
-                        <div style="color: var(--gray);">產品管理</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Features Section -->
-        <section id="features" class="features">
-            <div class="section-header fade-in-up">
-                <h2>強大功能，專為代購設計</h2>
-                <p>從成本計算到報價生成，一應俱全</p>
-            </div>
-
-            <div class="features-grid">
-                <div class="feature-card fade-in-up">
-                    <div class="feature-icon">🧮</div>
-                    <h3>代購計算器</h3>
-                    <p>精準計算代購成本，輕鬆制定報價策略。支援韓元等多種貨幣即時匯率轉換</p>
-                </div>
-
-                <div class="feature-card fade-in-up">
-                    <div class="feature-icon">📦</div>
-                    <h3>產品管理中心</h3>
-                    <p>集中管理您的代購商品，快速查找與分析。從計算機自動導入完整產品資訊</p>
-                </div>
-
-                <div class="feature-card fade-in-up">
-                    <div class="feature-icon">📷</div>
-                    <h3>商品圖片上傳</h3>
-                    <p>支援拍攝或從相簿選擇商品照片，包含商品圖片和詳細資訊管理</p>
-                </div>
-
-                <div class="feature-card fade-in-up">
-                    <div class="feature-icon">💱</div>
-                    <h3>即時匯率更新</h3>
-                    <p>匯率更新時間39分鐘前，1韓元=0.0240台幣，確保報價準確性</p>
-                </div>
-
-                <div class="feature-card fade-in-up">
-                    <div class="feature-icon">📊</div>
-                    <h3>歷史記錄管理</h3>
-                    <p>查看歷史計算的產品，完整計算過程和結果保存，方便回顧管理</p>
-                </div>
-
-                <div class="feature-card fade-in-up">
-                    <div class="feature-icon">⚙️</div>
-                    <h3>個人設定中心</h3>
-                    <p>自定義計算參數、管理個人資料，優化您的代購工作流程</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Demo Section -->
-        <section id="screenshots" class="screenshots">
-            <div class="screenshots-container">
-                <div class="section-header">
-                    <h2>精準計算代購成本，輕鬆制定報價策略</h2>
-                    <p>集中管理您的代購商品，快速查找與分析</p>
-                </div>
-
-                <!-- Process Flow -->
-                <div class="process-flow">
-                    <div class="process-step" data-step="1">
-                        <div class="step-icon">
-                            <div class="icon-bg">⚙️</div>
-                        </div>
-                        <div class="step-content">
-                            <h3>設定經營參數</h3>
-                            <p>設定經營成本、成本分攤方式、稅務設定、匯率管理等基礎參數</p>
-                        </div>
-                        <div class="step-arrow">→</div>
-                    </div>
-
-                    <div class="process-step" data-step="2">
-                        <div class="step-icon">
-                            <div class="icon-bg">🇰🇷</div>
-                        </div>
-                        <div class="step-content">
-                            <h3>選擇貨幣匯率</h3>
-                            <p>支援韓元(KRW)、日元(JPY)、美元(USD)、人民幣(CNY)、台幣(TWD)即時匯率轉換</p>
-                        </div>
-                        <div class="step-arrow">→</div>
-                    </div>
-
-                    <div class="process-step" data-step="3">
-                        <div class="step-icon">
-                            <div class="icon-bg">📷</div>
-                        </div>
-                        <div class="step-content">
-                            <h3>上傳商品圖片</h3>
-                            <p>拍攝或選擇商品照片，輸入商品資訊進行精準成本計算</p>
-                        </div>
-                        <div class="step-arrow">→</div>
-                    </div>
-
-                    <div class="process-step" data-step="4">
-                        <div class="step-icon">
-                            <div class="icon-bg">📊</div>
-                        </div>
-                        <div class="step-content">
-                            <h3>智能報價分析</h3>
-                            <p>自動計算成本分攤，生成專業報價策略，管理產品庫存</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Stats Section -->
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-number">5種</div>
-                        <div class="stat-label">主要貨幣</div>
-                        <div class="stat-desc">韓元・日元・美元・人民幣・台幣</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">200次</div>
-                        <div class="stat-label">每日計算額度</div>
-                        <div class="stat-desc">Pro 版每日 200 次計算</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">50個</div>
-                        <div class="stat-label">產品管理</div>
-                        <div class="stat-desc">Pro 版最多儲存 50 個產品</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">39分鐘</div>
-                        <div class="stat-label">匯率更新頻率</div>
-                        <div class="stat-desc">即時準確的匯率資訊</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Pricing Section -->
-        <section id="pricing" class="pricing">
-            <div class="section-header">
-                <h2>選擇適合您的方案</h2>
-                <p>免費試用，隨時升級</p>
-            </div>
-
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <h3>免費版</h3>
-                    <div class="price">$0</div>
-                    <p>適合剛開始的代購業者</p>
-                    <ul class="pricing-features">
-                        <li>✓ 每日 20 次計算</li>
-                        <li>✓ 僅支援韓元</li>
-                        <li>✓ 儲存 5 個產品</li>
-                        <li>✓ 20 筆歷史記錄</li>
-                        <li>✗ 資料匯出</li>
-                        <li>✗ 專業報價圖</li>
-                    </ul>
-                    <a href="#" class="btn btn-secondary" style="width: 100%;">開始使用</a>
-                </div>
-
-                <div class="pricing-card featured">
-                    <h3>Pro 專業版</h3>
-                    <div class="price">$9.99</div>
-                    <p>專業代購的最佳選擇</p>
-                    <ul class="pricing-features">
-                        <li>✓ 每日 200 次計算</li>
-                        <li>✓ 支援 5 種貨幣</li>
-                        <li>✓ 儲存 50 個產品</li>
-                        <li>✓ 200 筆歷史記錄</li>
-                        <li>✓ CSV/Excel 匯出</li>
-                        <li>✓ 專業報價圖生成</li>
-                    </ul>
-                    <a href="#" class="btn btn-primary" style="width: 100%; background: white; color: var(--primary);">立即升級</a>
-                </div>
-            </div>
-
-            <p style="text-align: center; margin-top: 2rem; color: var(--gray);">
-                💎 年付優惠：$79.99/年（省33%）
+    <!-- Hero 區域 -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">🎯 專業代購計算工具</div>
+            <h1>精準計算每筆代購<br>智能管理代購事業</h1>
+            <p class="hero-subtitle">
+                採用7步驟精準計算流程，支援8種國際貨幣，專業報價圖片生成，<br>
+                讓您的代購事業更專業、更高效
             </p>
-        </section>
+            <div class="cta-buttons">
+                <a href="#" class="btn btn-primary">📱 下載 App</a>
+                <a href="#features" class="btn btn-secondary">🔍 了解功能</a>
+            </div>
+        </div>
+    </section>
 
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="footer-content">
-                <div class="logo" style="color: white; justify-content: center; margin-bottom: 2rem;">
-                    <span>🐱</span>
-                    <span>MeowDaigou</span>
+    <!-- 功能特色 -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <h2 class="section-title">強大功能特色</h2>
+                <p class="section-subtitle">專為代購業者設計的完整解決方案</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card scroll-reveal">
+                    <div class="feature-icon">🧮</div>
+                    <h3 class="feature-title">7步驟精準計算</h3>
+                    <p class="feature-description">
+                        智能計算流程：商品成本 → 營運成本 → 運費成本 → 其他費用 → 成本小計 → 利潤計算 → 最終報價。
+                        支援固定/動態成本分攤，百分比/固定/混合利潤模式。
+                    </p>
                 </div>
                 
-                <div class="footer-links">
-                    <a href="privacy.html">隱私權政策</a>
-                    <a href="terms.html">使用條款</a>
-                    <a href="support.html">支援中心</a>
+                <div class="feature-card scroll-reveal">
+                    <div class="feature-icon">💱</div>
+                    <h3 class="feature-title">8種國際貨幣</h3>
+                    <p class="feature-description">
+                        支援韓元(KRW)、日圓(JPY)、美元(USD)、人民幣(CNY)、港幣(HKD)、馬來幣(MYR)、泰銖(THB)、歐元(EUR)。
+                        即時匯率更新，確保計算準確性。
+                    </p>
                 </div>
-
-                <div class="social-links">
-                    <a href="https://www.instagram.com/mr.__.l/" target="_blank">
-                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1112.324 0 6.162 6.162 0 01-12.324 0zM12 16a4 4 0 110-8 4 4 0 010 8zm4.965-10.405a1.44 1.44 0 112.881.001 1.44 1.44 0 01-2.881-.001z"/>
-                        </svg>
-                    </a>
+                
+                <div class="feature-card scroll-reveal">
+                    <div class="feature-icon">🖼️</div>
+                    <h3 class="feature-title">專業報價圖片</h3>
+                    <p class="feature-description">
+                        自動生成專業報價圖片，支援原價版/進位版選擇。
+                        智能浮水印系統，Pro版含App浮水印，Max版提供無浮水印專業版本。
+                    </p>
                 </div>
-
-                <p style="margin-top: 2rem; color: rgba(255,255,255,0.7);">
-                    © 2025 MeowDaigou. All rights reserved.<br>
-                    Made with ❤️ by Louis
-                </p>
+                
+                <div class="feature-card scroll-reveal">
+                    <div class="feature-icon">📦</div>
+                    <h3 class="feature-title">智能產品管理</h3>
+                    <p class="feature-description">
+                        自動商品編號生成(MD-YYYYMMDD-XXX格式)，支援圖片上傳、分類管理。
+                        採購數量追蹤，庫存管理，Excel/CSV批量導出功能。
+                    </p>
+                </div>
+                
+                <div class="feature-card scroll-reveal">
+                    <div class="feature-icon">⭐</div>
+                    <h3 class="feature-title">分級會員制度</h3>
+                    <p class="feature-description">
+                        FREE/PRO/MAX三級會員體系，享受不同計算次數、貨幣支援、儲存容量。
+                        付費會員無廣告體驗，專業功能解鎖。
+                    </p>
+                </div>
             </div>
-        </footer>
-    </div>
+        </div>
+    </section>
+
+    <!-- 會員方案 -->
+    <section id="membership" class="membership">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <h2 class="section-title">會員方案</h2>
+                <p class="section-subtitle">選擇最適合您的代購事業規模</p>
+            </div>
+            
+            <div class="membership-grid">
+                <div class="membership-card free scroll-reveal">
+                    <div class="membership-badge">FREE</div>
+                    <h3 class="membership-title">免費會員</h3>
+                    <div class="membership-price">免費</div>
+                    <div class="membership-period">永久使用</div>
+                    <ul class="membership-features">
+                        <li>每日 20 次計算</li>
+                        <li>僅支援韓元 (KRW)</li>
+                        <li>基本歷史記錄</li>
+                        <li>廣告支援</li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary">開始使用</a>
+                </div>
+                
+                <div class="membership-card pro featured scroll-reveal">
+                    <div class="membership-badge">PRO</div>
+                    <h3 class="membership-title">Pro 會員</h3>
+                    <div class="membership-price">NT$ 299</div>
+                    <div class="membership-period">/ 月</div>
+                    <ul class="membership-features">
+                        <li>每日 200 次計算</li>
+                        <li>支援 5 種貨幣</li>
+                        <li>100 個產品儲存</li>
+                        <li>報價圖片生成</li>
+                        <li>Excel 導出功能</li>
+                        <li>無廣告體驗</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">立即升級</a>
+                </div>
+                
+                <div class="membership-card max scroll-reveal">
+                    <div class="membership-badge">MAX</div>
+                    <h3 class="membership-title">Max 會員</h3>
+                    <div class="membership-price">NT$ 599</div>
+                    <div class="membership-period">/ 月</div>
+                    <ul class="membership-features">
+                        <li>每日 1000 次計算</li>
+                        <li>支援 8 種貨幣</li>
+                        <li>500 個產品儲存</li>
+                        <li>專業報價圖片（無浮水印）</li>
+                        <li>完整 Excel 導出（含圖片）</li>
+                        <li>無廣告體驗</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">立即升級</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 頁腳 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="privacy.html">隱私權政策</a>
+                <a href="terms.html">使用條款</a>
+                <a href="support.html">支援中心</a>
+                <a href="mailto:thankcoom@gmail.com">聯絡我們</a>
+            </div>
+            <p>&copy; 2025 MeowDaigou. All rights reserved.</p>
+        </div>
+    </footer>
 
     <script>
-        // Smooth scrolling
+        // 滾動顯示動畫
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // 平滑滾動
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -974,35 +728,14 @@
             });
         });
 
-        // Header scroll effect
+        // 導航欄背景變化
         window.addEventListener('scroll', () => {
-            const header = document.querySelector('.nav-header');
+            const nav = document.querySelector('.nav-header');
             if (window.scrollY > 100) {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
-                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+                nav.style.background = 'rgba(251, 249, 246, 0.98)';
             } else {
-                header.style.background = 'rgba(255, 255, 255, 0.85)';
-                header.style.boxShadow = 'none';
+                nav.style.background = 'rgba(251, 249, 246, 0.95)';
             }
-        });
-
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in-up').forEach(el => {
-            observer.observe(el);
         });
     </script>
 </body>
