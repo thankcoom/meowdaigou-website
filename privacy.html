@@ -19,25 +19,38 @@
         }
 
         :root {
-            --primary: #FF6B6B;
-            --primary-dark: #EE5A5A;
-            --secondary: #4ECDC4;
-            --accent: #FFE66D;
-            --dark: #2B2D42;
-            --light: #F8F9FA;
-            --gray: #8D99AE;
-            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            --shadow-sm: 0 2px 4px rgba(0,0,0,0.06);
-            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
-            --shadow-lg: 0 10px 30px rgba(0,0,0,0.12);
+            /* 莫蘭迪色彩系統 - 與應用同步 */
+            --pure-white: #FFFFFF;
+            --ivory-white: #FBF9F6;
+            --soft-white: #F8F6F3;
+            --morandi-blue: #7A9CC6;
+            --morandi-green: #9BB5A3;
+            --milk-tea: #E8D5C4;
+            --smoky-purple: #B8A5D1;
+            --dusty-rose: #D4A5A5;
+            --sage-brown: #C4A889;
+            --mist-gray: #B5B5B5;
+            --warm-gray: #8B8B8B;
+            --cool-gray: #6B7280;
+            --soft-black: #2D2D2D;
+            --success-green: #34C759;
+            --error-red: #FF3B30;
+            --warning-orange: #FF9500;
+            --info-blue: #007AFF;
+            
+            --shadow-soft: 0 2px 8px rgba(0,0,0,0.1);
+            --shadow-medium: 0 4px 12px rgba(0,0,0,0.15);
+            --shadow-strong: 0 8px 24px rgba(0,0,0,0.25);
+            
+            --gradient-primary: linear-gradient(135deg, var(--morandi-blue), var(--smoky-purple));
+            --gradient-secondary: linear-gradient(135deg, var(--milk-tea), var(--dusty-rose));
         }
 
         body {
             font-family: 'Inter', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.6;
-            color: var(--dark);
-            background-color: var(--light);
+            color: var(--soft-black);
+            background-color: var(--ivory-white);
             position: relative;
             min-height: 100vh;
         }
@@ -48,12 +61,12 @@
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(255, 255, 255, 0.85);
+            background: rgba(251, 249, 246, 0.95);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             z-index: 1000;
             transition: all 0.3s ease;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            border-bottom: 1px solid rgba(139, 139, 139, 0.1);
         }
 
         .nav-container {
@@ -68,7 +81,10 @@
         .logo {
             font-size: 1.5rem;
             font-weight: 700;
-            color: var(--primary);
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             text-decoration: none;
             display: flex;
             align-items: center;
@@ -82,7 +98,7 @@
         }
 
         .nav-links a {
-            color: var(--dark);
+            color: var(--soft-black);
             text-decoration: none;
             font-weight: 500;
             font-size: 0.95rem;
@@ -91,7 +107,7 @@
         }
 
         .nav-links a:hover {
-            color: var(--primary);
+            color: var(--morandi-blue);
         }
 
         /* Main Content */
@@ -101,7 +117,7 @@
         }
 
         .page-header {
-            background: var(--gradient-1);
+            background: var(--gradient-primary);
             padding: 4rem 2rem;
             text-align: center;
             color: white;
@@ -147,21 +163,21 @@
         }
 
         .section {
-            background: white;
+            background: var(--pure-white);
             padding: 2.5rem;
             margin-bottom: 2rem;
             border-radius: 1rem;
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--shadow-soft);
             transition: all 0.3s ease;
         }
 
         .section:hover {
-            box-shadow: var(--shadow-lg);
+            box-shadow: var(--shadow-medium);
             transform: translateY(-2px);
         }
 
         .section h2 {
-            color: var(--primary);
+            color: var(--morandi-blue);
             font-size: 1.75rem;
             margin-bottom: 1.5rem;
             display: flex;
@@ -173,12 +189,12 @@
             content: '';
             width: 4px;
             height: 100%;
-            background: var(--gradient-2);
+            background: var(--gradient-secondary);
             border-radius: 2px;
         }
 
         .section p {
-            color: var(--gray);
+            color: var(--warm-gray);
             line-height: 1.8;
             margin-bottom: 1rem;
         }
@@ -191,7 +207,7 @@
         .section ul li {
             padding: 0.75rem 0 0.75rem 2rem;
             position: relative;
-            color: var(--gray);
+            color: var(--warm-gray);
             line-height: 1.8;
         }
 
@@ -199,17 +215,17 @@
             content: '✓';
             position: absolute;
             left: 0;
-            color: var(--secondary);
+            color: var(--success-green);
             font-weight: 700;
         }
 
         .section ul li strong {
-            color: var(--dark);
+            color: var(--soft-black);
         }
 
         /* Contact Section */
         .contact-section {
-            background: var(--gradient-2);
+            background: var(--gradient-secondary);
             color: white;
             text-align: center;
         }
@@ -242,8 +258,8 @@
 
         /* Footer */
         .footer {
-            background: var(--dark);
-            color: white;
+            background: var(--soft-black);
+            color: var(--mist-gray);
             padding: 3rem 2rem;
             text-align: center;
         }
@@ -257,7 +273,7 @@
         }
 
         .footer-links a {
-            color: white;
+            color: var(--mist-gray);
             text-decoration: none;
             padding: 0.5rem 1.5rem;
             background: rgba(255,255,255,0.1);
@@ -266,7 +282,8 @@
         }
 
         .footer-links a:hover {
-            background: var(--primary);
+            background: var(--morandi-blue);
+            color: white;
             transform: translateY(-2px);
         }
 
@@ -328,7 +345,7 @@
         <!-- Page Header -->
         <div class="page-header">
             <h1>隱私權政策</h1>
-            <p class="update-date">最後更新日期：2025年1月8日</p>
+            <p class="update-date">最後更新日期：2025年8月17日</p>
         </div>
 
         <!-- Content -->
@@ -467,10 +484,10 @@
         window.addEventListener('scroll', () => {
             const header = document.querySelector('.nav-header');
             if (window.scrollY > 100) {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.background = 'rgba(251, 249, 246, 0.98)';
                 header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
             } else {
-                header.style.background = 'rgba(255, 255, 255, 0.85)';
+                header.style.background = 'rgba(251, 249, 246, 0.95)';
                 header.style.boxShadow = 'none';
             }
         });

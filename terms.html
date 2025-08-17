@@ -19,26 +19,39 @@
         }
 
         :root {
-            --primary: #FF6B6B;
-            --primary-dark: #EE5A5A;
-            --secondary: #4ECDC4;
-            --accent: #FFE66D;
-            --dark: #2B2D42;
-            --light: #F8F9FA;
-            --gray: #8D99AE;
-            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            --shadow-sm: 0 2px 4px rgba(0,0,0,0.06);
-            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
-            --shadow-lg: 0 10px 30px rgba(0,0,0,0.12);
+            /* 莫蘭迪色彩系統 - 與應用同步 */
+            --pure-white: #FFFFFF;
+            --ivory-white: #FBF9F6;
+            --soft-white: #F8F6F3;
+            --morandi-blue: #7A9CC6;
+            --morandi-green: #9BB5A3;
+            --milk-tea: #E8D5C4;
+            --smoky-purple: #B8A5D1;
+            --dusty-rose: #D4A5A5;
+            --sage-brown: #C4A889;
+            --mist-gray: #B5B5B5;
+            --warm-gray: #8B8B8B;
+            --cool-gray: #6B7280;
+            --soft-black: #2D2D2D;
+            --success-green: #34C759;
+            --error-red: #FF3B30;
+            --warning-orange: #FF9500;
+            --info-blue: #007AFF;
+            
+            --shadow-soft: 0 2px 8px rgba(0,0,0,0.1);
+            --shadow-medium: 0 4px 12px rgba(0,0,0,0.15);
+            --shadow-strong: 0 8px 24px rgba(0,0,0,0.25);
+            
+            --gradient-primary: linear-gradient(135deg, var(--morandi-blue), var(--smoky-purple));
+            --gradient-secondary: linear-gradient(135deg, var(--milk-tea), var(--dusty-rose));
+            --gradient-accent: linear-gradient(135deg, var(--morandi-green), var(--sage-brown));
         }
 
         body {
             font-family: 'Inter', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.6;
-            color: var(--dark);
-            background-color: var(--light);
+            color: var(--soft-black);
+            background-color: var(--ivory-white);
             position: relative;
             min-height: 100vh;
         }
@@ -49,12 +62,12 @@
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(255, 255, 255, 0.85);
+            background: rgba(251, 249, 246, 0.95);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             z-index: 1000;
             transition: all 0.3s ease;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            border-bottom: 1px solid rgba(139, 139, 139, 0.1);
         }
 
         .nav-container {
@@ -69,7 +82,10 @@
         .logo {
             font-size: 1.5rem;
             font-weight: 700;
-            color: var(--primary);
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             text-decoration: none;
             display: flex;
             align-items: center;
@@ -83,7 +99,7 @@
         }
 
         .nav-links a {
-            color: var(--dark);
+            color: var(--soft-black);
             text-decoration: none;
             font-weight: 500;
             font-size: 0.95rem;
@@ -92,7 +108,7 @@
         }
 
         .nav-links a:hover {
-            color: var(--primary);
+            color: var(--morandi-blue);
         }
 
         /* Main Content */
@@ -102,7 +118,7 @@
         }
 
         .page-header {
-            background: var(--gradient-3);
+            background: var(--gradient-accent);
             padding: 4rem 2rem;
             text-align: center;
             color: white;
@@ -148,21 +164,21 @@
         }
 
         .section {
-            background: white;
+            background: var(--pure-white);
             padding: 2.5rem;
             margin-bottom: 2rem;
             border-radius: 1rem;
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--shadow-soft);
             transition: all 0.3s ease;
         }
 
         .section:hover {
-            box-shadow: var(--shadow-lg);
+            box-shadow: var(--shadow-medium);
             transform: translateY(-2px);
         }
 
         .section h2 {
-            color: var(--secondary);
+            color: var(--morandi-green);
             font-size: 1.75rem;
             margin-bottom: 1.5rem;
             display: flex;
@@ -174,18 +190,18 @@
             content: '';
             width: 4px;
             height: 100%;
-            background: var(--gradient-3);
+            background: var(--gradient-accent);
             border-radius: 2px;
         }
 
         .section h3 {
-            color: var(--dark);
+            color: var(--soft-black);
             font-size: 1.25rem;
             margin: 1.5rem 0 1rem 0;
         }
 
         .section p {
-            color: var(--gray);
+            color: var(--warm-gray);
             line-height: 1.8;
             margin-bottom: 1rem;
         }
@@ -198,7 +214,7 @@
         .section ul li {
             padding: 0.75rem 0 0.75rem 2rem;
             position: relative;
-            color: var(--gray);
+            color: var(--warm-gray);
             line-height: 1.8;
         }
 
@@ -206,17 +222,17 @@
             content: '→';
             position: absolute;
             left: 0;
-            color: var(--primary);
+            color: var(--morandi-blue);
             font-weight: 700;
         }
 
         .section ul li strong {
-            color: var(--dark);
+            color: var(--soft-black);
         }
 
         /* Pricing Section */
         .pricing-highlight {
-            background: var(--gradient-1);
+            background: var(--gradient-primary);
             color: white;
             padding: 2rem;
             border-radius: 1rem;
@@ -256,7 +272,7 @@
 
         /* Contact Section */
         .contact-section {
-            background: var(--gradient-2);
+            background: var(--gradient-secondary);
             color: white;
             text-align: center;
         }
@@ -289,8 +305,8 @@
 
         /* Footer */
         .footer {
-            background: var(--dark);
-            color: white;
+            background: var(--soft-black);
+            color: var(--mist-gray);
             padding: 3rem 2rem;
             text-align: center;
         }
@@ -304,7 +320,7 @@
         }
 
         .footer-links a {
-            color: white;
+            color: var(--mist-gray);
             text-decoration: none;
             padding: 0.5rem 1.5rem;
             background: rgba(255,255,255,0.1);
@@ -313,7 +329,8 @@
         }
 
         .footer-links a:hover {
-            background: var(--primary);
+            background: var(--morandi-blue);
+            color: white;
             transform: translateY(-2px);
         }
 
@@ -359,7 +376,7 @@
 
         /* Table of Contents */
         .toc {
-            background: var(--gradient-3);
+            background: var(--gradient-accent);
             color: white;
             padding: 1.5rem;
             border-radius: 1rem;
@@ -412,7 +429,7 @@
         <!-- Page Header -->
         <div class="page-header">
             <h1>使用條款</h1>
-            <p class="update-date">最後更新日期：2025年1月8日</p>
+            <p class="update-date">最後更新日期：2025年8月17日</p>
         </div>
 
         <!-- Content -->
@@ -436,7 +453,7 @@
 
             <section id="accept" class="section fade-in-up">
                 <h2>接受條款</h2>
-                <p>歡迎使用「MeowDaigou 多國代購報價工具」（以下簡稱「本應用程式」）。使用本應用程式即表示您同意遵守這些使用條款。</p>
+                <p>歡迎使用「MeowDaigou 專業代購計算機」（以下簡稱「本應用程式」）。使用本應用程式即表示您同意遵守這些使用條款。</p>
                 <p>如果您不同意這些條款，請勿使用本應用程式。我們保留隨時修改這些條款的權利，繼續使用即表示您接受修改後的條款。</p>
             </section>
 
@@ -444,11 +461,11 @@
                 <h2>服務說明</h2>
                 <p>MeowDaigou 提供專業的代購成本計算服務，包括：</p>
                 <ul>
-                    <li><strong>多國貨幣轉換</strong>：支援韓元、日元、美元、人民幣、台幣</li>
-                    <li><strong>智能成本計算</strong>：自動分攤機票、住宿、交通等固定成本</li>
-                    <li><strong>報價單生成</strong>：專業的圖片報價單，含浮水印功能</li>
-                    <li><strong>產品管理</strong>：完整的產品資料庫管理功能</li>
-                    <li><strong>歷史記錄</strong>：詳細的計算歷史追蹤</li>
+                    <li><strong>8種國際貨幣</strong>：支援韓元(KRW)、日圓(JPY)、美元(USD)、人民幣(CNY)、港幣(HKD)、馬來幣(MYR)、泰銖(THB)、歐元(EUR)</li>
+                    <li><strong>7步驟精準計算</strong>：智能計算流程，支援固定/動態成本分攤、百分比/固定/混合利潤模式</li>
+                    <li><strong>專業報價圖片</strong>：支援原價版/進位版選擇，智能浮水印系統</li>
+                    <li><strong>智能產品管理</strong>：自動商品編號生成(MD-YYYYMMDD-XXX格式)，支援圖片上傳、分類管理、Excel/CSV批量導出</li>
+                    <li><strong>分級會員制度</strong>：FREE/PRO/MAX三級會員體系，享受不同計算次數、貨幣支援、儲存容量</li>
                 </ul>
             </section>
 
@@ -475,15 +492,17 @@
                 <h2>訂閱服務</h2>
                 
                 <div class="pricing-highlight">
-                    <h3>💎 Pro 專業版訂閱</h3>
+                    <h3>💎 會員訂閱方案</h3>
                     <div class="pricing-grid">
                         <div class="price-card">
-                            <div class="price">$9.99</div>
-                            <div class="desc">每月</div>
+                            <div>Pro 會員</div>
+                            <div class="price">NT$ 299</div>
+                            <div class="desc">每月 (年費 NT$ 2,870, 8折優惠)</div>
                         </div>
                         <div class="price-card">
-                            <div class="price">$79.99</div>
-                            <div class="desc">每年（省33%）</div>
+                            <div>Max 會員</div>
+                            <div class="price">NT$ 599</div>
+                            <div class="desc">每月 (年費 NT$ 5,750, 8折優惠)</div>
                         </div>
                     </div>
                 </div>
@@ -648,10 +667,10 @@
         window.addEventListener('scroll', () => {
             const header = document.querySelector('.nav-header');
             if (window.scrollY > 100) {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.background = 'rgba(251, 249, 246, 0.98)';
                 header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
             } else {
-                header.style.background = 'rgba(255, 255, 255, 0.85)';
+                header.style.background = 'rgba(251, 249, 246, 0.95)';
                 header.style.boxShadow = 'none';
             }
         });
