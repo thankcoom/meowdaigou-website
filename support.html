@@ -209,7 +209,8 @@
         }
 
         /* 快速指南 */
-        .guide-section {
+        .guide-section,
+        .troubleshooting-section {
             margin-bottom: 4rem;
         }
 
@@ -362,9 +363,10 @@
             <a href="index.html" class="logo">🐱 MeowDaigou</a>
             <ul class="nav-links">
                 <li><a href="index.html">首頁</a></li>
+                <li><a href="index.html#ui-demo">界面</a></li>
                 <li><a href="index.html#features">功能</a></li>
+                <li><a href="index.html#user-journey">流程</a></li>
                 <li><a href="index.html#membership">方案</a></li>
-                <li><a href="privacy.html">隱私</a></li>
             </ul>
         </div>
     </nav>
@@ -429,6 +431,72 @@
                     <h3 class="guide-title">數據分析</h3>
                     <p class="guide-description">
                         學習查看歷史記錄，導出Excel/CSV數據，分析經營效益。
+                    </p>
+                </div>
+
+                <div class="guide-card">
+                    <div class="guide-icon">🔧</div>
+                    <h3 class="guide-title">故障排除</h3>
+                    <p class="guide-description">
+                        解決App閃退、數據同步、付費問題等常見技術困難。
+                    </p>
+                </div>
+
+                <div class="guide-card">
+                    <div class="guide-icon">🎓</div>
+                    <h3 class="guide-title">進階技巧</h3>
+                    <p class="guide-description">
+                        掌握批量計算、範本設定、快速鍵操作等進階使用技巧。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 故障排除區域 -->
+        <section class="troubleshooting-section scroll-reveal">
+            <h2 class="section-title">🔧 故障排除</h2>
+            <div class="guide-grid">
+                <div class="guide-card">
+                    <div class="guide-icon">❌</div>
+                    <h3 class="guide-title">App 閃退或當機</h3>
+                    <p class="guide-description">
+                        1. 重新啟動 App<br>
+                        2. 重新開機 iPhone<br>
+                        3. 檢查 iOS 版本是否過舊<br>
+                        4. 重新安裝 App（會保留資料）
+                    </p>
+                </div>
+
+                <div class="guide-card">
+                    <div class="guide-icon">🔄</div>
+                    <h3 class="guide-title">數據未同步</h3>
+                    <p class="guide-description">
+                        1. 確認 iCloud 同步已開啟<br>
+                        2. 檢查網路連線狀態<br>
+                        3. 重新登入 Apple ID<br>
+                        4. 手動備份匯出數據
+                    </p>
+                </div>
+
+                <div class="guide-card">
+                    <div class="guide-icon">💳</div>
+                    <h3 class="guide-title">付費問題</h3>
+                    <p class="guide-description">
+                        1. 檢查 Apple ID 付款方式<br>
+                        2. 確認地區設定正確<br>
+                        3. 到 Apple 設定恢復購買<br>
+                        4. 聯絡 Apple 客服處理付款問題
+                    </p>
+                </div>
+
+                <div class="guide-card">
+                    <div class="guide-icon">📶</div>
+                    <h3 class="guide-title">匯率無法更新</h3>
+                    <p class="guide-description">
+                        1. 檢查網路連線<br>
+                        2. 手動點擊重新整理<br>
+                        3. 關閉並重新開啟 App<br>
+                        4. 檢查系統時間是否正確
                     </p>
                 </div>
             </div>
@@ -503,12 +571,16 @@
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>會員訂閱如何計費？</span>
+                        <span>會員訂閱如何計費？有首購優惠嗎？</span>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>• <strong>Pro 會員</strong>：月費 NT$ 299，年費 NT$ 2,870 (8折優惠)<br>
-                        • <strong>Max 會員</strong>：月費 NT$ 599，年費 NT$ 5,750 (8折優惠)<br>
+                        <p><strong>🎁 首購優惠（50%折扣）</strong><br>
+                        • <strong>Pro 會員首購</strong>：月費 NT$ 150（原價 NT$ 300），年費 NT$ 1,440（原價 NT$ 2,880）<br>
+                        • <strong>Max 會員首購</strong>：月費 NT$ 300（原價 NT$ 600），年費 NT$ 2,880（原價 NT$ 5,760）<br><br>
+                        <strong>正常訂閱價格</strong><br>
+                        • <strong>Pro 會員</strong>：月費 NT$ 300，年費 NT$ 2,880<br>
+                        • <strong>Max 會員</strong>：月費 NT$ 600，年費 NT$ 5,760<br>
                         • 透過 Apple App Store 安全付費<br>
                         • 可隨時在 Apple 設定中管理或取消訂閱</p>
                     </div>
@@ -539,6 +611,94 @@
                         • 計算時顯示匯率更新時間</p>
                     </div>
                 </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>如何選擇最適合的成本分攤方法？</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p><strong>選擇建議：</strong><br>
+                        • <strong>固定分攤</strong>：適合商品價格相近的情況（如都是化妝品、都是服飾）<br>
+                        • <strong>動態分攤</strong>：適合商品價格差異較大的情況（如同時賣包包和小飾品）<br><br>
+                        <strong>計算範例：</strong><br>
+                        固定分攤：3個商品，營運成本300元 → 每個商品分攤100元<br>
+                        動態分攤：商品A(1000元)、B(2000元)、C(3000元) → 分攤50、100、150元</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>利潤設定有哪些模式？如何選擇？</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p><strong>三種利潤模式：</strong><br>
+                        • <strong>百分比模式</strong>：固定利潤率，獲利穩定（推薦新手15-20%）<br>
+                        • <strong>固定金額模式</strong>：每個商品加固定利潤，計算簡單<br>
+                        • <strong>混合模式</strong>：結合百分比和固定金額，設定最低利潤保障<br><br>
+                        <strong>使用建議：</strong><br>
+                        新手代購：15-20% | 經驗代購：混合模式 | 高級商品：10-15% | 特殊商品：25-30%</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>如何刪除帳戶？</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>依照蘋果隱私政策，我們提供完整的帳戶刪除功能：<br>
+                        • 在App內進入「設定」→「帳戶管理」→「刪除帳戶」<br>
+                        • 刪除後將清除所有本地數據<br>
+                        • 如有付費訂閱，請先在Apple設定中取消<br>
+                        • 刪除操作無法恢復，請謹慎考慮</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>為什麼我的首購優惠沒有顯示？</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>首購優惠可能沒有顯示的原因：<br>
+                        • 優惠活動尚未開始（預定8/25開始）<br>
+                        • 您之前已購買過任何訂閱（包括其他App的訂閱）<br>
+                        • 使用的Apple ID曾經購買過訂閱服務<br>
+                        • 網路連線問題，請重新開啟App<br>
+                        如仍有問題，請聯絡我們客服</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>App支援深色模式嗎？</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>是的！MeowDaigou完整支援深色模式：<br>
+                        • 自動跟隨系統設定切換<br>
+                        • 莫蘭迪色系在深色模式下同樣優雅<br>
+                        • 夜間使用更護眼舒適<br>
+                        • 所有功能在深色模式下正常運作</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>計算次數如何計算？會重複計算嗎？</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>計算次數規則說明：<br>
+                        • 每次點擊「開始計算」按鈕計為1次<br>
+                        • 修改參數重新計算會重新計次<br>
+                        • 查看歷史記錄不消耗計算次數<br>
+                        • 每日午夜00:00重置計算次數<br>
+                        • 免費：20次/日 | Pro：200次/日 | Max：1000次/日</p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -556,6 +716,10 @@
                 <a href="https://www.instagram.com/mr.__.l/" class="contact-method" target="_blank">
                     <span>📷</span>
                     <span>Instagram</span>
+                </a>
+                <a href="https://apps.apple.com/tw/app/meowdaigou/id6751156662" class="contact-method" target="_blank">
+                    <span>📱</span>
+                    <span>下載App</span>
                 </a>
             </div>
         </section>
