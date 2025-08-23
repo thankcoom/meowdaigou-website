@@ -535,6 +535,829 @@
         .footer-links a:hover {
             color: var(--morandi-blue);
         }
+
+        /* 使用者路線圖區域 */
+        .user-journey {
+            padding: 6rem 2rem;
+            background: var(--pure-white);
+        }
+
+        .journey-timeline {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .journey-timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .timeline-item.final .timeline-number {
+            background: var(--success-green);
+            font-size: 1rem;
+        }
+
+        .timeline-number {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 1;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .timeline-content {
+            margin-left: 2rem;
+            background: var(--ivory-white);
+            padding: 2rem;
+            border-radius: 1.5rem;
+            box-shadow: var(--shadow-soft);
+            flex: 1;
+            position: relative;
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            left: -12px;
+            top: 30px;
+            width: 0;
+            height: 0;
+            border-top: 12px solid transparent;
+            border-bottom: 12px solid transparent;
+            border-right: 12px solid var(--ivory-white);
+        }
+
+        .timeline-content h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--soft-black);
+            margin-bottom: 0.75rem;
+        }
+
+        .timeline-content > p {
+            color: var(--warm-gray);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Timeline子組件樣式 */
+        .timeline-tips {
+            background: var(--soft-white);
+            padding: 1rem;
+            border-radius: 0.75rem;
+            border-left: 4px solid var(--warning-orange);
+        }
+
+        .tip {
+            font-size: 0.9rem;
+            color: var(--warm-gray);
+            font-style: italic;
+        }
+
+        .timeline-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .feature-item {
+            background: var(--pure-white);
+            padding: 0.5rem 1rem;
+            border-radius: 1.5rem;
+            font-size: 0.85rem;
+            color: var(--success-green);
+            font-weight: 500;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .timeline-settings {
+            background: var(--pure-white);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .setting-group {
+            padding: 0.75rem 0;
+            color: var(--warm-gray);
+            border-bottom: 1px solid rgba(139, 139, 139, 0.1);
+        }
+
+        .setting-group:last-child {
+            border-bottom: none;
+        }
+
+        .timeline-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .detail-section {
+            background: var(--pure-white);
+            padding: 1.25rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .detail-section h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--morandi-blue);
+            margin-bottom: 0.75rem;
+        }
+
+        .detail-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .detail-section li {
+            padding: 0.25rem 0;
+            font-size: 0.9rem;
+            color: var(--warm-gray);
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        .detail-section li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--morandi-blue);
+        }
+
+        .timeline-photo-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .photo-feature {
+            display: flex;
+            align-items: center;
+            background: var(--pure-white);
+            padding: 0.75rem 1rem;
+            border-radius: 2rem;
+            box-shadow: var(--shadow-soft);
+            font-size: 0.9rem;
+            color: var(--warm-gray);
+        }
+
+        .photo-feature .icon {
+            margin-right: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .timeline-form {
+            background: var(--pure-white);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .form-group {
+            padding: 0.75rem 0;
+            color: var(--warm-gray);
+            border-bottom: 1px solid rgba(139, 139, 139, 0.1);
+        }
+
+        .form-group:last-child {
+            border-bottom: none;
+        }
+
+        .timeline-output {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .output-item {
+            display: flex;
+            align-items: center;
+            background: var(--pure-white);
+            padding: 1rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .output-item .icon {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        .output-details strong {
+            color: var(--soft-black);
+            font-weight: 600;
+        }
+
+        .output-details p {
+            font-size: 0.85rem;
+            color: var(--warm-gray);
+            margin: 0.25rem 0 0 0;
+        }
+
+        .completion-benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+
+        .benefit {
+            background: var(--pure-white);
+            padding: 1rem;
+            border-radius: 1rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--success-green);
+            font-weight: 500;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .journey-cta {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: var(--gradient-primary);
+            border-radius: 2rem;
+            color: white;
+            margin-top: 4rem;
+        }
+
+        .journey-cta h3 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .journey-cta p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .journey-cta .btn {
+            font-size: 1.1rem;
+            padding: 1.25rem 2.5rem;
+        }
+
+        /* 計算方法詳解區域 */
+        .calculation-details {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, 
+                var(--ivory-white) 0%, 
+                var(--soft-white) 50%, 
+                var(--pure-white) 100%);
+        }
+
+        .calculation-section {
+            margin-bottom: 4rem;
+        }
+
+        .calculation-title {
+            display: flex;
+            align-items: center;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--soft-black);
+            margin-bottom: 1.5rem;
+        }
+
+        .title-icon {
+            font-size: 2rem;
+            margin-right: 1rem;
+        }
+
+        .calculation-intro {
+            font-size: 1.1rem;
+            color: var(--warm-gray);
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+
+        /* 7步驟流程 */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .step-card {
+            background: var(--pure-white);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .step-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-primary);
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .step-card h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--soft-black);
+            margin-bottom: 0.5rem;
+        }
+
+        .step-card p {
+            font-size: 0.9rem;
+            color: var(--warm-gray);
+            line-height: 1.6;
+        }
+
+        /* 方法卡片 */
+        .method-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .method-card {
+            background: var(--pure-white);
+            border-radius: 1.5rem;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+        }
+
+        .method-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-strong);
+        }
+
+        .method-card.featured {
+            border: 2px solid var(--morandi-blue);
+            position: relative;
+        }
+
+        .method-card.featured::before {
+            content: '推薦';
+            position: absolute;
+            top: -1px;
+            right: 1.5rem;
+            background: var(--morandi-blue);
+            color: white;
+            padding: 0.25rem 1rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border-radius: 0 0 0.5rem 0.5rem;
+        }
+
+        .method-header {
+            padding: 1.5rem 1.5rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(139, 139, 139, 0.1);
+        }
+
+        .method-header h4 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--soft-black);
+        }
+
+        .method-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .method-badge.basic {
+            background: rgba(107, 114, 128, 0.1);
+            color: var(--cool-gray);
+        }
+
+        .method-badge.pro {
+            background: rgba(122, 156, 198, 0.1);
+            color: var(--morandi-blue);
+        }
+
+        .method-content {
+            padding: 1.5rem;
+        }
+
+        .method-description {
+            color: var(--warm-gray);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .method-example {
+            background: var(--ivory-white);
+            padding: 1.25rem;
+            border-radius: 0.75rem;
+            border-left: 4px solid var(--morandi-blue);
+        }
+
+        .method-example h5 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--soft-black);
+            margin-bottom: 0.75rem;
+        }
+
+        .example-item {
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+            color: var(--warm-gray);
+        }
+
+        .example-item.success {
+            color: var(--success-green);
+            font-weight: 500;
+        }
+
+        /* 比較提示 */
+        .comparison-tip {
+            display: flex;
+            align-items: flex-start;
+            background: linear-gradient(135deg, var(--morandi-blue) 0%, var(--smoky-purple) 100%);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            color: white;
+            margin-top: 2rem;
+        }
+
+        .tip-icon {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        .tip-content {
+            line-height: 1.6;
+        }
+
+        /* 利潤設定建議 */
+        .profit-tips {
+            background: var(--soft-white);
+            padding: 2rem;
+            border-radius: 1rem;
+            margin-top: 2rem;
+        }
+
+        .profit-tips h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--soft-black);
+            margin-bottom: 1.5rem;
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .tip-item {
+            background: var(--pure-white);
+            padding: 1rem;
+            border-radius: 0.75rem;
+            box-shadow: var(--shadow-soft);
+            font-size: 0.9rem;
+            color: var(--warm-gray);
+        }
+
+        /* 運費設定 */
+        .shipping-content {
+            background: var(--pure-white);
+            padding: 2rem;
+            border-radius: 1.5rem;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .shipping-intro {
+            margin-bottom: 2rem;
+        }
+
+        .shipping-intro p {
+            font-size: 1.1rem;
+            color: var(--warm-gray);
+            line-height: 1.7;
+        }
+
+        .shipping-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .shipping-method h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--soft-black);
+            margin-bottom: 1rem;
+        }
+
+        .method-details {
+            margin-bottom: 1.5rem;
+        }
+
+        .detail-item {
+            padding: 0.5rem 0;
+            font-size: 0.95rem;
+            color: var(--warm-gray);
+        }
+
+        .example-box {
+            background: var(--ivory-white);
+            padding: 1.25rem;
+            border-radius: 0.75rem;
+            border-left: 4px solid var(--morandi-green);
+        }
+
+        .example-box h5 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--soft-black);
+            margin-bottom: 0.75rem;
+        }
+
+        .example-box p {
+            font-size: 0.9rem;
+            color: var(--warm-gray);
+            margin-bottom: 0.25rem;
+        }
+
+        .shipping-tips {
+            margin-top: 2rem;
+        }
+
+        .tip-highlight {
+            display: flex;
+            align-items: flex-start;
+            background: linear-gradient(135deg, var(--morandi-green) 0%, var(--sage-brown) 100%);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            color: white;
+        }
+
+        .tip-highlight .tip-icon {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        .tip-text {
+            line-height: 1.6;
+        }
+
+        /* 首購優惠 */
+        .offer-content {
+            background: var(--pure-white);
+            padding: 2rem;
+            border-radius: 1.5rem;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .offer-banner {
+            text-align: center;
+            padding: 2rem;
+            background: var(--gradient-primary);
+            border-radius: 1rem;
+            color: white;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .offer-badge {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--error-red);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 1.5rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .offer-banner h4 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .offer-plans {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .offer-plan {
+            background: var(--ivory-white);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            border-left: 4px solid var(--success-green);
+        }
+
+        .offer-plan h5 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--soft-black);
+            margin-bottom: 1rem;
+        }
+
+        .price-comparison {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .original-price {
+            font-size: 0.9rem;
+            color: var(--warm-gray);
+            text-decoration: line-through;
+        }
+
+        .offer-price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--success-green);
+        }
+
+        .offer-plan p {
+            font-size: 0.9rem;
+            color: var(--warm-gray);
+        }
+
+        .offer-terms {
+            background: var(--soft-white);
+            padding: 1.5rem;
+            border-radius: 1rem;
+        }
+
+        .offer-terms h5 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--soft-black);
+            margin-bottom: 1rem;
+        }
+
+        .offer-terms ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .offer-terms li {
+            padding: 0.25rem 0;
+            font-size: 0.9rem;
+            color: var(--warm-gray);
+        }
+
+        /* 功能連結樣式 */
+        .feature-link {
+            color: var(--morandi-blue);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            margin-top: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .feature-link:hover {
+            color: var(--smoky-purple);
+        }
+
+        /* 響應式設計 */
+        @media (max-width: 768px) {
+            /* User Journey 響應式 */
+            .journey-timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-number {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+            
+            .timeline-content {
+                margin-left: 1.5rem;
+                padding: 1.5rem;
+            }
+            
+            .timeline-details {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline-features {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .timeline-photo-features {
+                flex-direction: column;
+            }
+            
+            .completion-benefits {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .journey-cta {
+                padding: 2rem 1rem;
+            }
+            
+            .journey-cta h3 {
+                font-size: 1.5rem;
+            }
+            
+            /* 其他區域響應式 */
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .method-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .shipping-methods {
+                grid-template-columns: 1fr;
+            }
+            
+            .tips-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .offer-plans {
+                grid-template-columns: 1fr;
+            }
+            
+            .calculation-title {
+                font-size: 1.5rem;
+            }
+            
+            .title-icon {
+                font-size: 1.5rem;
+                margin-right: 0.75rem;
+            }
+            
+            .calculation-intro {
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -544,9 +1367,10 @@
             <a href="#" class="logo">🐱 MeowDaigou</a>
             <ul class="nav-links">
                 <li><a href="#features">功能</a></li>
+                <li><a href="#user-journey">流程</a></li>
+                <li><a href="#calculation-details">計算</a></li>
                 <li><a href="#membership">方案</a></li>
                 <li><a href="support.html">支援</a></li>
-                <li><a href="privacy.html">隱私</a></li>
             </ul>
         </div>
     </nav>
@@ -561,7 +1385,7 @@
                 讓您的代購事業更專業、更高效
             </p>
             <div class="cta-buttons">
-                <a href="#" class="btn btn-primary">📱 下載 App</a>
+                <a href="https://apps.apple.com/tw/app/meowdaigou/id6751156662" target="_blank" class="btn btn-primary">📱 下載 App</a>
                 <a href="#features" class="btn btn-secondary">🔍 了解功能</a>
             </div>
         </div>
@@ -580,8 +1404,9 @@
                     <div class="feature-icon">🧮</div>
                     <h3 class="feature-title">7步驟精準計算</h3>
                     <p class="feature-description">
-                        智能計算流程：商品成本 → 營運成本 → 運費成本 → 其他費用 → 成本小計 → 利潤計算 → 最終報價。
-                        支援固定/動態成本分攤，百分比/固定/混合利潤模式。
+                        智能7步驟計算流程：商品成本 → 營運成本 → 運費成本 → 其他費用 → 成本小計 → 利潤計算 → 最終報價。
+                        支援固定/動態成本分攤，百分比/固定/混合利潤模式。<br>
+                        <a href="#calculation-details" class="feature-link">詳細了解計算方法 →</a>
                     </p>
                 </div>
                 
@@ -644,7 +1469,7 @@
                         <li>基本歷史記錄</li>
                         <li>廣告支援</li>
                     </ul>
-                    <a href="#" class="btn btn-secondary">開始使用</a>
+                    <a href="https://apps.apple.com/tw/app/meowdaigou/id6751156662" target="_blank" class="btn btn-secondary">開始使用</a>
                 </div>
                 
                 <div class="membership-card pro featured scroll-reveal">
@@ -660,7 +1485,7 @@
                         <li>Excel 導出功能</li>
                         <li>無廣告體驗</li>
                     </ul>
-                    <a href="#" class="btn btn-primary">立即升級</a>
+                    <a href="https://apps.apple.com/tw/app/meowdaigou/id6751156662" target="_blank" class="btn btn-primary">立即升級</a>
                 </div>
                 
                 <div class="membership-card max scroll-reveal">
@@ -676,7 +1501,539 @@
                         <li>完整 Excel 導出（含圖片）</li>
                         <li>無廣告體驗</li>
                     </ul>
-                    <a href="#" class="btn btn-primary">立即升級</a>
+                    <a href="https://apps.apple.com/tw/app/meowdaigou/id6751156662" target="_blank" class="btn btn-primary">立即升級</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 使用者路線圖 -->
+    <section id="user-journey" class="user-journey">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <h2 class="section-title">使用流程指南</h2>
+                <p class="section-subtitle">從開始到完成，MeowDaigou陪伴您的每一步代購流程</p>
+            </div>
+            
+            <div class="journey-timeline scroll-reveal">
+                <div class="timeline-item">
+                    <div class="timeline-number">1</div>
+                    <div class="timeline-content">
+                        <h3>📱 下載安裝</h3>
+                        <p>從App Store下載MeowDaigou，完成Apple ID登入或匿名使用</p>
+                        <div class="timeline-tips">
+                            <span class="tip">💡 建議使用Apple ID登入，資料雲端同步更安全</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-number">2</div>
+                    <div class="timeline-content">
+                        <h3>🧮 進入計算機</h3>
+                        <p>點擊主頁「計算機」功能，開始您的第一次代購計算</p>
+                        <div class="timeline-features">
+                            <div class="feature-item">✓ 直觀的計算界面</div>
+                            <div class="feature-item">✓ 即時匯率更新</div>
+                            <div class="feature-item">✓ 多種貨幣支援</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-number">3</div>
+                    <div class="timeline-content">
+                        <h3>⚙️ 進階設定</h3>
+                        <p>點擊「進階設定」，客製化您的計算參數</p>
+                        <div class="timeline-settings">
+                            <div class="setting-group">
+                                <strong>成本分攤：</strong>選擇固定分攤或動態分攤
+                            </div>
+                            <div class="setting-group">
+                                <strong>利潤模式：</strong>百分比、固定金額或混合模式
+                            </div>
+                            <div class="setting-group">
+                                <strong>運費設定：</strong>國際運費與本地配送設定
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-number">4</div>
+                    <div class="timeline-content">
+                        <h3>💰 完整設定</h3>
+                        <p>完成所有參數設定，建立您專屬的計算範本</p>
+                        <div class="timeline-details">
+                            <div class="detail-section">
+                                <h4>基本資料</h4>
+                                <ul>
+                                    <li>商品原價與幣別</li>
+                                    <li>商品重量與尺寸</li>
+                                    <li>數量與規格</li>
+                                </ul>
+                            </div>
+                            <div class="detail-section">
+                                <h4>成本控制</h4>
+                                <ul>
+                                    <li>營運成本分攤</li>
+                                    <li>運費精確計算</li>
+                                    <li>其他費用（稅費、保險等）</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-number">5</div>
+                    <div class="timeline-content">
+                        <h3>📷 拍照記錄</h3>
+                        <p>使用內建相機功能，拍攝商品照片建立完整記錄</p>
+                        <div class="timeline-photo-features">
+                            <div class="photo-feature">
+                                <span class="icon">📸</span>
+                                <span>拍攝商品照片</span>
+                            </div>
+                            <div class="photo-feature">
+                                <span class="icon">🏷️</span>
+                                <span>自動生成商品編號</span>
+                            </div>
+                            <div class="photo-feature">
+                                <span class="icon">📱</span>
+                                <span>支援多張圖片儲存</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-number">6</div>
+                    <div class="timeline-content">
+                        <h3>📝 填寫商品資訊</h3>
+                        <p>詳細填寫商品資訊，建立專業的代購記錄</p>
+                        <div class="timeline-form">
+                            <div class="form-group">
+                                <strong>商品資訊：</strong>名稱、品牌、規格、顏色等詳細資料
+                            </div>
+                            <div class="form-group">
+                                <strong>採購資訊：</strong>採購地點、採購日期、供應商資訊
+                            </div>
+                            <div class="form-group">
+                                <strong>客戶資訊：</strong>客戶暱稱、交付方式、特殊需求
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-number">7</div>
+                    <div class="timeline-content">
+                        <h3>🖼️ 生成報價圖</h3>
+                        <p>自動生成專業報價圖片，直接分享給客戶</p>
+                        <div class="timeline-output">
+                            <div class="output-item">
+                                <span class="icon">🎨</span>
+                                <div class="output-details">
+                                    <strong>專業報價圖</strong>
+                                    <p>含商品照片、價格明細、浮水印</p>
+                                </div>
+                            </div>
+                            <div class="output-item">
+                                <span class="icon">📊</span>
+                                <div class="output-details">
+                                    <strong>Excel報表</strong>
+                                    <p>詳細成本分析、批量導出功能</p>
+                                </div>
+                            </div>
+                            <div class="output-item">
+                                <span class="icon">💾</span>
+                                <div class="output-details">
+                                    <strong>雲端儲存</strong>
+                                    <p>自動儲存計算記錄、隨時查閱</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item final">
+                    <div class="timeline-number">✓</div>
+                    <div class="timeline-content">
+                        <h3>🎉 完成代購</h3>
+                        <p>專業的代購流程完成，客戶滿意，您獲得合理利潤</p>
+                        <div class="completion-benefits">
+                            <div class="benefit">✨ 提升專業形象</div>
+                            <div class="benefit">💰 確保合理獲利</div>
+                            <div class="benefit">📈 累積客戶信任</div>
+                            <div class="benefit">⏰ 節省計算時間</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="journey-cta scroll-reveal">
+                <h3>準備開始您的專業代購之旅嗎？</h3>
+                <p>立即下載MeowDaigou，體驗完整的代購計算流程</p>
+                <a href="https://apps.apple.com/tw/app/meowdaigou/id6751156662" target="_blank" class="btn btn-primary">
+                    🚀 立即開始
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 計算方法詳解 -->
+    <section id="calculation-details" class="calculation-details">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <h2 class="section-title">計算方法詳解</h2>
+                <p class="section-subtitle">了解MeowDaigou的智能計算流程，讓您的代購報價更專業更準確</p>
+            </div>
+            
+            <!-- 7步驟計算流程 -->
+            <div class="calculation-section scroll-reveal">
+                <h3 class="calculation-title">
+                    <span class="title-icon">🧮</span>
+                    7步驟精準計算流程
+                </h3>
+                <p class="calculation-intro">
+                    MeowDaigou採用業界最完整的7步驟計算方式，確保每項成本都被精確計算，讓您的報價既專業又透明。
+                </p>
+                
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h4>商品成本</h4>
+                        <p>輸入商品原價，支援8種國際貨幣即時換算</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h4>營運成本</h4>
+                        <p>包含人力、店面、水電等固定營運開銷</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h4>運費成本</h4>
+                        <p>國際運費、本地配送費用精確計算</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <h4>其他費用</h4>
+                        <p>稅費、包裝費、保險費等額外成本</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">5</div>
+                        <h4>成本小計</h4>
+                        <p>自動加總前4項成本，形成總成本基數</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">6</div>
+                        <h4>利潤計算</h4>
+                        <p>根據您設定的利潤模式計算預期利潤</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">7</div>
+                        <h4>最終報價</h4>
+                        <p>成本+利潤=最終客戶報價，支援進位處理</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 攤平方法說明 -->
+            <div class="calculation-section scroll-reveal">
+                <h3 class="calculation-title">
+                    <span class="title-icon">📊</span>
+                    成本分攤方法
+                </h3>
+                
+                <div class="method-grid">
+                    <div class="method-card">
+                        <div class="method-header">
+                            <h4>固定分攤</h4>
+                            <span class="method-badge basic">基礎</span>
+                        </div>
+                        <div class="method-content">
+                            <p class="method-description">
+                                每個商品均攤相同的固定成本，適合商品價格相近的代購訂單。
+                            </p>
+                            <div class="method-example">
+                                <h5>計算範例：</h5>
+                                <div class="example-item">
+                                    <strong>情境：</strong>購買3個商品，總營運成本300元
+                                </div>
+                                <div class="example-item">
+                                    <strong>計算：</strong>每個商品分攤 300÷3 = 100元
+                                </div>
+                                <div class="example-item success">
+                                    <strong>適用：</strong>商品價格相近，簡單快速
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="method-card featured">
+                        <div class="method-header">
+                            <h4>動態分攤</h4>
+                            <span class="method-badge pro">進階</span>
+                        </div>
+                        <div class="method-content">
+                            <p class="method-description">
+                                根據商品價格比例分攤成本，高價商品承擔更多成本，更符合實際營運邏輯。
+                            </p>
+                            <div class="method-example">
+                                <h5>計算範例：</h5>
+                                <div class="example-item">
+                                    <strong>情境：</strong>商品A(1000元)、商品B(2000元)、商品C(3000元)
+                                </div>
+                                <div class="example-item">
+                                    <strong>總值：</strong>6000元，營運成本300元
+                                </div>
+                                <div class="example-item">
+                                    <strong>分攤：</strong>A: 50元 | B: 100元 | C: 150元
+                                </div>
+                                <div class="example-item success">
+                                    <strong>適用：</strong>商品價格差異大，分攤更公平
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="comparison-tip">
+                    <div class="tip-icon">💡</div>
+                    <div class="tip-content">
+                        <strong>選擇建議：</strong>
+                        如果您的代購商品價格相近（如都是化妝品、都是服飾），建議使用「固定分攤」；
+                        如果商品價格差異較大（如同時賣包包和小飾品），建議使用「動態分攤」。
+                    </div>
+                </div>
+            </div>
+
+            <!-- 利潤設定說明 -->
+            <div class="calculation-section scroll-reveal">
+                <h3 class="calculation-title">
+                    <span class="title-icon">💰</span>
+                    利潤設定方式
+                </h3>
+                
+                <div class="method-grid">
+                    <div class="method-card">
+                        <div class="method-header">
+                            <h4>百分比模式</h4>
+                            <span class="method-badge basic">推薦</span>
+                        </div>
+                        <div class="method-content">
+                            <p class="method-description">
+                                設定固定利潤率，自動根據成本計算利潤金額。適合想要穩定獲利率的代購業者。
+                            </p>
+                            <div class="method-example">
+                                <h5>設定範例：</h5>
+                                <div class="example-item">
+                                    <strong>利潤率：</strong>20%
+                                </div>
+                                <div class="example-item">
+                                    <strong>商品A成本：</strong>1000元 → 利潤200元 → 報價1200元
+                                </div>
+                                <div class="example-item">
+                                    <strong>商品B成本：</strong>500元 → 利潤100元 → 報價600元
+                                </div>
+                                <div class="example-item success">
+                                    <strong>優點：</strong>獲利率穩定，高價商品獲利更多
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="method-card">
+                        <div class="method-header">
+                            <h4>固定金額模式</h4>
+                            <span class="method-badge basic">簡單</span>
+                        </div>
+                        <div class="method-content">
+                            <p class="method-description">
+                                每個商品加上固定利潤金額，不論成本高低。適合薄利多銷的經營策略。
+                            </p>
+                            <div class="method-example">
+                                <h5>設定範例：</h5>
+                                <div class="example-item">
+                                    <strong>固定利潤：</strong>150元
+                                </div>
+                                <div class="example-item">
+                                    <strong>商品A成本：</strong>1000元 → 利潤150元 → 報價1150元
+                                </div>
+                                <div class="example-item">
+                                    <strong>商品B成本：</strong>500元 → 利潤150元 → 報價650元
+                                </div>
+                                <div class="example-item success">
+                                    <strong>優點：</strong>計算簡單，低價商品獲利率高
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="method-card featured">
+                        <div class="method-header">
+                            <h4>混合模式</h4>
+                            <span class="method-badge pro">專業</span>
+                        </div>
+                        <div class="method-content">
+                            <p class="method-description">
+                                結合百分比和固定金額，設定最低利潤保障。適合專業代購業者精細化管理。
+                            </p>
+                            <div class="method-example">
+                                <h5>設定範例：</h5>
+                                <div class="example-item">
+                                    <strong>設定：</strong>15% 或最少100元（取較高者）
+                                </div>
+                                <div class="example-item">
+                                    <strong>商品A成本：</strong>1000元 → 15%=150元 > 100元 → 利潤150元
+                                </div>
+                                <div class="example-item">
+                                    <strong>商品B成本：</strong>300元 → 15%=45元 < 100元 → 利潤100元
+                                </div>
+                                <div class="example-item success">
+                                    <strong>優點：</strong>保障最低獲利，高價商品按比例獲利
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profit-tips">
+                    <h4>利潤設定建議</h4>
+                    <div class="tips-grid">
+                        <div class="tip-item">
+                            <strong>新手代購：</strong>建議15-20%，確保合理獲利
+                        </div>
+                        <div class="tip-item">
+                            <strong>經驗代購：</strong>可用混合模式，最低利潤100-200元
+                        </div>
+                        <div class="tip-item">
+                            <strong>高級商品：</strong>可降至10-15%，薄利多銷
+                        </div>
+                        <div class="tip-item">
+                            <strong>特殊商品：</strong>可提高至25-30%，反映服務價值
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 運費設定說明 -->
+            <div class="calculation-section scroll-reveal">
+                <h3 class="calculation-title">
+                    <span class="title-icon">🚚</span>
+                    運費計算設定
+                </h3>
+                
+                <div class="shipping-content">
+                    <div class="shipping-intro">
+                        <p>運費是代購成本的重要組成部分，MeowDaigou提供多種運費計算方式，協助您精確控制運輸成本。</p>
+                    </div>
+
+                    <div class="shipping-methods">
+                        <div class="shipping-method">
+                            <h4>🌍 國際運費</h4>
+                            <div class="method-details">
+                                <div class="detail-item">
+                                    <strong>重量計費：</strong>適合服飾、小物件，按公斤計算
+                                </div>
+                                <div class="detail-item">
+                                    <strong>體積計費：</strong>適合大型商品，按立方公分計算
+                                </div>
+                                <div class="detail-item">
+                                    <strong>混合計費：</strong>取重量和體積費用較高者
+                                </div>
+                            </div>
+                            
+                            <div class="example-box">
+                                <h5>範例：韓國寄台灣</h5>
+                                <p><strong>商品：</strong>化妝品 500g</p>
+                                <p><strong>計算：</strong>500g × 每公斤運費 = 實際運費</p>
+                                <p><strong>分攤：</strong>如多件商品可選擇平均分攤或按重量比例分攤</p>
+                            </div>
+                        </div>
+
+                        <div class="shipping-method">
+                            <h4>🏪 本地配送</h4>
+                            <div class="method-details">
+                                <div class="detail-item">
+                                    <strong>統一運費：</strong>所有商品相同配送費
+                                </div>
+                                <div class="detail-item">
+                                    <strong>免運門檻：</strong>滿額免運，提升客戶滿意度
+                                </div>
+                                <div class="detail-item">
+                                    <strong>地區差異：</strong>可設定不同地區不同運費
+                                </div>
+                            </div>
+                            
+                            <div class="example-box">
+                                <h5>範例：台灣本地配送</h5>
+                                <p><strong>設定：</strong>統一60元，滿1000元免運</p>
+                                <p><strong>訂單A：</strong>800元 + 60元運費 = 860元</p>
+                                <p><strong>訂單B：</strong>1200元 + 0元運費 = 1200元</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="shipping-tips">
+                        <div class="tip-highlight">
+                            <div class="tip-icon">📦</div>
+                            <div class="tip-text">
+                                <strong>專業建議：</strong>
+                                建議將包裝材料成本(10-20元)也計入運費中，確保所有相關成本都被涵蓋。
+                                同時可考慮設定「代購服務費」來反映您的專業服務價值。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 首購優惠說明 -->
+            <div class="calculation-section scroll-reveal">
+                <h3 class="calculation-title">
+                    <span class="title-icon">🎁</span>
+                    首購優惠活動
+                </h3>
+                
+                <div class="offer-content">
+                    <div class="offer-banner">
+                        <div class="offer-badge">限時優惠</div>
+                        <h4>首次購買會員享50%折扣</h4>
+                        <p>新用戶專屬優惠，體驗完整專業功能</p>
+                    </div>
+
+                    <div class="offer-details">
+                        <div class="offer-plans">
+                            <div class="offer-plan">
+                                <h5>Pro 會員首購優惠</h5>
+                                <div class="price-comparison">
+                                    <span class="original-price">原價 NT$300/月</span>
+                                    <span class="offer-price">首購 NT$150/月</span>
+                                </div>
+                                <p>省下NT$150，立即體驗專業功能</p>
+                            </div>
+                            <div class="offer-plan">
+                                <h5>Max 會員首購優惠</h5>
+                                <div class="price-comparison">
+                                    <span class="original-price">原價 NT$600/月</span>
+                                    <span class="offer-price">首購 NT$300/月</span>
+                                </div>
+                                <p>省下NT$300，享受頂級代購體驗</p>
+                            </div>
+                        </div>
+
+                        <div class="offer-terms">
+                            <h5>優惠條款</h5>
+                            <ul>
+                                <li>✅ 僅限首次訂閱用戶</li>
+                                <li>✅ 可選擇月付或年付方案</li>
+                                <li>✅ 第二期開始恢復原價</li>
+                                <li>✅ 隨時可在App Store取消訂閱</li>
+                                <li>✅ 優惠期間享受完整功能</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
