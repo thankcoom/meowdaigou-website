@@ -536,6 +536,571 @@
             color: var(--morandi-blue);
         }
 
+        /* UI 界面展示區域 */
+        .ui-demo {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, 
+                var(--pure-white) 0%, 
+                var(--ivory-white) 50%, 
+                var(--soft-white) 100%);
+        }
+
+        .ui-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .ui-phone {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* 手機框架 */
+        .phone-frame {
+            width: 280px;
+            height: 580px;
+            background: #1a1a1a;
+            border-radius: 30px;
+            padding: 8px;
+            box-shadow: 
+                0 0 0 2px #2a2a2a,
+                0 10px 40px rgba(0,0,0,0.3),
+                0 0 0 1px rgba(255,255,255,0.1) inset;
+            position: relative;
+        }
+
+        .phone-frame::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: #333;
+            border-radius: 2px;
+        }
+
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            background: var(--ivory-white);
+            border-radius: 22px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* 狀態欄 */
+        .status-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 24px;
+            padding: 0 20px;
+            background: transparent;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--soft-black);
+        }
+
+        .status-right {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .battery {
+            width: 20px;
+            height: 10px;
+            border: 1px solid var(--soft-black);
+            border-radius: 2px;
+            position: relative;
+        }
+
+        .battery::after {
+            content: '';
+            position: absolute;
+            right: -2px;
+            top: 3px;
+            width: 1px;
+            height: 4px;
+            background: var(--soft-black);
+        }
+
+        .battery::before {
+            content: '';
+            position: absolute;
+            left: 1px;
+            top: 1px;
+            width: 14px;
+            height: 6px;
+            background: var(--success-green);
+            border-radius: 1px;
+        }
+
+        .signal,
+        .wifi {
+            width: 12px;
+            height: 8px;
+            background: var(--soft-black);
+            border-radius: 1px;
+            position: relative;
+        }
+
+        /* 導航欄 */
+        .nav-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 50px;
+            padding: 0 20px;
+            background: var(--ivory-white);
+            border-bottom: 1px solid rgba(139, 139, 139, 0.1);
+        }
+
+        .nav-bar h1 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--soft-black);
+            margin: 0;
+        }
+
+        .settings-btn,
+        .add-btn,
+        .share-btn {
+            width: 32px;
+            height: 32px;
+            border: none;
+            background: transparent;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.2s;
+        }
+
+        .settings-btn:hover,
+        .add-btn:hover,
+        .share-btn:hover {
+            background: rgba(139, 139, 139, 0.1);
+        }
+
+        /* 手機內容 */
+        .phone-content {
+            flex: 1;
+            padding: 16px;
+            overflow-y: auto;
+            background: var(--ivory-white);
+        }
+
+        /* 資訊卡片 */
+        .info-card {
+            background: var(--pure-white);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 16px;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .info-card h3 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--soft-black);
+            margin-bottom: 12px;
+        }
+
+        .form-group {
+            margin-bottom: 12px;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 8px;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 11px;
+            color: var(--warm-gray);
+            margin-bottom: 4px;
+            font-weight: 500;
+        }
+
+        .input-field {
+            background: var(--ivory-white);
+            border: 1px solid rgba(139, 139, 139, 0.2);
+            border-radius: 8px;
+            padding: 8px 12px;
+            font-size: 13px;
+            color: var(--soft-black);
+            min-height: 16px;
+        }
+
+        .currency-selector {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--ivory-white);
+            border: 1px solid rgba(139, 139, 139, 0.2);
+            border-radius: 8px;
+            padding: 8px 12px;
+            font-size: 13px;
+            color: var(--soft-black);
+            min-height: 16px;
+        }
+
+        .dropdown-arrow {
+            color: var(--warm-gray);
+            font-size: 10px;
+        }
+
+        /* 計算結果預覽 */
+        .result-preview {
+            background: var(--pure-white);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 16px;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6px 0;
+            font-size: 13px;
+        }
+
+        .result-item.total {
+            border-top: 1px solid rgba(139, 139, 139, 0.1);
+            margin-top: 8px;
+            padding-top: 12px;
+            font-weight: 600;
+        }
+
+        .result-item .label {
+            color: var(--warm-gray);
+        }
+
+        .result-item .value {
+            color: var(--soft-black);
+            font-weight: 500;
+        }
+
+        .result-item .value.profit {
+            color: var(--success-green);
+        }
+
+        .result-item.total .value {
+            color: var(--morandi-blue);
+            font-size: 14px;
+        }
+
+        /* 操作按鈕 */
+        .action-buttons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .btn-primary,
+        .btn-secondary {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--morandi-blue);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: var(--ivory-white);
+            color: var(--morandi-blue);
+            border: 1px solid var(--morandi-blue);
+        }
+
+        /* 搜尋欄 */
+        .search-bar {
+            margin-bottom: 16px;
+        }
+
+        .search-input {
+            display: flex;
+            align-items: center;
+            background: var(--pure-white);
+            border: 1px solid rgba(139, 139, 139, 0.2);
+            border-radius: 20px;
+            padding: 8px 16px;
+            gap: 8px;
+        }
+
+        .search-icon {
+            color: var(--warm-gray);
+            font-size: 14px;
+        }
+
+        .placeholder {
+            color: var(--warm-gray);
+            font-size: 13px;
+        }
+
+        /* 產品列表 */
+        .product-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .product-item {
+            display: flex;
+            align-items: center;
+            background: var(--pure-white);
+            border-radius: 12px;
+            padding: 12px;
+            box-shadow: var(--shadow-soft);
+            gap: 12px;
+        }
+
+        .product-image {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--morandi-blue), var(--smoky-purple));
+            border-radius: 8px;
+            flex-shrink: 0;
+        }
+
+        .product-info {
+            flex: 1;
+        }
+
+        .product-info h4 {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--soft-black);
+            margin-bottom: 2px;
+        }
+
+        .product-code {
+            font-size: 10px;
+            color: var(--warm-gray);
+            margin-bottom: 4px;
+        }
+
+        .product-price {
+            display: flex;
+            gap: 8px;
+        }
+
+        .cost,
+        .profit {
+            font-size: 10px;
+        }
+
+        .cost {
+            color: var(--warm-gray);
+        }
+
+        .profit {
+            color: var(--success-green);
+            font-weight: 500;
+        }
+
+        .more-btn {
+            width: 24px;
+            height: 24px;
+            border: none;
+            background: transparent;
+            color: var(--warm-gray);
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        /* 報價圖預覽 */
+        .quote-image-preview {
+            background: var(--pure-white);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 16px;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .quote-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(139, 139, 139, 0.1);
+        }
+
+        .brand-logo {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--morandi-blue);
+        }
+
+        .product-code {
+            font-size: 10px;
+            color: var(--warm-gray);
+        }
+
+        .quote-product {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+            align-items: center;
+        }
+
+        .product-photo {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--morandi-blue), var(--smoky-purple));
+            border-radius: 8px;
+        }
+
+        .product-details h3 {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--soft-black);
+            margin-bottom: 2px;
+        }
+
+        .product-specs {
+            font-size: 10px;
+            color: var(--warm-gray);
+        }
+
+        .quote-breakdown {
+            margin-bottom: 12px;
+        }
+
+        .cost-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 4px 0;
+            font-size: 11px;
+        }
+
+        .cost-item.subtotal {
+            border-top: 1px solid rgba(139, 139, 139, 0.1);
+            margin-top: 8px;
+            padding-top: 8px;
+            font-weight: 500;
+        }
+
+        .cost-item.profit span:last-child {
+            color: var(--success-green);
+        }
+
+        .cost-item.total {
+            border-top: 1px solid rgba(139, 139, 139, 0.2);
+            margin-top: 8px;
+            padding-top: 8px;
+            font-weight: 600;
+            font-size: 12px;
+        }
+
+        .cost-item.total span:last-child {
+            color: var(--morandi-blue);
+        }
+
+        .quote-footer {
+            text-align: center;
+            padding-top: 12px;
+            border-top: 1px solid rgba(139, 139, 139, 0.1);
+        }
+
+        .quote-footer p {
+            font-size: 9px;
+            color: var(--warm-gray);
+            margin: 0;
+        }
+
+        .quote-options {
+            display: flex;
+            gap: 8px;
+        }
+
+        .option-btn {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid var(--morandi-blue);
+            background: transparent;
+            color: var(--morandi-blue);
+            border-radius: 8px;
+            font-size: 11px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .option-btn.active {
+            background: var(--morandi-blue);
+            color: white;
+        }
+
+        /* UI 說明文字 */
+        .ui-caption {
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+
+        .ui-caption h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--soft-black);
+            margin-bottom: 0.5rem;
+        }
+
+        .ui-caption p {
+            font-size: 0.9rem;
+            color: var(--warm-gray);
+        }
+
+        /* UI 亮點 */
+        .ui-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .highlight-item {
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        .highlight-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .highlight-item h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--soft-black);
+            margin-bottom: 0.75rem;
+        }
+
+        .highlight-item p {
+            font-size: 0.9rem;
+            color: var(--warm-gray);
+            line-height: 1.6;
+        }
+
         /* 使用者路線圖區域 */
         .user-journey {
             padding: 6rem 2rem;
@@ -1283,6 +1848,21 @@
 
         /* 響應式設計 */
         @media (max-width: 768px) {
+            /* UI Demo 響應式 */
+            .ui-showcase {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .phone-frame {
+                width: 250px;
+                height: 520px;
+            }
+            
+            .ui-highlights {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
             /* User Journey 響應式 */
             .journey-timeline::before {
                 left: 20px;
@@ -1366,11 +1946,10 @@
         <div class="nav-container">
             <a href="#" class="logo">🐱 MeowDaigou</a>
             <ul class="nav-links">
+                <li><a href="#ui-demo">界面</a></li>
                 <li><a href="#features">功能</a></li>
                 <li><a href="#user-journey">流程</a></li>
-                <li><a href="#calculation-details">計算</a></li>
                 <li><a href="#membership">方案</a></li>
-                <li><a href="support.html">支援</a></li>
             </ul>
         </div>
     </nav>
@@ -1386,7 +1965,289 @@
             </p>
             <div class="cta-buttons">
                 <a href="https://apps.apple.com/tw/app/meowdaigou/id6751156662" target="_blank" class="btn btn-primary">📱 下載 App</a>
-                <a href="#features" class="btn btn-secondary">🔍 了解功能</a>
+                <a href="#ui-demo" class="btn btn-secondary">👀 查看界面</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- UI 界面展示 -->
+    <section id="ui-demo" class="ui-demo">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <h2 class="section-title">直觀易用的操作界面</h2>
+                <p class="section-subtitle">採用莫蘭迪色系設計，簡潔優雅的界面讓代購計算變得輕鬆愉快</p>
+            </div>
+            
+            <div class="ui-showcase">
+                <!-- 主計算器界面模擬 -->
+                <div class="ui-phone scroll-reveal">
+                    <div class="phone-frame">
+                        <div class="phone-screen">
+                            <!-- 狀態欄 -->
+                            <div class="status-bar">
+                                <div class="status-left">
+                                    <span class="time">9:41</span>
+                                </div>
+                                <div class="status-right">
+                                    <div class="battery"></div>
+                                    <div class="signal"></div>
+                                    <div class="wifi"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- 導航欄 -->
+                            <div class="nav-bar">
+                                <h1>🐱 代購計算機</h1>
+                                <button class="settings-btn">⚙️</button>
+                            </div>
+                            
+                            <!-- 主要內容 -->
+                            <div class="phone-content">
+                                <!-- 商品資訊卡片 -->
+                                <div class="info-card">
+                                    <h3>商品資訊</h3>
+                                    <div class="form-group">
+                                        <label>商品名稱</label>
+                                        <div class="input-field">韓國精華液套組</div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label>商品價格</label>
+                                            <div class="input-field">89,000</div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>幣別</label>
+                                            <div class="currency-selector">
+                                                <span>KRW</span>
+                                                <span class="dropdown-arrow">▼</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>重量 (kg)</label>
+                                        <div class="input-field">0.5</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- 快速計算結果 -->
+                                <div class="result-preview">
+                                    <div class="result-item">
+                                        <span class="label">成本小計</span>
+                                        <span class="value">NT$ 2,180</span>
+                                    </div>
+                                    <div class="result-item">
+                                        <span class="label">預估利潤</span>
+                                        <span class="value profit">NT$ 436</span>
+                                    </div>
+                                    <div class="result-item total">
+                                        <span class="label">最終報價</span>
+                                        <span class="value">NT$ 2,616</span>
+                                    </div>
+                                </div>
+                                
+                                <!-- 操作按鈕 -->
+                                <div class="action-buttons">
+                                    <button class="btn-secondary">進階設定</button>
+                                    <button class="btn-primary">開始計算</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="ui-caption">
+                        <h4>📱 主計算頁面</h4>
+                        <p>簡潔直觀的輸入界面，支援8種國際貨幣</p>
+                    </div>
+                </div>
+
+                <!-- 產品管理界面模擬 -->
+                <div class="ui-phone scroll-reveal">
+                    <div class="phone-frame">
+                        <div class="phone-screen">
+                            <!-- 狀態欄 -->
+                            <div class="status-bar">
+                                <div class="status-left">
+                                    <span class="time">9:41</span>
+                                </div>
+                                <div class="status-right">
+                                    <div class="battery"></div>
+                                    <div class="signal"></div>
+                                    <div class="wifi"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- 導航欄 -->
+                            <div class="nav-bar">
+                                <h1>📦 產品管理</h1>
+                                <button class="add-btn">+</button>
+                            </div>
+                            
+                            <!-- 產品列表 -->
+                            <div class="phone-content">
+                                <div class="search-bar">
+                                    <div class="search-input">
+                                        <span class="search-icon">🔍</span>
+                                        <span class="placeholder">搜尋產品...</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="product-list">
+                                    <div class="product-item">
+                                        <div class="product-image"></div>
+                                        <div class="product-info">
+                                            <h4>韓國精華液套組</h4>
+                                            <p class="product-code">MD-20250823-001</p>
+                                            <div class="product-price">
+                                                <span class="cost">成本 NT$ 2,180</span>
+                                                <span class="profit">售價 NT$ 2,616</span>
+                                            </div>
+                                        </div>
+                                        <button class="more-btn">⋯</button>
+                                    </div>
+                                    
+                                    <div class="product-item">
+                                        <div class="product-image"></div>
+                                        <div class="product-info">
+                                            <h4>日本面膜組合</h4>
+                                            <p class="product-code">MD-20250822-002</p>
+                                            <div class="product-price">
+                                                <span class="cost">成本 NT$ 1,850</span>
+                                                <span class="profit">售價 NT$ 2,220</span>
+                                            </div>
+                                        </div>
+                                        <button class="more-btn">⋯</button>
+                                    </div>
+                                    
+                                    <div class="product-item">
+                                        <div class="product-image"></div>
+                                        <div class="product-info">
+                                            <h4>泰國香氛蠟燭</h4>
+                                            <p class="product-code">MD-20250821-003</p>
+                                            <div class="product-price">
+                                                <span class="cost">成本 NT$ 920</span>
+                                                <span class="profit">售價 NT$ 1,150</span>
+                                            </div>
+                                        </div>
+                                        <button class="more-btn">⋯</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="ui-caption">
+                        <h4>📦 產品管理</h4>
+                        <p>自動編號、圖片管理、Excel批量導出</p>
+                    </div>
+                </div>
+
+                <!-- 報價圖生成界面模擬 -->
+                <div class="ui-phone scroll-reveal">
+                    <div class="phone-frame">
+                        <div class="phone-screen">
+                            <!-- 狀態欄 -->
+                            <div class="status-bar">
+                                <div class="status-left">
+                                    <span class="time">9:41</span>
+                                </div>
+                                <div class="status-right">
+                                    <div class="battery"></div>
+                                    <div class="signal"></div>
+                                    <div class="wifi"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- 導航欄 -->
+                            <div class="nav-bar">
+                                <h1>🖼️ 報價圖片</h1>
+                                <button class="share-btn">↗️</button>
+                            </div>
+                            
+                            <!-- 報價圖預覽 -->
+                            <div class="phone-content">
+                                <div class="quote-image-preview">
+                                    <div class="quote-header">
+                                        <div class="brand-logo">🐱 MeowDaigou</div>
+                                        <div class="product-code">MD-20250823-001</div>
+                                    </div>
+                                    
+                                    <div class="quote-product">
+                                        <div class="product-photo"></div>
+                                        <div class="product-details">
+                                            <h3>韓國精華液套組</h3>
+                                            <p class="product-specs">30ml × 3瓶 | 韓國製</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="quote-breakdown">
+                                        <div class="cost-item">
+                                            <span>商品成本</span>
+                                            <span>NT$ 1,890</span>
+                                        </div>
+                                        <div class="cost-item">
+                                            <span>運費成本</span>
+                                            <span>NT$ 180</span>
+                                        </div>
+                                        <div class="cost-item">
+                                            <span>其他費用</span>
+                                            <span>NT$ 110</span>
+                                        </div>
+                                        <div class="cost-item subtotal">
+                                            <span>成本小計</span>
+                                            <span>NT$ 2,180</span>
+                                        </div>
+                                        <div class="cost-item profit">
+                                            <span>利潤 (20%)</span>
+                                            <span>NT$ 436</span>
+                                        </div>
+                                        <div class="cost-item total">
+                                            <span>最終報價</span>
+                                            <span>NT$ 2,616</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="quote-footer">
+                                        <p>專業代購 • 品質保證 • 安心購買</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="quote-options">
+                                    <button class="option-btn active">原價版</button>
+                                    <button class="option-btn">進位版</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="ui-caption">
+                        <h4>🖼️ 專業報價圖</h4>
+                        <p>自動生成專業報價圖片，直接分享客戶</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 特色亮點 -->
+            <div class="ui-highlights scroll-reveal">
+                <div class="highlight-item">
+                    <div class="highlight-icon">🎨</div>
+                    <h4>莫蘭迪設計</h4>
+                    <p>採用優雅的莫蘭迪色系，視覺舒適不疲勞</p>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">📱</div>
+                    <h4>直觀操作</h4>
+                    <p>簡潔明瞭的界面設計，新手也能快速上手</p>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">⚡</div>
+                    <h4>即時計算</h4>
+                    <p>輸入數據即時更新計算結果，效率提升</p>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">🌙</div>
+                    <h4>深色模式</h4>
+                    <p>支援深色模式，夜間使用更護眼</p>
+                </div>
             </div>
         </div>
     </section>
