@@ -343,6 +343,194 @@
             }
         }
 
+        /* 版本更新區域 */
+        .version-section {
+            margin-bottom: 4rem;
+        }
+
+        .version-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .version-card {
+            background: var(--pure-white);
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: var(--shadow-medium);
+            border-left: 4px solid var(--morandi-blue);
+        }
+
+        .version-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(139, 139, 139, 0.1);
+            padding-bottom: 1rem;
+        }
+
+        .version-title {
+            color: var(--morandi-blue);
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .version-date {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .version-content h4 {
+            color: var(--soft-black);
+            margin: 1.5rem 0 1rem 0;
+            font-size: 1.1rem;
+        }
+
+        .version-highlights, .version-improvements {
+            list-style: none;
+            padding: 0;
+        }
+
+        .version-highlights li, .version-improvements li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(139, 139, 139, 0.1);
+        }
+
+        .version-highlights li:last-child, .version-improvements li:last-child {
+            border-bottom: none;
+        }
+
+        .version-cta {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(139, 139, 139, 0.1);
+        }
+
+        .btn-update {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .btn-update:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        /* SOP 區域 */
+        .sop-section {
+            margin-bottom: 4rem;
+        }
+
+        .sop-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .sop-card {
+            background: var(--pure-white);
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+        }
+
+        .sop-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .sop-title {
+            color: var(--morandi-blue);
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--morandi-blue);
+            padding-bottom: 0.5rem;
+        }
+
+        .sop-steps, .sop-practices, .sop-tips {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sop-steps {
+            counter-reset: step-counter;
+        }
+
+        .sop-steps li {
+            counter-increment: step-counter;
+            position: relative;
+            padding: 1rem 0 1rem 3rem;
+            border-bottom: 1px solid rgba(139, 139, 139, 0.1);
+        }
+
+        .sop-steps li:before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 1rem;
+            background: var(--gradient-primary);
+            color: white;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+
+        .sop-practices li, .sop-tips li {
+            padding: 0.75rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            border-bottom: 1px solid rgba(139, 139, 139, 0.1);
+        }
+
+        .sop-practices li:before {
+            content: "🚀";
+            position: absolute;
+            left: 0;
+            top: 0.75rem;
+        }
+
+        .sop-tips li:before {
+            content: "💡";
+            position: absolute;
+            left: 0;
+            top: 0.75rem;
+        }
+
+        .troubleshoot h4 {
+            color: var(--morandi-blue);
+            font-size: 1rem;
+            margin: 1rem 0 0.5rem 0;
+        }
+
+        .troubleshoot ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+
+        .troubleshoot li {
+            padding: 0.25rem 0;
+        }
+
         /* 動畫效果 */
         .scroll-reveal {
             opacity: 0;
@@ -498,6 +686,45 @@
                         3. 關閉並重新開啟 App<br>
                         4. 檢查系統時間是否正確
                     </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 版本更新 -->
+        <section class="version-section scroll-reveal">
+            <h2 class="section-title">🚀 最新版本更新</h2>
+            <div class="version-container">
+                <div class="version-card">
+                    <div class="version-header">
+                        <h3 class="version-title">v1.0.4 - 效能革命性提升</h3>
+                        <div class="version-date">2025年8月</div>
+                    </div>
+                    <div class="version-content">
+                        <h4>🎯 主要更新亮點</h4>
+                        <ul class="version-highlights">
+                            <li><strong>響應速度提升50%</strong> - Tab切換零延遲，操作更流暢</li>
+                            <li><strong>手動利潤率輸入</strong> - 精確設定，最高支援100%利潤率</li>
+                            <li><strong>觸覺回饋系統</strong> - 專業級操作體驗</li>
+                            <li><strong>快速選項按鈕</strong> - 15%、25%、35%等常用利潤率</li>
+                            <li><strong>零營運成本支援</strong> - 適合網購代購業務模式</li>
+                            <li><strong>稅率彈性設定</strong> - 支援0%稅率設定</li>
+                            <li><strong>一鍵清空功能</strong> - 批量重置營運成本</li>
+                        </ul>
+                        
+                        <h4>🔧 技術優化</h4>
+                        <ul class="version-improvements">
+                            <li>主題切換防抖處理，避免重複渲染</li>
+                            <li>計算狀態管理優化，提供更穩定體驗</li>
+                            <li>修復編譯警告，提升程式碼品質</li>
+                            <li>改善按鈕響應邏輯，操作更即時</li>
+                        </ul>
+                        
+                        <div class="version-cta">
+                            <a href="https://apps.apple.com/tw/app/meowdaigou/id6751156662" target="_blank" class="btn-update">
+                                立即更新體驗 →
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -697,6 +924,117 @@
                         • 查看歷史記錄不消耗計算次數<br>
                         • 每日午夜00:00重置計算次數<br>
                         • 免費：20次/日 | Pro：200次/日 | Max：1000次/日</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>v1.0.4新增的手動利潤率輸入如何使用？</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>新版本提供更彈性的利潤率設定：<br>
+                        • <strong>手動輸入</strong>：支援精確到小數點的利潤率<br>
+                        • <strong>最高100%</strong>：滿足高端商品定價需求<br>
+                        • <strong>快速按鈕</strong>：15%、25%、35%、50%、65%、80%常用選項<br>
+                        • <strong>滑桿保留</strong>：原有滑桿操作依然可用<br>
+                        • <strong>混合模式</strong>：支援手動輸入百分比範圍(3-50%)</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>什麼是零營運成本？適合哪些業務？</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>零營運成本功能專為現代代購模式設計：<br>
+                        • <strong>網購代購</strong>：在家透過網路下單，無實體成本<br>
+                        • <strong>個人買手</strong>：個人兼職代購，無固定營運開銷<br>
+                        • <strong>計算公式</strong>：商品價格 + 買手費用 + 稅率<br>
+                        • <strong>彈性設定</strong>：可隨時調整，支援不同業務模式<br>
+                        • <strong>稅率0%</strong>：部分地區或商品免稅也可設定</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>一鍵清空功能在哪裡？如何使用？</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>清空功能提供快速重置營運成本：<br>
+                        • <strong>位置</strong>：計算器頁面 → 進階設定 → 營運成本卡片右上角<br>
+                        • <strong>功能</strong>：一鍵清空所有旅行費用和營運成本<br>
+                        • <strong>立即生效</strong>：點擊後立即更新，無需退出頁面<br>
+                        • <strong>安全設計</strong>：只清空營運成本，不影響其他設定<br>
+                        • <strong>效率提升</strong>：批量重置，節省逐項清除時間</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 使用指南 SOP -->
+        <section class="sop-section scroll-reveal">
+            <h2 class="section-title">📚 完整使用指南</h2>
+            
+            <div class="sop-container">
+                <div class="sop-card">
+                    <h3 class="sop-title">🎯 新手5分鐘快速上手</h3>
+                    <ol class="sop-steps">
+                        <li><strong>下載安裝</strong>：從 App Store 下載 MeowDaigou</li>
+                        <li><strong>選擇登入</strong>：Apple ID 登入或匿名使用</li>
+                        <li><strong>設定預設值</strong>：選擇常用貨幣，設定預設利潤率</li>
+                        <li><strong>首次計算</strong>：輸入商品價格，選擇幣別，開始計算</li>
+                        <li><strong>儲存產品</strong>：計算完成後立即儲存到產品管理</li>
+                    </ol>
+                </div>
+                
+                <div class="sop-card">
+                    <h3 class="sop-title">🚀 進階功能最佳實踐</h3>
+                    <ul class="sop-practices">
+                        <li><strong>利潤率建議</strong>：新手15-20%，經驗者可用混合模式</li>
+                        <li><strong>成本分攤選擇</strong>：商品價格相近用固定，差異大用動態</li>
+                        <li><strong>貨幣組合</strong>：根據會員等級規劃貨幣需求再升級</li>
+                        <li><strong>批量管理</strong>：善用 MD 編號系統和 Excel 導出</li>
+                        <li><strong>效能優化</strong>：利用 v1.0.4 的快速計算→儲存→跳轉流程</li>
+                    </ul>
+                </div>
+                
+                <div class="sop-card">
+                    <h3 class="sop-title">⚠️ 注意事項與技巧</h3>
+                    <ul class="sop-tips">
+                        <li><strong>數據備份</strong>：定期使用 Excel/CSV 導出備份重要數據</li>
+                        <li><strong>匯率更新</strong>：重要計算前先確認匯率是否為最新</li>
+                        <li><strong>會員規劃</strong>：FREE 體驗→PRO 擴展→MAX 專業的升級路徑</li>
+                        <li><strong>計算策略</strong>：善用零成本模式適應不同業務場景</li>
+                        <li><strong>效率技巧</strong>：使用快速選項按鈕和一鍵清空功能</li>
+                    </ul>
+                </div>
+                
+                <div class="sop-card">
+                    <h3 class="sop-title">🔧 故障排除 SOP</h3>
+                    <div class="troubleshoot">
+                        <h4>性能問題</h4>
+                        <ol>
+                            <li>重新啟動 App（利用 v1.0.4 性能優化）</li>
+                            <li>檢查 iOS 版本（建議 iOS 17.6+）</li>
+                            <li>清理 App 緩存和重新安裝</li>
+                        </ol>
+                        
+                        <h4>匯出問題</h4>
+                        <ol>
+                            <li>確認 iOS 存儲權限已開啟</li>
+                            <li>檢查選擇的檔案格式（Excel/CSV）</li>
+                            <li>使用系統內建分享功能</li>
+                        </ol>
+                        
+                        <h4>計算異常</h4>
+                        <ol>
+                            <li>檢查所有必填欄位是否已填寫</li>
+                            <li>確認數值範圍是否合理</li>
+                            <li>嘗試使用清空功能重新設定</li>
+                        </ol>
                     </div>
                 </div>
             </div>
