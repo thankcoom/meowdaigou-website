@@ -71,90 +71,139 @@
     </script>
     
     <style>
+        :root {
+            /* 莫蘭迪核心色 */
+            --morandi-blue: #7A9CC6;
+            --morandi-green: #9BB5A3;
+            --milk-tea: #E8D5C4;
+            --smoky-purple: #B8A5D1;
+            
+            /* 莫蘭迪延伸色 */
+            --dusty-rose: #D4A5A5;
+            --sage-brown: #C4A889;
+            --mist-gray: #B5B5B5;
+            
+            /* 輔助中性色 */
+            --warm-gray: #8B8B8B;
+            --cool-gray: #6B7280;
+            --soft-black: #2D2D2D;
+            --ivory-white: #FBF9F6;
+            
+            /* 陰影系統 */
+            --shadow-soft: 0 2px 8px rgba(0,0,0,0.1);
+            --shadow-medium: 0 4px 12px rgba(0,0,0,0.15);
+            --shadow-strong: 0 8px 24px rgba(0,0,0,0.25);
+            
+            /* 莫蘭迪漸變 */
+            --gradient-primary: linear-gradient(135deg, var(--morandi-blue), var(--smoky-purple));
+            --gradient-secondary: linear-gradient(135deg, var(--milk-tea), var(--dusty-rose));
+            --gradient-accent: linear-gradient(135deg, var(--morandi-green), var(--sage-brown));
+        }
+        
         body {
-            font-family: 'Noto Sans TC', sans-serif;
-            line-height: 1.8;
-            color: #333;
+            font-family: 'Inter', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--soft-black);
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
+            background: var(--gradient-primary);
+            background-attachment: fixed;
         }
         
         .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 40px;
+            background: var(--ivory-white);
+            border-radius: 20px;
+            box-shadow: var(--shadow-strong);
+            backdrop-filter: blur(10px);
         }
         
         h1 {
-            color: #2c3e50;
+            color: var(--soft-black);
             font-size: 2.5rem;
-            margin-bottom: 20px;
-            border-bottom: 3px solid #3498db;
-            padding-bottom: 10px;
+            margin-bottom: 30px;
+            border-bottom: 3px solid var(--morandi-blue);
+            padding-bottom: 15px;
+            text-align: center;
         }
         
         h2 {
-            color: #34495e;
+            color: var(--soft-black);
             font-size: 1.8rem;
             margin: 30px 0 15px 0;
-            border-left: 4px solid #3498db;
+            border-left: 4px solid var(--morandi-blue);
             padding-left: 15px;
         }
         
         h3 {
-            color: #2c3e50;
+            color: var(--soft-black);
             font-size: 1.3rem;
             margin: 25px 0 10px 0;
         }
         
         .highlight {
-            background: linear-gradient(120deg, #a8e6cf 0%, #dcedc8 100%);
-            padding: 15px;
-            border-radius: 5px;
-            margin: 15px 0;
+            background: var(--gradient-secondary);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            backdrop-filter: blur(5px);
+            box-shadow: var(--shadow-soft);
         }
         
         .step-box {
-            background: #f8f9fa;
-            border: 1px solid #e9ecef;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px 0;
+            background: rgba(255,255,255,0.8);
+            border: 1px solid var(--mist-gray);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 25px 0;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+        
+        .step-box:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
         }
         
         .tip {
-            background: #fff3cd;
-            border: 1px solid #ffeaa7;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 15px 0;
+            background: var(--gradient-accent);
+            border: 1px solid var(--sage-brown);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            color: var(--soft-black);
+            backdrop-filter: blur(5px);
         }
         
         .cta-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 30px;
-            border-radius: 10px;
+            background: var(--gradient-primary);
+            color: var(--ivory-white);
+            padding: 40px;
+            border-radius: 20px;
             text-align: center;
-            margin: 30px 0;
+            margin: 40px 0;
+            backdrop-filter: blur(10px);
         }
         
         .btn {
             display: inline-block;
-            padding: 12px 30px;
-            background: #3498db;
-            color: white;
+            padding: 15px 30px;
+            background: var(--dusty-rose);
+            color: var(--soft-black);
             text-decoration: none;
-            border-radius: 25px;
+            border-radius: 50px;
             margin: 10px;
-            font-weight: bold;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-soft);
         }
         
         .btn:hover {
-            background: #2980b9;
+            background: var(--sage-brown);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-medium);
         }
     </style>
 </head>
