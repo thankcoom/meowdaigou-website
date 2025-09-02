@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>代購計算機完整使用指南 | 韓國日本代購價格計算教學 - MeowDaigou</title>
+    <meta name="description" content="專業代購計算機使用指南，教您如何計算韓國代購、日本代購價格。包含匯率計算、運費分攤、利潤計算完整教學。免費代購工具推薦。">
+    <meta name="keywords" content="代購計算機,代購計算教學,韓國代購計算,日本代購計算,代購價格計算,匯率計算教學,運費計算,代購成本計算,代購利潤計算">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="代購計算機完整使用指南 | 韓國日本代購價格計算教學">
+    <meta property="og:description" content="專業代購計算機使用指南，教您如何計算韓國代購、日本代購價格。包含匯率計算、運費分攤、利潤計算完整教學。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://thankcoom.github.io/meowdaigou-website/daigou-calculator-guide.html">
+    
+    <link rel="canonical" href="https://thankcoom.github.io/meowdaigou-website/daigou-calculator-guide.html">
+    
+    <!-- 結構化數據 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "如何使用代購計算機計算代購價格",
+      "description": "完整的代購計算機使用指南，教您計算韓國日本代購價格",
+      "image": "https://thankcoom.github.io/meowdaigou-website/images/calculator-guide.jpg",
+      "totalTime": "PT10M",
+      "estimatedCost": {
+        "@type": "MonetaryAmount",
+        "currency": "TWD",
+        "value": "0"
+      },
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "MeowDaigou 代購計算機 App"
+        }
+      ],
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "iPhone 或 iPad"
+        }
+      ],
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "步驟一：輸入商品基本資訊",
+          "text": "在代購計算機中輸入商品原價、重量、選擇貨幣類型",
+          "url": "https://thankcoom.github.io/meowdaigou-website/daigou-calculator-guide.html#step1"
+        },
+        {
+          "@type": "HowToStep", 
+          "name": "步驟二：設定營運成本",
+          "text": "輸入代購服務費、手續費等營運成本",
+          "url": "https://thankcoom.github.io/meowdaigou-website/daigou-calculator-guide.html#step2"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "步驟三：計算運費分攤",
+          "text": "選擇運費分攤方式，系統自動計算每件商品應分攤的運費",
+          "url": "https://thankcoom.github.io/meowdaigou-website/daigou-calculator-guide.html#step3"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "步驟四：設定利潤率",
+          "text": "輸入期望利潤率，計算最終報價",
+          "url": "https://thankcoom.github.io/meowdaigou-website/daigou-calculator-guide.html#step4"
+        }
+      ]
+    }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            line-height: 1.8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            color: #34495e;
+            font-size: 1.8rem;
+            margin: 30px 0 15px 0;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+        }
+        
+        h3 {
+            color: #2c3e50;
+            font-size: 1.3rem;
+            margin: 25px 0 10px 0;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #a8e6cf 0%, #dcedc8 100%);
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        
+        .step-box {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .tip {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            margin: 10px;
+            font-weight: bold;
+        }
+        
+        .btn:hover {
+            background: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>代購計算機完整使用指南</h1>
+        
+        <div class="highlight">
+            <strong>📱 免費下載 MeowDaigou 代購計算機</strong><br>
+            專業代購價格計算工具，支援韓國代購、日本代購、美國代購等11種國際貨幣計算
+        </div>
+        
+        <h2>什麼是代購計算機？</h2>
+        <p>代購計算機是專門為代購業者設計的<strong>價格計算工具</strong>，能夠精準計算代購商品的最終售價。無論您是經營<strong>韓國代購</strong>、<strong>日本代購</strong>或其他國家的代購業務，都能透過代購計算機快速算出合理的報價。</p>
+        
+        <h2 id="why-need-calculator">為什麼需要代購計算機？</h2>
+        <div class="step-box">
+            <h3>🎯 避免計算錯誤</h3>
+            <p>人工計算容易出錯，代購計算機能自動處理複雜的<strong>匯率轉換</strong>、<strong>運費分攤</strong>、<strong>利潤計算</strong>，確保每次報價都精準無誤。</p>
+        </div>
+        
+        <div class="step-box">
+            <h3>⏰ 節省時間</h3>
+            <p>傳統的代購價格計算需要多個步驟，使用代購計算機只需3分鐘就能完成所有計算，大幅提升工作效率。</p>
+        </div>
+        
+        <div class="step-box">
+            <h3>💰 提高利潤</h3>
+            <p>精準的成本計算幫助您設定合理的利潤率，既能保持競爭力又能確保獲利。</p>
+        </div>
+        
+        <h2>代購計算機使用教學</h2>
+        
+        <h3 id="step1">步驟一：商品基本資訊輸入</h3>
+        <div class="step-box">
+            <p><strong>商品原價</strong>：輸入商品在當地的售價</p>
+            <p><strong>商品重量</strong>：輸入商品重量(公斤)，用於運費計算</p>
+            <p><strong>貨幣選擇</strong>：選擇商品原價的貨幣類型</p>
+            <ul>
+                <li>韓國代購：選擇韓元(KRW)</li>
+                <li>日本代購：選擇日圓(JPY)</li>
+                <li>美國代購：選擇美元(USD)</li>
+                <li>其他還支援：人民幣、泰銖、港幣、歐元等</li>
+            </ul>
+        </div>
+        
+        <div class="tip">
+            <strong>💡 小技巧：</strong>MeowDaigou 代購計算機會自動更新匯率，確保計算結果最準確！
+        </div>
+        
+        <h3 id="step2">步驟二：營運成本設定</h3>
+        <div class="step-box">
+            <p>代購業務的營運成本包括：</p>
+            <ul>
+                <li><strong>代購服務費</strong>：您的服務費用</li>
+                <li><strong>當地稅金</strong>：商品購買時的消費稅</li>
+                <li><strong>手續費</strong>：信用卡手續費、轉帳費用等</li>
+                <li><strong>其他費用</strong>：包裝費、保險費等</li>
+            </ul>
+        </div>
+        
+        <h3 id="step3">步驟三：運費計算分攤</h3>
+        <div class="step-box">
+            <p>運費分攤是代購計算的重要環節，MeowDaigou 提供多種分攤方式：</p>
+            
+            <h4>🔄 平均分攤</h4>
+            <p>適合價格相近的商品，每件商品均攤相同運費</p>
+            
+            <h4>💰 價格比例分攤</h4>
+            <p>根據商品價值比例分攤運費，高價商品承擔更多運費</p>
+            
+            <h4>⚖️ 重量比例分攤</h4>
+            <p>根據商品重量比例分攤運費，重量大的商品承擔更多運費</p>
+        </div>
+        
+        <h3 id="step4">步驟四：利潤率設定與最終報價</h3>
+        <div class="step-box">
+            <p>設定合理的利潤率是代購成功的關鍵：</p>
+            <ul>
+                <li><strong>新手代購</strong>：建議設定15-25%利潤率</li>
+                <li><strong>有經驗代購</strong>：可設定25-35%利潤率</li>
+                <li><strong>高級代購服務</strong>：可設定35%以上利潤率</li>
+            </ul>
+            <p>MeowDaigou 代購計算機支援最高100%利潤率設定，滿足各種代購模式需求。</p>
+        </div>
+        
+        <h2>代購計算機進階功能</h2>
+        
+        <h3>📊 歷史記錄管理</h3>
+        <p>自動保存所有計算記錄，方便查詢歷史報價和成本分析</p>
+        
+        <h3>📈 Excel 匯出功能</h3>
+        <p>一鍵匯出詳細的成本分析報表，專業管理您的代購事業</p>
+        
+        <h3>🖼️ 專業報價圖片</h3>
+        <p>自動生成美觀的報價圖片，提升客戶信任度</p>
+        
+        <h3>👥 會員制度</h3>
+        <div class="step-box">
+            <p><strong>免費版</strong>：每日20次計算，支援2種貨幣</p>
+            <p><strong>Pro版</strong>：每日200次計算，支援6種貨幣，專業功能</p>
+            <p><strong>Max版</strong>：每日1000次計算，支援11種貨幣，頂級功能</p>
+        </div>
+        
+        <h2>常見代購計算問題解答</h2>
+        
+        <h3>Q: 代購計算機支援哪些貨幣？</h3>
+        <p>A: 支援11種主流貨幣：台幣(TWD)、韓元(KRW)、日圓(JPY)、美元(USD)、人民幣(CNY)、泰銖(THB)、港幣(HKD)、馬來幣(MYR)、歐元(EUR)、新加坡幣(SGD)、加幣(CAD)</p>
+        
+        <h3>Q: 匯率多久更新一次？</h3>
+        <p>A: MeowDaigou 代購計算機的匯率每日自動更新，確保計算結果準確</p>
+        
+        <h3>Q: 可以計算多件商品嗎？</h3>
+        <p>A: 可以，系統支援批量計算和智能運費分攤</p>
+        
+        <div class="cta-section">
+            <h2>立即下載 MeowDaigou 代購計算機</h2>
+            <p>免費使用專業代購計算工具，讓您的代購事業更成功！</p>
+            <a href="https://apps.apple.com/tw/app/meowdaigou/id6751156662" class="btn">📱 App Store 下載</a>
+            <a href="https://thankcoom.github.io/meowdaigou-website/" class="btn">🌐 了解更多功能</a>
+        </div>
+        
+        <h2>總結</h2>
+        <p>使用專業的<strong>代購計算機</strong>能大幅提升代購業務的效率和準確度。MeowDaigou 提供完整的代購計算解決方案，從基本的<strong>價格計算</strong>到進階的<strong>成本分析</strong>，幫助您建立更專業、更獲利的代購事業。</p>
+        
+        <p>無論您是剛開始經營<strong>韓國代購</strong>、<strong>日本代購</strong>，或是已經是經驗豐富的代購達人，MeowDaigou 代購計算機都是您不可或缺的好幫手。立即下載體驗，讓代購生意更輕鬆、更賺錢！</p>
+    </div>
+</body>
+</html>

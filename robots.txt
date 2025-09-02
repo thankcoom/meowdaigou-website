@@ -1,0 +1,50 @@
+# robots.txt for MeowDaigou 代購計算機
+# Generated: 2025-09-02
+
+User-agent: *
+Allow: /
+
+# 允許搜尋引擎索引所有重要內容
+Allow: /index.html
+Allow: /support.html
+Allow: /privacy.html
+Allow: /terms.html
+
+# 禁止索引開發者文檔和內部文件
+Disallow: /DEVELOPER_MANUAL_UPGRADE_GUIDE.md
+Disallow: /README.md
+Disallow: /*.md$
+
+# 允許但不優先索引的文件類型
+Allow: /images/
+Allow: /css/
+Allow: /js/
+
+# 常見垃圾爬蟲禁止
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# 優先搜尋引擎
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot  
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 2
+
+# Sitemap 位置
+Sitemap: https://thankcoom.github.io/meowdaigou-website/sitemap.xml
+
+# 聯絡資訊 (給搜尋引擎參考)
+# Contact: 2023meowmiles@gmail.com
