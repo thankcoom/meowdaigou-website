@@ -52,6 +52,12 @@
     
     <style>
         :root {
+            /* 莫蘭迪色彩系統 - 來自 MeowDaigou App */
+            /* 主要白色系 */
+            --pure-white: #FFFFFF;
+            --ivory-white: #FBF9F6;
+            --soft-white: #F8F6F3;
+            
             /* 莫蘭迪核心色 */
             --morandi-blue: #7A9CC6;
             --morandi-green: #9BB5A3;
@@ -62,12 +68,18 @@
             --dusty-rose: #D4A5A5;
             --sage-brown: #C4A889;
             --mist-gray: #B5B5B5;
+            --pale-yellow: #F0E68C;
             
             /* 輔助中性色 */
             --warm-gray: #8B8B8B;
             --cool-gray: #6B7280;
             --soft-black: #2D2D2D;
-            --ivory-white: #FBF9F6;
+            
+            /* 功能色彩 */
+            --success-green: #34C759;
+            --error-red: #FF3B30;
+            --warning-orange: #FF9500;
+            --info-blue: #007AFF;
             
             /* 陰影系統 */
             --shadow-soft: 0 2px 8px rgba(0,0,0,0.1);
@@ -84,32 +96,28 @@
             font-family: 'Inter', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.6;
             color: var(--soft-black);
-            margin: 0;
-            padding: 0;
-            background: var(--gradient-primary);
-            background-attachment: fixed;
+            background-color: var(--ivory-white);
+            overflow-x: hidden;
         }
         
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
-            background: var(--ivory-white);
-            margin-top: 50px;
-            margin-bottom: 50px;
-            border-radius: 20px;
-            box-shadow: var(--shadow-strong);
-            backdrop-filter: blur(10px);
+            padding: 2rem;
         }
         
         .hero {
             text-align: center;
-            padding: 40px 0;
-            background: var(--gradient-secondary);
-            color: var(--soft-black);
-            border-radius: 20px;
-            margin-bottom: 40px;
-            backdrop-filter: blur(10px);
+            padding: 4rem 2rem;
+            margin: 2rem 0 4rem 0;
+        }
+        
+        .hero-content {
+            background: var(--pure-white);
+            padding: 3rem;
+            border-radius: 24px;
+            box-shadow: var(--shadow-medium);
+            border: 1px solid rgba(139, 139, 139, 0.1);
         }
         
         h1 {
@@ -139,18 +147,19 @@
         }
         
         .feature-card {
-            background: rgba(255,255,255,0.8);
-            padding: 25px;
-            border-radius: 15px;
-            border: 1px solid var(--mist-gray);
+            background: var(--pure-white);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(139, 139, 139, 0.1);
             text-align: center;
-            backdrop-filter: blur(5px);
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: var(--shadow-soft);
         }
         
         .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-medium);
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-strong);
+            border-color: var(--morandi-blue);
         }
         
         .feature-icon {
@@ -287,8 +296,10 @@
 <body>
     <div class="container">
         <div class="hero">
-            <h1>🇰🇷 韓國代購計算機</h1>
-            <p class="hero-subtitle">專業韓元匯率計算工具 - 精準計算韓國代購價格</p>
+            <div class="hero-content">
+                <h1>🇰🇷 韓國代購計算機</h1>
+                <p class="hero-subtitle">專業韓元匯率計算工具 - 精準計算韓國代購價格</p>
+            </div>
         </div>
         
         <h2>為什麼選擇專業韓國代購計算機？</h2>
