@@ -51,33 +51,65 @@
     </script>
     
     <style>
+        :root {
+            /* 莫蘭迪核心色 */
+            --morandi-blue: #7A9CC6;
+            --morandi-green: #9BB5A3;
+            --milk-tea: #E8D5C4;
+            --smoky-purple: #B8A5D1;
+            
+            /* 莫蘭迪延伸色 */
+            --dusty-rose: #D4A5A5;
+            --sage-brown: #C4A889;
+            --mist-gray: #B5B5B5;
+            
+            /* 輔助中性色 */
+            --warm-gray: #8B8B8B;
+            --cool-gray: #6B7280;
+            --soft-black: #2D2D2D;
+            --ivory-white: #FBF9F6;
+            
+            /* 陰影系統 */
+            --shadow-soft: 0 2px 8px rgba(0,0,0,0.1);
+            --shadow-medium: 0 4px 12px rgba(0,0,0,0.15);
+            --shadow-strong: 0 8px 24px rgba(0,0,0,0.25);
+            
+            /* 莫蘭迪漸變 */
+            --gradient-primary: linear-gradient(135deg, var(--morandi-blue), var(--smoky-purple));
+            --gradient-secondary: linear-gradient(135deg, var(--milk-tea), var(--dusty-rose));
+            --gradient-accent: linear-gradient(135deg, var(--morandi-green), var(--sage-brown));
+        }
+        
         body {
-            font-family: 'Noto Sans TC', sans-serif;
-            line-height: 1.8;
-            color: #333;
+            font-family: 'Inter', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--soft-black);
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--gradient-primary);
+            background-attachment: fixed;
         }
         
         .container {
             max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
-            background: white;
+            background: var(--ivory-white);
             margin-top: 50px;
             margin-bottom: 50px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border-radius: 20px;
+            box-shadow: var(--shadow-strong);
+            backdrop-filter: blur(10px);
         }
         
         .hero {
             text-align: center;
             padding: 40px 0;
-            background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%);
-            color: white;
-            border-radius: 15px;
+            background: var(--gradient-secondary);
+            color: var(--soft-black);
+            border-radius: 20px;
             margin-bottom: 40px;
+            backdrop-filter: blur(10px);
         }
         
         h1 {
@@ -92,10 +124,10 @@
         }
         
         h2 {
-            color: #2c3e50;
+            color: var(--soft-black);
             font-size: 1.8rem;
             margin: 30px 0 15px 0;
-            border-left: 4px solid #ff6b6b;
+            border-left: 4px solid var(--morandi-blue);
             padding-left: 15px;
         }
         
@@ -107,11 +139,18 @@
         }
         
         .feature-card {
-            background: #f8f9fa;
+            background: rgba(255,255,255,0.8);
             padding: 25px;
-            border-radius: 10px;
-            border: 1px solid #e9ecef;
+            border-radius: 15px;
+            border: 1px solid var(--mist-gray);
             text-align: center;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
         }
         
         .feature-icon {
@@ -120,19 +159,21 @@
         }
         
         .currency-info {
-            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
-            color: white;
+            background: var(--gradient-accent);
+            color: var(--soft-black);
             padding: 30px;
-            border-radius: 15px;
+            border-radius: 20px;
             margin: 30px 0;
             text-align: center;
+            backdrop-filter: blur(10px);
         }
         
         .calc-steps {
-            background: #f1f2f6;
+            background: rgba(255,255,255,0.6);
             padding: 30px;
-            border-radius: 15px;
+            border-radius: 20px;
             margin: 30px 0;
+            backdrop-filter: blur(10px);
         }
         
         .step {
@@ -140,13 +181,19 @@
             align-items: center;
             margin: 20px 0;
             padding: 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background: rgba(255,255,255,0.8);
+            border-radius: 15px;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+        }
+        
+        .step:hover {
+            transform: translateX(10px);
+            box-shadow: var(--shadow-medium);
         }
         
         .step-number {
-            background: #ff6b6b;
+            background: var(--morandi-blue);
             color: white;
             width: 50px;
             height: 50px;
@@ -160,29 +207,32 @@
         }
         
         .cta-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background: var(--gradient-primary);
+            color: var(--ivory-white);
             padding: 40px;
-            border-radius: 15px;
+            border-radius: 20px;
             text-align: center;
             margin: 40px 0;
+            backdrop-filter: blur(10px);
         }
         
         .btn {
             display: inline-block;
             padding: 15px 30px;
-            background: #ff6b6b;
-            color: white;
+            background: var(--dusty-rose);
+            color: var(--soft-black);
             text-decoration: none;
             border-radius: 50px;
-            font-weight: bold;
+            font-weight: 600;
             margin: 10px;
             transition: all 0.3s ease;
+            box-shadow: var(--shadow-soft);
         }
         
         .btn:hover {
-            background: #ee5a52;
-            transform: translateY(-2px);
+            background: var(--sage-brown);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-medium);
         }
         
         .korea-brands {
@@ -193,30 +243,43 @@
         }
         
         .brand-item {
-            background: white;
+            background: rgba(255,255,255,0.8);
             padding: 15px;
-            border-radius: 8px;
-            border: 1px solid #dee2e6;
+            border-radius: 15px;
+            border: 1px solid var(--mist-gray);
             text-align: center;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+        
+        .brand-item:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-soft);
         }
         
         .faq {
-            background: #f8f9fa;
+            background: rgba(255,255,255,0.6);
             padding: 30px;
-            border-radius: 15px;
+            border-radius: 20px;
             margin: 30px 0;
+            backdrop-filter: blur(10px);
         }
         
         .faq-item {
             margin: 20px 0;
             padding: 20px;
-            background: white;
-            border-radius: 8px;
+            background: rgba(255,255,255,0.8);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            box-shadow: var(--shadow-soft);
         }
         
         .faq-q {
-            font-weight: bold;
-            color: #2c3e50;
+            font-weight: 600;
+            color: var(--soft-black);
             margin-bottom: 10px;
         }
     </style>
