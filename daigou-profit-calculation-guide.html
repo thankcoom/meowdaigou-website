@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>代購利潤計算完整指南 | 如何精準計算代購利潤率 - MeowDaigou</title>
+    <meta name="description" content="完整代購利潤計算教學指南，包含代購成本分析、利潤率設定、風險控管。學會專業的代購利潤計算方法，提升代購事業獲利能力，避免虧損風險。">
+    <meta name="keywords" content="代購利潤計算,代購利潤率,代購成本分析,代購獲利計算,代購風險控管,代購定價策略,代購利潤公式,代購成本控制,代購賺錢方法,代購獲利模式">
+    <link rel="canonical" href="https://thankcoom.github.io/meowdaigou-website/daigou-profit-calculation-guide.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="代購利潤計算完整指南 | 如何精準計算代購利潤率">
+    <meta property="og:description" content="完整代購利潤計算教學指南，包含成本分析、利潤率設定、風險控管。學會專業的代購利潤計算方法。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://thankcoom.github.io/meowdaigou-website/daigou-profit-calculation-guide.html">
+    
+    <!-- 結構化資料 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "代購利潤計算完整指南",
+      "description": "學會專業的代購利潤計算方法，包含成本分析、利潤率設定、風險控管",
+      "image": "https://thankcoom.github.io/meowdaigou-website/images/profit-guide.jpg",
+      "estimatedCost": "0",
+      "supply": ["MeowDaigou代購計算機", "計算機", "紙筆"],
+      "tool": ["MeowDaigou App"],
+      "totalTime": "PT30M",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "步驟一：計算商品成本",
+          "text": "包含商品原價、匯率轉換、商品稅費等基本成本",
+          "url": "https://thankcoom.github.io/meowdaigou-website/daigou-profit-calculation-guide.html#step1"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "步驟二：計算運費成本",
+          "text": "國際運費、國內運費、包裝費用等運送相關成本",
+          "url": "https://thankcoom.github.io/meowdaigou-website/daigou-profit-calculation-guide.html#step2"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "步驟三：計算代購服務費",
+          "text": "代購手續費、時間成本、風險費用等服務成本",
+          "url": "https://thankcoom.github.io/meowdaigou-website/daigou-profit-calculation-guide.html#step3"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "步驟四：設定目標利潤率",
+          "text": "根據商品類型、市場競爭、風險程度設定合理利潤率",
+          "url": "https://thankcoom.github.io/meowdaigou-website/daigou-profit-calculation-guide.html#step4"
+        }
+      ]
+    }
+    </script>
+    
+    <style>
+        :root {
+            /* 莫蘭迪色彩系統 - 來自 MeowDaigou App */
+            --pure-white: #FFFFFF;
+            --ivory-white: #FBF9F6;
+            --soft-white: #F8F6F3;
+            --morandi-blue: #7A9CC6;
+            --morandi-green: #9BB5A3;
+            --milk-tea: #E8D5C4;
+            --smoky-purple: #B8A5D1;
+            --dusty-rose: #D4A5A5;
+            --sage-brown: #C4A889;
+            --mist-gray: #B5B5B5;
+            --warm-gray: #8B8B8B;
+            --cool-gray: #6B7280;
+            --soft-black: #2D2D2D;
+            --shadow-soft: 0 2px 8px rgba(0,0,0,0.1);
+            --shadow-medium: 0 4px 12px rgba(0,0,0,0.15);
+            --shadow-strong: 0 8px 24px rgba(0,0,0,0.25);
+            --gradient-primary: linear-gradient(135deg, var(--morandi-blue), var(--smoky-purple));
+            --gradient-secondary: linear-gradient(135deg, var(--milk-tea), var(--dusty-rose));
+            --gradient-accent: linear-gradient(135deg, var(--morandi-green), var(--sage-brown));
+        }
+        
+        body {
+            font-family: 'Inter', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--soft-black);
+            background-color: var(--ivory-white);
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            background: 
+                radial-gradient(ellipse 600px 300px at 50% 0%, rgba(122, 156, 198, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse 400px 200px at 80% 80%, rgba(232, 213, 196, 0.15) 0%, transparent 50%);
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--warm-gray);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .content-section {
+            background: var(--pure-white);
+            margin: 2rem 0;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid rgba(139, 139, 139, 0.1);
+        }
+        
+        .content-section h2 {
+            color: var(--soft-black);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--morandi-blue);
+            padding-left: 1rem;
+        }
+        
+        .step-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .step-card {
+            background: var(--gradient-secondary);
+            padding: 2rem;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+        
+        .step-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: var(--morandi-blue);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .formula-box {
+            background: var(--gradient-accent);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+            text-align: center;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+        }
+        
+        .tip-box {
+            background: rgba(122, 156, 198, 0.1);
+            border-left: 4px solid var(--morandi-blue);
+            padding: 1rem 1.5rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .nav-links {
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .nav-links a {
+            display: inline-block;
+            margin: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            background: var(--morandi-blue);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            background: var(--smoky-purple);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <h1>代購利潤計算完整指南</h1>
+            <p class="hero-subtitle">學會專業的代購利潤計算方法，精準掌控成本與獲利，讓您的代購事業更有競爭力</p>
+        </div>
+        
+        <div class="nav-links">
+            <a href="/index.html">← 回首頁</a>
+            <a href="/daigou-calculator-guide.html">使用教學</a>
+            <a href="/korea-daigou-calculator.html">韓國代購</a>
+            <a href="/japan-daigou-calculator.html">日本代購</a>
+        </div>
+        
+        <div class="content-section">
+            <h2>💰 什麼是代購利潤計算？</h2>
+            <p><strong>代購利潤計算</strong>是代購業者最重要的技能之一。正確的利潤計算能幫助您：</p>
+            <ul>
+                <li>🎯 <strong>精準定價</strong>：避免報價過低造成虧損</li>
+                <li>📈 <strong>獲利最大化</strong>：在競爭中找到最佳利潤點</li>
+                <li>⚖️ <strong>風險控管</strong>：預留緩衝空間應對匯率波動</li>
+                <li>💼 <strong>商業決策</strong>：評估是否接受特定訂單</li>
+            </ul>
+            
+            <div class="tip-box">
+                💡 <strong>專家建議</strong>：使用專業的<a href="/index.html" style="color: var(--morandi-blue); text-decoration: none; font-weight: 600;">代購計算機工具</a>可以大幅提升計算準確性，避免人為計算錯誤。
+            </div>
+        </div>
+        
+        <div class="content-section" id="step1">
+            <h2>📦 步驟一：計算商品成本</h2>
+            <p>商品成本是代購利潤計算的基礎，包含以下項目：</p>
+            
+            <div class="step-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h4>商品原價</h4>
+                    <p>商品在當地的銷售價格，需要注意是否含稅</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h4>匯率轉換</h4>
+                    <p>使用即時匯率將外幣轉換為本地貨幣，建議加入匯率波動緩衝</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h4>當地稅費</h4>
+                    <p>消費稅、營業稅等當地稅費，<a href="/korea-daigou-calculator.html" style="color: var(--morandi-blue); text-decoration: none;">韓國</a>、<a href="/japan-daigou-calculator.html" style="color: var(--morandi-blue); text-decoration: none;">日本</a>稅率不同</p>
+                </div>
+            </div>
+            
+            <div class="formula-box">
+                商品成本 = 商品原價 × 即時匯率 + 當地稅費
+            </div>
+        </div>
+        
+        <div class="content-section" id="step2">
+            <h2>🚚 步驟二：計算運費成本</h2>
+            <p>運費成本通常是代購中第二大支出項目：</p>
+            
+            <div class="step-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h4>國際運費</h4>
+                    <p>從購買國到台灣的運費，可選擇EMS、DHL、FedEx等</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h4>國內配送</h4>
+                    <p>商品到達台灣後的配送費用</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h4>包裝保護</h4>
+                    <p>額外包裝、保險等保護措施費用</p>
+                </div>
+            </div>
+            
+            <div class="tip-box">
+                💡 <strong>運費分攤技巧</strong>：多件商品合併運送可以有效降低單件運費成本，提升整體利潤率。
+            </div>
+        </div>
+        
+        <div class="content-section" id="step3">
+            <h2>⚙️ 步驟三：計算代購服務費</h2>
+            <p>代購服務費是您的主要獲利來源：</p>
+            
+            <ul>
+                <li><strong>代購手續費</strong>：基本服務費用，通常為商品價格的5-15%</li>
+                <li><strong>時間成本</strong>：購買、包裝、處理時間的人工費用</li>
+                <li><strong>風險費用</strong>：商品損壞、遺失等風險的保險費用</li>
+                <li><strong>額外服務</strong>：拍照確認、特殊包裝等加值服務</li>
+            </ul>
+        </div>
+        
+        <div class="content-section" id="step4">
+            <h2>📊 步驟四：設定目標利潤率</h2>
+            <p>不同類型的代購商品建議利潤率：</p>
+            
+            <div class="step-grid">
+                <div class="step-card">
+                    <div class="step-number">韓</div>
+                    <h4>韓國美妝代購</h4>
+                    <p><strong>建議利潤率：20-30%</strong><br>競爭激烈但需求穩定</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">日</div>
+                    <h4>日本藥妝代購</h4>
+                    <p><strong>建議利潤率：15-25%</strong><br>高頻次購買商品</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">精</div>
+                    <h4>精品代購</h4>
+                    <p><strong>建議利潤率：8-15%</strong><br>高單價商品，薄利多銷</p>
+                </div>
+            </div>
+            
+            <div class="formula-box">
+                最終報價 = (商品成本 + 運費成本 + 服務費) × (1 + 目標利潤率)
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2>🛠️ 使用專業工具提升效率</h2>
+            <p>手動計算代購利潤容易出錯且耗時，建議使用專業的<strong>代購計算機工具</strong>：</p>
+            
+            <ul>
+                <li>✅ <strong>即時匯率更新</strong>：確保計算準確性</li>
+                <li>✅ <strong>自動運費分攤</strong>：多件商品智能分攤</li>
+                <li>✅ <strong>利潤率設定</strong>：快速計算不同利潤率方案</li>
+                <li>✅ <strong>歷史記錄</strong>：追蹤過往訂單獲利情況</li>
+                <li>✅ <strong>報價單生成</strong>：專業報價單一鍵匯出</li>
+            </ul>
+            
+            <div style="text-align: center; margin: 2rem 0;">
+                <a href="https://apps.apple.com/tw/app/meowdaigou/id6751156662" 
+                   style="display: inline-block; padding: 1rem 2rem; background: var(--gradient-primary); color: white; text-decoration: none; border-radius: 50px; font-weight: 600; box-shadow: var(--shadow-medium);">
+                    📱 立即下載 MeowDaigou 代購計算機
+                </a>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2>🎯 實戰案例分析</h2>
+            <p>以韓國化妝品代購為例：</p>
+            
+            <div class="formula-box" style="text-align: left;">
+                商品原價：50,000 韓元<br>
+                匯率：1 KRW = 0.024 TWD<br>
+                商品成本：50,000 × 0.024 = 1,200 元<br>
+                運費分攤：150 元<br>
+                服務費：200 元<br>
+                總成本：1,200 + 150 + 200 = 1,550 元<br>
+                目標利潤率：25%<br>
+                <strong>最終報價：1,550 × 1.25 = 1,938 元</strong>
+            </div>
+        </div>
+        
+        <div class="nav-links">
+            <a href="/index.html">🏠 回首頁</a>
+            <a href="/daigou-calculator-guide.html">📖 查看更多教學</a>
+            <a href="/korea-daigou-calculator.html">🇰🇷 韓國代購計算</a>
+            <a href="/japan-daigou-calculator.html">🇯🇵 日本代購計算</a>
+        </div>
+    </div>
+</body>
+</html>

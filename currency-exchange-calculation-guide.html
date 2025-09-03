@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>匯率計算完整教學 | 代購匯率換算技巧與風險控管 - MeowDaigou</title>
+    <meta name="description" content="專業代購匯率計算教學，包含韓元匯率、日圓匯率計算技巧、匯率風險控管、即時匯率查詢方法。掌握匯率計算技巧，避免匯損影響代購獲利。">
+    <meta name="keywords" content="匯率計算,代購匯率,韓元匯率計算,日圓匯率計算,匯率換算,匯率風險,外幣換算,代購匯損,匯率波動,即時匯率查詢,匯率計算公式,外匯計算">
+    <link rel="canonical" href="https://thankcoom.github.io/meowdaigou-website/currency-exchange-calculation-guide.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="匯率計算完整教學 | 代購匯率換算技巧與風險控管">
+    <meta property="og:description" content="專業代購匯率計算教學，包含韓元、日圓匯率計算技巧、風險控管方法。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://thankcoom.github.io/meowdaigou-website/currency-exchange-calculation-guide.html">
+    
+    <!-- 結構化資料 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "代購匯率計算完整教學",
+      "description": "學會專業的代購匯率計算方法，包含風險控管和即時匯率應用",
+      "estimatedCost": "0",
+      "totalTime": "PT20M",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "了解匯率基本概念",
+          "text": "學習匯率的定義、影響因素和波動原理"
+        },
+        {
+          "@type": "HowToStep", 
+          "name": "掌握即時匯率查詢",
+          "text": "使用可靠的匯率查詢工具和API"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "計算匯率轉換",
+          "text": "正確計算外幣與台幣的換算"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "設定匯率緩衝",
+          "text": "預留匯率波動空間，控制匯損風險"
+        }
+      ]
+    }
+    </script>
+    
+    <style>
+        :root {
+            --pure-white: #FFFFFF;
+            --ivory-white: #FBF9F6;
+            --morandi-blue: #7A9CC6;
+            --morandi-green: #9BB5A3;
+            --milk-tea: #E8D5C4;
+            --smoky-purple: #B8A5D1;
+            --dusty-rose: #D4A5A5;
+            --sage-brown: #C4A889;
+            --warm-gray: #8B8B8B;
+            --soft-black: #2D2D2D;
+            --shadow-soft: 0 2px 8px rgba(0,0,0,0.1);
+            --shadow-medium: 0 4px 12px rgba(0,0,0,0.15);
+            --gradient-primary: linear-gradient(135deg, var(--morandi-blue), var(--smoky-purple));
+            --gradient-secondary: linear-gradient(135deg, var(--milk-tea), var(--dusty-rose));
+            --gradient-accent: linear-gradient(135deg, var(--morandi-green), var(--sage-brown));
+        }
+        
+        body {
+            font-family: 'Inter', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--soft-black);
+            background-color: var(--ivory-white);
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            background: 
+                radial-gradient(ellipse 600px 300px at 50% 0%, rgba(122, 156, 198, 0.1) 0%, transparent 50%);
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .content-section {
+            background: var(--pure-white);
+            margin: 2rem 0;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid rgba(139, 139, 139, 0.1);
+        }
+        
+        .currency-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .currency-card {
+            background: var(--gradient-secondary);
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        .currency-flag {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .exchange-calculator {
+            background: var(--gradient-accent);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+        }
+        
+        .calc-input {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .calc-input input {
+            padding: 0.8rem;
+            border: 2px solid var(--morandi-blue);
+            border-radius: 8px;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+        
+        .risk-warning {
+            background: rgba(255, 59, 48, 0.1);
+            border-left: 4px solid #FF3B30;
+            padding: 1rem 1.5rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .tip-success {
+            background: rgba(52, 199, 89, 0.1);
+            border-left: 4px solid #34C759;
+            padding: 1rem 1.5rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <h1>代購匯率計算完整教學</h1>
+            <p class="hero-subtitle">掌握專業匯率計算技巧，有效控制匯損風險，讓代購獲利更穩定</p>
+        </div>
+        
+        <div class="content-section">
+            <h2>💱 什麼是代購匯率計算？</h2>
+            <p><strong>代購匯率計算</strong>是將外國商品價格轉換為本地貨幣的重要程序。準確的匯率計算能幫助您：</p>
+            <ul>
+                <li>🎯 精準掌握商品成本</li>
+                <li>💰 避免匯率波動損失</li>
+                <li>📈 提高報價競爭力</li>
+                <li>⚖️ 合理分配匯率風險</li>
+            </ul>
+        </div>
+        
+        <div class="content-section">
+            <h2>🌍 熱門代購貨幣介紹</h2>
+            
+            <div class="currency-grid">
+                <div class="currency-card">
+                    <div class="currency-flag">🇰🇷</div>
+                    <h4>韓元 (KRW)</h4>
+                    <p>韓國代購主要貨幣<br>匯率：1 KRW ≈ 0.024 TWD</p>
+                    <a href="/korea-daigou-calculator.html" style="color: var(--morandi-blue); text-decoration: none; font-weight: 600;">→ 韓國代購計算</a>
+                </div>
+                
+                <div class="currency-card">
+                    <div class="currency-flag">🇯🇵</div>
+                    <h4>日圓 (JPY)</h4>
+                    <p>日本代購主要貨幣<br>匯率：1 JPY ≈ 0.21 TWD</p>
+                    <a href="/japan-daigou-calculator.html" style="color: var(--morandi-blue); text-decoration: none; font-weight: 600;">→ 日本代購計算</a>
+                </div>
+                
+                <div class="currency-card">
+                    <div class="currency-flag">🇺🇸</div>
+                    <h4>美元 (USD)</h4>
+                    <p>美國代購主要貨幣<br>匯率：1 USD ≈ 31.5 TWD</p>
+                </div>
+                
+                <div class="currency-card">
+                    <div class="currency-flag">🇪🇺</div>
+                    <h4>歐元 (EUR)</h4>
+                    <p>歐洲代購主要貨幣<br>匯率：1 EUR ≈ 34.2 TWD</p>
+                </div>
+            </div>
+            
+            <div class="tip-success">
+                💡 <strong>即時匯率查詢</strong>：使用<a href="/index.html" style="color: var(--morandi-blue); text-decoration: none; font-weight: 600;">專業代購計算機</a>可以自動獲取最新匯率，確保計算準確性。
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2>🧮 匯率計算公式與方法</h2>
+            
+            <div class="exchange-calculator">
+                <h4 style="text-align: center; margin-bottom: 1rem;">基本匯率轉換公式</h4>
+                <div style="text-align: center; font-family: 'Courier New', monospace; font-size: 1.2rem; font-weight: bold;">
+                    台幣金額 = 外幣金額 × 匯率
+                </div>
+            </div>
+            
+            <h3>實例說明：</h3>
+            <p><strong>韓國代購計算範例</strong>：</p>
+            <ul>
+                <li>商品價格：100,000 韓元</li>
+                <li>即時匯率：1 KRW = 0.024 TWD</li>
+                <li>計算：100,000 × 0.024 = 2,400 台幣</li>
+            </ul>
+            
+            <p><strong>日本代購計算範例</strong>：</p>
+            <ul>
+                <li>商品價格：15,000 日圓</li>
+                <li>即時匯率：1 JPY = 0.21 TWD</li>
+                <li>計算：15,000 × 0.21 = 3,150 台幣</li>
+            </ul>
+        </div>
+        
+        <div class="content-section">
+            <h2>⚠️ 匯率風險控管</h2>
+            
+            <div class="risk-warning">
+                <strong>⚠️ 匯率風險警告</strong><br>
+                匯率每日波動，可能造成代購成本變動。未做好風險控管可能導致：
+                <ul>
+                    <li>報價過低，實際成本超出預期</li>
+                    <li>匯率大幅波動造成虧損</li>
+                    <li>客戶爭議與信任問題</li>
+                </ul>
+            </div>
+            
+            <h3>🛡️ 風險控管策略：</h3>
+            
+            <div class="currency-grid">
+                <div class="currency-card">
+                    <h4>1. 匯率緩衝</h4>
+                    <p>在計算基礎上加入2-5%緩衝空間</p>
+                </div>
+                
+                <div class="currency-card">
+                    <h4>2. 即時更新</h4>
+                    <p>使用即時匯率，避免過時資訊</p>
+                </div>
+                
+                <div class="currency-card">
+                    <h4>3. 定期檢查</h4>
+                    <p>每日檢查匯率變動，調整策略</p>
+                </div>
+                
+                <div class="currency-card">
+                    <h4>4. 專業工具</h4>
+                    <p>使用專業計算機自動處理</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2>🛠️ 推薦使用專業工具</h2>
+            <p>手動計算匯率容易出錯且耗時，建議使用 <strong>MeowDaigou 代購計算機</strong>：</p>
+            
+            <ul>
+                <li>✅ <strong>即時匯率更新</strong>：每日自動更新11種貨幣匯率</li>
+                <li>✅ <strong>自動風險控制</strong>：內建匯率緩衝機制</li>
+                <li>✅ <strong>多貨幣支援</strong>：支援韓元、日圓、美元等11種貨幣</li>
+                <li>✅ <strong>歷史匯率記錄</strong>：追蹤匯率變化趨勢</li>
+                <li>✅ <strong>一鍵計算</strong>：輸入金額即可獲得精確轉換</li>
+            </ul>
+            
+            <div style="text-align: center; margin: 2rem 0;">
+                <a href="https://apps.apple.com/tw/app/meowdaigou/id6751156662" 
+                   style="display: inline-block; padding: 1rem 2rem; background: var(--gradient-primary); color: white; text-decoration: none; border-radius: 50px; font-weight: 600; box-shadow: var(--shadow-medium);">
+                    📱 立即下載專業匯率計算工具
+                </a>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2>📚 相關教學資源</h2>
+            <div class="currency-grid">
+                <div class="currency-card">
+                    <h4>📖 基礎教學</h4>
+                    <a href="/daigou-calculator-guide.html" style="color: var(--morandi-blue); text-decoration: none;">代購計算機使用指南</a>
+                </div>
+                
+                <div class="currency-card">
+                    <h4>💰 進階教學</h4>
+                    <a href="/daigou-profit-calculation-guide.html" style="color: var(--morandi-blue); text-decoration: none;">代購利潤計算指南</a>
+                </div>
+                
+                <div class="currency-card">
+                    <h4>🇰🇷 韓國專區</h4>
+                    <a href="/korea-daigou-calculator.html" style="color: var(--morandi-blue); text-decoration: none;">韓國代購計算機</a>
+                </div>
+                
+                <div class="currency-card">
+                    <h4>🇯🇵 日本專區</h4>
+                    <a href="/japan-daigou-calculator.html" style="color: var(--morandi-blue); text-decoration: none;">日本代購計算機</a>
+                </div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin: 3rem 0;">
+            <a href="/index.html" style="display: inline-block; margin: 0.5rem; padding: 0.8rem 1.5rem; background: var(--morandi-blue); color: white; text-decoration: none; border-radius: 25px;">🏠 回首頁</a>
+        </div>
+    </div>
+</body>
+</html>
