@@ -15,7 +15,7 @@
     
     <title>代購計算機 | MeowDaigou - 專業韓國日本代購價格計算工具</title>
     <meta name="description" content="專業代購計算機App，支援韓國代購、日本代購價格計算。11種貨幣匯率、運費分攤、利潤計算、Excel匯出。免費下載，提升代購效率，避免報價錯誤，立即使用最智能的代購工具！">
-    <meta name="keywords" content="代購計算機,韓國代購,日本代購,代購工具,價格計算,匯率計算,運費計算,代購app,代購軟體,成本計算,利潤計算,報價工具,Excel匯出,代購管理,海外代購,進口計算">
+    <meta name="keywords" content="代購計算機,韓國代購,日本代購,代購工具,價格計算,匯率計算,運費計算,代購app,代購軟體,成本計算,利潤計算,報價工具,Excel匯出,代購管理,海外代購,進口計算,代購生意,代購創業,小資代購,代購賺錢,代購成本,代購利潤率,代購報價,代購計算器,代購助手,專業代購,代購平台,代購系統">
     
     <!-- Google Search Console 驗證 -->
     <meta name="google-site-verification" content="WlDUJxwvSjwgNh1qcH1JUme8m3CNbqY_hMfWCf3lm9I" />
@@ -97,11 +97,11 @@
       "applicationSubCategory": "計算工具",
       "operatingSystem": "iOS",
       "downloadUrl": "https://apps.apple.com/app/meowdaigou",
-      "softwareVersion": "1.0.5",
+      "softwareVersion": "1.0.9",
       "datePublished": "2025-01-01",
-      "dateModified": "2025-09-02",
+      "dateModified": "2025-09-09",
       "inLanguage": "zh-TW",
-      "keywords": "代購計算機,韓國代購,日本代購,代購工具,價格計算,匯率計算,運費計算",
+      "keywords": "代購計算機,韓國代購,日本代購,代購工具,價格計算,匯率計算,運費計算,代購app,代購創業,利潤計算,成本控制,專業代購",
       "offers": [
         {
           "@type": "Offer",
@@ -181,6 +181,64 @@
         "@type": "Organization", 
         "name": "MeowDaigou Team"
       }
+    }
+    </script>
+    
+    <!-- FAQ 結構化數據 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "這個代購計算機支援哪些國家的代購？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "MeowDaigou 支援韓國代購、日本代購等11個國家，包含 TWD、KRW、JPY、USD、CNY、THB、HKD、MYR、EUR、SGD、CAD 等貨幣匯率計算。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "免費版和付費版有什麼差別？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "免費版每日20次計算，支援2種貨幣。Pro版每日200次，支援6種貨幣。Max版每日1000次，支援全部11種貨幣，還有Excel匯出等專業功能。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "如何確保計算結果準確？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "採用7步驟精準計算流程，即時匯率更新，包含商品成本、運費分攤、手續費、稅金、保險等所有項目，確保計算結果精確無誤。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "我的產品資料會安全保存嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "是的！v1.0.9版本已修復資料持久化問題，採用Apple ID登錄，您的產品資料會完整保存在雲端，換設備也不會遺失。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "可以匯出計算記錄嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pro版以上支援Excel/CSV匯出功能，可以將計算歷史、產品管理等數據匯出，方便後續分析和報稅使用。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "適合什麼樣的代購業者使用？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "適合所有規模的代購業者：個人代購、小型代購店家、專業代購公司。無論是韓妝、日本藥妝、服飾、3C產品等都能精準計算。"
+          }
+        }
+      ]
     }
     </script>
     
@@ -2127,6 +2185,77 @@
                 gap: 1.2rem;
             }
         }
+        
+        /* FAQ 區域樣式 */
+        .faq {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--ivory-white) 0%, var(--soft-white) 100%);
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: white;
+            border-radius: 16px;
+            margin-bottom: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(122, 156, 198, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(122, 156, 198, 0.08);
+        }
+        
+        .faq-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 48px rgba(122, 156, 198, 0.15);
+        }
+        
+        .faq-question {
+            color: var(--deep-blue-gray);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+        
+        .faq-answer {
+            color: var(--mist-gray);
+            line-height: 1.7;
+            font-size: 1rem;
+            margin: 0;
+        }
+        
+        .faq .section-title {
+            color: var(--deep-blue-gray);
+            margin-bottom: 15px;
+        }
+        
+        .faq .section-subtitle {
+            color: var(--mist-gray);
+            margin-bottom: 60px;
+        }
+        
+        /* FAQ 響應式設計 */
+        @media (max-width: 768px) {
+            .faq {
+                padding: 60px 0;
+            }
+            
+            .faq-item {
+                padding: 20px;
+                margin-bottom: 15px;
+            }
+            
+            .faq-question {
+                font-size: 1.1rem;
+            }
+            
+            .faq-answer {
+                font-size: 0.95rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -2146,7 +2275,7 @@
     <!-- Hero 區域 -->
     <section class="hero">
         <div class="hero-content">
-            <div class="hero-badge">🚀 v1.0.5 最新版本 - 專業代購計算工具</div>
+            <div class="hero-badge">🚀 v1.0.9 最新版本 - 專業代購計算工具</div>
             <h1>韓國日本代購計算機<br>智能代購價格計算工具</h1>
             <p class="hero-subtitle">
                 專業代購計算機App，採用7步驟精準計算流程，支援11種國際貨幣匯率計算。<br>
@@ -2500,8 +2629,8 @@
                     <div class="feature-icon">🚀</div>
                     <h3 class="feature-title">效能大幅提升</h3>
                     <p class="feature-description">
-                        v1.0.4版本響應速度提升50%，Tab切換零延遲，觸覺回饋系統。
-                        流暢動畫效果，一鍵清空功能，提供專業級使用體驗。
+                        v1.0.9版本重大更新：修復資料持久化問題，確保用戶產品完整保存。
+                        Swift 6升級優化，響應速度提升50%，觸覺回饋系統，專業級使用體驗。
                     </p>
                 </div>
                 
@@ -3120,6 +3249,46 @@
                             </ul>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ 常見問題區域 -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2 class="section-title scroll-reveal">常見問題 FAQ</h2>
+            <p class="section-subtitle scroll-reveal">關於代購計算機的常見疑問</p>
+            
+            <div class="faq-container">
+                <div class="faq-item scroll-reveal">
+                    <h3 class="faq-question">Q: 這個代購計算機支援哪些國家的代購？</h3>
+                    <p class="faq-answer">A: MeowDaigou 支援韓國代購、日本代購等11個國家，包含 TWD、KRW、JPY、USD、CNY、THB、HKD、MYR、EUR、SGD、CAD 等貨幣匯率計算。</p>
+                </div>
+                
+                <div class="faq-item scroll-reveal">
+                    <h3 class="faq-question">Q: 免費版和付費版有什麼差別？</h3>
+                    <p class="faq-answer">A: 免費版每日20次計算，支援2種貨幣。Pro版每日200次，支援6種貨幣。Max版每日1000次，支援全部11種貨幣，還有Excel匯出等專業功能。</p>
+                </div>
+                
+                <div class="faq-item scroll-reveal">
+                    <h3 class="faq-question">Q: 如何確保計算結果準確？</h3>
+                    <p class="faq-answer">A: 採用7步驟精準計算流程，即時匯率更新，包含商品成本、運費分攤、手續費、稅金、保險等所有項目，確保計算結果精確無誤。</p>
+                </div>
+                
+                <div class="faq-item scroll-reveal">
+                    <h3 class="faq-question">Q: 我的產品資料會安全保存嗎？</h3>
+                    <p class="faq-answer">A: 是的！v1.0.9版本已修復資料持久化問題，採用Apple ID登錄，您的產品資料會完整保存在雲端，換設備也不會遺失。</p>
+                </div>
+                
+                <div class="faq-item scroll-reveal">
+                    <h3 class="faq-question">Q: 可以匯出計算記錄嗎？</h3>
+                    <p class="faq-answer">A: Pro版以上支援Excel/CSV匯出功能，可以將計算歷史、產品管理等數據匯出，方便後續分析和報稅使用。</p>
+                </div>
+                
+                <div class="faq-item scroll-reveal">
+                    <h3 class="faq-question">Q: 適合什麼樣的代購業者使用？</h3>
+                    <p class="faq-answer">A: 適合所有規模的代購業者：個人代購、小型代購店家、專業代購公司。無論是韓妝、日本藥妝、服飾、3C產品等都能精準計算。</p>
                 </div>
             </div>
         </div>
