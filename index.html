@@ -70,6 +70,9 @@
     <!-- 網頁載入優化 -->
     <meta http-equiv="x-dns-prefetch-control" content="on">
     
+    <!-- Font Awesome 圖示 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <!-- 結構化數據 JSON-LD -->
     <script type="application/ld+json">
     {
@@ -184,6 +187,37 @@
     }
     </script>
     
+    <!-- 社群媒體 Meta 標籤 -->
+    <meta property="fb:app_id" content="YOUR_FACEBOOK_APP_ID">
+    <meta name="twitter:site" content="@MeowDaigou">
+    
+    <!-- 新增事件追蹤 -->
+    <script>
+        function trackSocialClick(platform) {
+            gtag('event', 'social_click', {
+                'event_category': 'engagement',
+                'event_label': platform,
+                'page_location': window.location.href
+            });
+        }
+        
+        function trackCaseStudyView() {
+            gtag('event', 'case_study_view', {
+                'event_category': 'engagement',
+                'event_label': 'success_stories',
+                'page_location': window.location.href
+            });
+        }
+        
+        function trackDownloadIntent(source) {
+            gtag('event', 'download_intent', {
+                'event_category': 'conversion',
+                'event_label': source,
+                'page_location': window.location.href
+            });
+        }
+    </script>
+
     <!-- FAQ 結構化數據 -->
     <script type="application/ld+json">
     {
@@ -596,6 +630,304 @@
             color: var(--warm-gray);
             line-height: 1.5;
             font-size: 0.85rem;
+        }
+
+        /* 會員制度區域 */
+        .membership {
+            padding: 80px 0;
+            background: var(--soft-white);
+        }
+
+        /* 成功案例區塊 */
+        .success-stories {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--ivory-white) 0%, var(--soft-white) 100%);
+        }
+
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .story-card {
+            background: var(--pure-white);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(122, 156, 198, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .story-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(122, 156, 198, 0.15);
+        }
+
+        .story-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--morandi-blue), var(--morandi-green));
+        }
+
+        .story-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .story-avatar {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--morandi-blue), var(--morandi-green));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            flex-shrink: 0;
+        }
+
+        .story-info {
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .story-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 5px;
+        }
+
+        .story-location {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .story-badge {
+            background: var(--morandi-green);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .story-quote {
+            font-style: italic;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin: 20px 0;
+            padding: 20px;
+            background: var(--ivory-white);
+            border-radius: 10px;
+            border-left: 4px solid var(--morandi-blue);
+        }
+
+        .story-stats {
+            display: flex;
+            gap: 20px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--morandi-green);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .stat-icon {
+            font-size: 1.1rem;
+        }
+
+        .story-cta {
+            margin-top: 20px;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--morandi-blue);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 10px 15px;
+            border-radius: 8px;
+            background: var(--milk-tea);
+            transition: all 0.3s;
+        }
+
+        .social-link:hover {
+            background: var(--morandi-blue);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* 社群媒體整合 */
+        .social-community {
+            text-align: center;
+            padding: 40px;
+            background: var(--pure-white);
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(122, 156, 198, 0.1);
+        }
+
+        .community-title {
+            font-size: 1.8rem;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .community-subtitle {
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .social-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .social-btn {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px;
+            border-radius: 15px;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .social-btn.instagram {
+            background: linear-gradient(135deg, #E4405F, #C13584);
+            color: white;
+        }
+
+        .social-btn.facebook {
+            background: linear-gradient(135deg, #4267B2, #365899);
+            color: white;
+        }
+
+        .social-btn.line {
+            background: linear-gradient(135deg, #00C300, #00B900);
+            color: white;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .social-btn i {
+            font-size: 1.8rem;
+            flex-shrink: 0;
+        }
+
+        .social-info {
+            flex: 1;
+            text-align: left;
+        }
+
+        .social-name {
+            display: block;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .social-desc {
+            display: block;
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+
+        .social-action {
+            background: rgba(255,255,255,0.2);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* 成功案例響應式設計 */
+        @media (max-width: 768px) {
+            .stories-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .story-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            
+            .story-info {
+                text-align: center;
+            }
+            
+            .story-stats {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            .social-buttons {
+                grid-template-columns: 1fr;
+            }
+            
+            .social-btn {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            
+            .social-info {
+                text-align: center;
+            }
+            
+            .community-title {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .story-card {
+                padding: 20px;
+            }
+            
+            .story-quote {
+                padding: 15px;
+                font-size: 0.9rem;
+            }
+            
+            .social-community {
+                padding: 20px;
+            }
+            
+            .story-badge {
+                font-size: 0.8rem;
+                padding: 6px 12px;
+            }
         }
 
         /* 會員制度區域 */
@@ -2641,6 +2973,143 @@
                         支援手動精確輸入利潤率，最高可設定100%。
                         快速選項按鈕（15%、25%、35%等），支援零營運成本，稅率可設為0%。
                     </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 成功案例區塊 -->
+    <section id="success-stories" class="success-stories">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <h2 class="section-title">代購成功案例</h2>
+                <p class="section-subtitle">看看其他代購如何使用 MeowDaigou 提升獲利能力</p>
+            </div>
+            
+            <div class="stories-grid">
+                <div class="story-card scroll-reveal" onclick="trackCaseStudyView()">
+                    <div class="story-header">
+                        <div class="story-avatar">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="story-info">
+                            <h3 class="story-name">小雪 - 韓妝代購達人</h3>
+                            <p class="story-location">台北，經營2年</p>
+                        </div>
+                        <div class="story-badge">月獲利 5萬+</div>
+                    </div>
+                    <blockquote class="story-quote">
+                        "使用 MeowDaigou 後，我再也不用擔心計算錯誤虧損。7步驟計算法讓我的報價更專業，客戶滿意度提升很多。現在每個月穩定獲利 3-5 萬元！"
+                    </blockquote>
+                    <div class="story-stats">
+                        <div class="stat-item">
+                            <span class="stat-icon">📈</span>
+                            <span class="stat-text">月獲利提升 200%</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-icon">⭐</span>
+                            <span class="stat-text">客戶滿意度 95%</span>
+                        </div>
+                    </div>
+                    <div class="story-cta">
+                        <a href="https://www.instagram.com/mr.__.l/" target="_blank" class="social-link" onclick="trackSocialClick('instagram')">
+                            <i class="fab fa-instagram"></i> 查看更多案例
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="story-card scroll-reveal">
+                    <div class="story-header">
+                        <div class="story-avatar">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="story-info">
+                            <h3 class="story-name">阿明 - 日本代購專家</h3>
+                            <p class="story-location">高雄，經營1年</p>
+                        </div>
+                        <div class="story-badge">回購率 80%</div>
+                    </div>
+                    <blockquote class="story-quote">
+                        "MeowDaigou 的匯率自動更新功能太棒了！以前要手動查匯率很麻煩，現在一鍵計算，客戶看到詳細的成本分析都很滿意。回購率超過 80%！"
+                    </blockquote>
+                    <div class="story-stats">
+                        <div class="stat-item">
+                            <span class="stat-icon">🔄</span>
+                            <span class="stat-text">客戶回購率 80%</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-icon">⚡</span>
+                            <span class="stat-text">效率提升 150%</span>
+                        </div>
+                    </div>
+                    <div class="story-cta">
+                        <a href="#" class="social-link">
+                            <i class="fas fa-quote-left"></i> 分享您的故事
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="story-card scroll-reveal">
+                    <div class="story-header">
+                        <div class="story-avatar">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="story-info">
+                            <h3 class="story-name">美美 - 小資代購新手</h3>
+                            <p class="story-location">新竹，剛開始</p>
+                        </div>
+                        <div class="story-badge">新手友善</div>
+                    </div>
+                    <blockquote class="story-quote">
+                        "剛開始做代購很擔心算錯價格，用了免費版就覺得很棒！操作簡單，計算精準。現在升級 Pro 版，每天都在穩定獲利，謝謝 MeowDaigou！"
+                    </blockquote>
+                    <div class="story-stats">
+                        <div class="stat-item">
+                            <span class="stat-icon">🎯</span>
+                            <span class="stat-text">零失誤計算</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-icon">💰</span>
+                            <span class="stat-text">月入 2萬+</span>
+                        </div>
+                    </div>
+                    <div class="story-cta">
+                        <a href="profit-calculation-guide.html" class="social-link">
+                            <i class="fas fa-graduation-cap"></i> 新手教學
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 社群媒體整合 -->
+            <div class="social-community scroll-reveal">
+                <h3 class="community-title">加入代購社群，分享成功經驗</h3>
+                <p class="community-subtitle">與其他代購交流心得，學習更多賺錢技巧</p>
+                <div class="social-buttons">
+                    <a href="https://www.instagram.com/mr.__.l/" target="_blank" class="social-btn instagram" onclick="trackSocialClick('instagram')">
+                        <i class="fab fa-instagram"></i>
+                        <div class="social-info">
+                            <span class="social-name">Instagram</span>
+                            <span class="social-desc">每日代購技巧分享</span>
+                        </div>
+                        <span class="social-action">關注</span>
+                    </a>
+                    <a href="#" class="social-btn facebook" onclick="trackSocialClick('facebook')">
+                        <i class="fab fa-facebook-f"></i>
+                        <div class="social-info">
+                            <span class="social-name">Facebook 社團</span>
+                            <span class="social-desc">代購教學與交流</span>
+                        </div>
+                        <span class="social-action">加入</span>
+                    </a>
+                    <a href="https://line.me/R/ti/p/@meowdaigou" class="social-btn line" onclick="trackSocialClick('line')">
+                        <i class="fab fa-line"></i>
+                        <div class="social-info">
+                            <span class="social-name">LINE 官方帳號</span>
+                            <span class="social-desc">即時客服與優惠</span>
+                        </div>
+                        <span class="social-action">加好友</span>
+                    </a>
                 </div>
             </div>
         </div>

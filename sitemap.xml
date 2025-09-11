@@ -79,4 +79,20 @@
     <priority>0.8</priority>
   </url>
   
+  <!-- 代購利潤計算指南 -->
+  <url>
+    <loc>https://thankcoom.github.io/meowdaigou-website/profit-calculation-guide.html</loc>
+    <lastmod>2025-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- 代購成功案例 -->
+  <url>
+    <loc>https://thankcoom.github.io/meowdaigou-website/success-stories.html</loc>
+    <lastmod>2025-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
 </urlset>
